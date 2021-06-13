@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16234174223370" configfile="/proyect-web/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="96" y="180" id="pf16234176793991" outlinks="pf16234176793992 pf16234176794003 pf162342620902410" inlinks="pf16234176794004 pf16234176794005 pf162342620902410" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="reporte.xhtml" x="300" y="300" id="pf16234176794006" outlinks="pf16234176794005 pf16234176794007" inlinks="pf16234176794003 pf16234176794008" path="/reporte.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="autores.xhtml" x="300" y="72" id="pf16234176794009" outlinks="pf16234176794004 pf16234176794008" inlinks="pf16234176793992 pf16234176794007" path="/autores.xhtml"/>
+  <links id="pf16234176793992" target="pf16234176794009" source="pf16234176793991" outcome="autores"/>
+  <links id="pf16234176794003" target="pf16234176794006" source="pf16234176793991" outcome="reporte"/>
+  <links id="pf16234176794004" target="pf16234176793991" source="pf16234176794009" outcome="inicio"/>
+  <links id="pf16234176794005" target="pf16234176793991" source="pf16234176794006" outcome="inicio"/>
+  <links id="pf16234176794007" target="pf16234176794009" source="pf16234176794006" outcome="autores"/>
+  <links id="pf16234176794008" target="pf16234176794006" source="pf16234176794009" outcome="reporte"/>
+  <links id="pf162342620902410" target="pf16234176793991" source="pf16234176793991" outcome="inicio">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>
