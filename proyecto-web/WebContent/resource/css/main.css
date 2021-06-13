@@ -51,6 +51,11 @@
 	height: 55px;
 }
 
+.link{
+	border-bottom: solid 5px;
+	background-color: red;
+}
+
 .link1{
 	display:flex;
 	justify-content: center;
@@ -106,8 +111,12 @@
 	height: 600px;
 	
 }
-
 .contenido{
+	display: flex;
+	flex-direction: column;
+}
+
+.contenido-texto{
 	display: flex;
 	flex-flow: row wrap;
 }
@@ -119,13 +128,13 @@
 	align-items: center;
 	flex: 30%;
 	background-color: navy;
-	height: 100vh;
+	height: 80vh;
 }
 
 .texto{
 	flex: 70%;
 	background-color: orange;
-	height: 100vh;
+	/* height: 100vh; */
 }
 
 .imagen1{
@@ -140,7 +149,7 @@
 	background-color: red;
 }
 
-.link{
-	border-bottom: solid 5px;
-	background-color: red;
+.contenido-link{
+	background-color:red;
+	height: 20vh;
 }
