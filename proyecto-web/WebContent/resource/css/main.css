@@ -1,0 +1,146 @@
+@charset "ISO-8859-1";
+
+.header{
+	background-color: #FF9900;
+	text-align: center;
+	font-size: 1rem;
+	height: 100px;
+}
+
+
+.footer{
+	background-color: #FF9900;
+	text-align: center;
+	font-size: 1.2rem;
+	height: 100px;
+	padding-top: 5px;
+}
+
+.autores{
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+.body{
+	min-height: calc(100vh - 250px);
+}
+
+.flex-container{
+	display:flex;
+	flex-flow: row wrap;
+}
+
+.container1{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex: 20%;
+	background-color:red;
+}
+
+.container2{
+	display:flex;
+	flex-flow: row wrap;
+	flex: 80%;
+	background-color:green;
+}
+.box{
+	background-color:blue;
+	width: 190px;
+	height: 55px;
+}
+
+.link1{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex: 10%;
+	background-color: fuchsia;
+}
+
+.link2{
+	display:flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex: 70%;
+	background-color: gray;
+	padding-left: 40px;
+	
+}
+
+.link3{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex:10%;
+	background-color: maroon;
+}
+
+.ini-sesion{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width:80%;
+	height: 30%;
+	background-color: green;
+	border-radius: 15px;
+}
+
+.ini-sesion:hover{
+	color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor: pointer;
+}
+
+.reporte{
+	display: block;
+	margin: auto;
+	background-color: black;
+	width: 600px;
+	height: 450px; 
+}
+
+.imagenMundo{
+	background-color: #1d3557;
+	height: 600px;
+	
+}
+
+.contenido{
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.fotos{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-around;
+	align-items: center;
+	flex: 30%;
+	background-color: navy;
+	height: 100vh;
+}
+
+.texto{
+	flex: 70%;
+	background-color: orange;
+	height: 100vh;
+}
+
+.imagen1{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+
+.imagen2{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+
+.link{
+	border-bottom: solid 5px;
+	background-color: red;
+}
