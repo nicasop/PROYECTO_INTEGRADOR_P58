@@ -1,10 +1,13 @@
 @charset "ISO-8859-1";
 
+html,body{
+	font-size: 1.2rem;
+}
+
 .header{
-	background-color: #FF9900;
 	text-align: center;
 	font-size: 1rem;
-	height: 100px;
+	height: 45px;
 }
 
 
@@ -35,20 +38,21 @@
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	flex: 20%;
-	background-color:red;
+	flex: 10%;
 }
 
 .container2{
 	display:flex;
 	flex-flow: row wrap;
-	flex: 80%;
+	flex: 90%;
 	background-color:green;
 }
-.box{
-	background-color:blue;
-	width: 190px;
-	height: 55px;
+.imagen-mundo{
+	background-image: url("../images/mundo.png");
+	background-position: center;
+	background-size: cover;
+	width: 45px;
+	height: 45px;
 }
 
 .link{
@@ -87,7 +91,7 @@
 	justify-content: center;
 	align-items: center;
 	width:80%;
-	height: 30%;
+	height:50%;
 	background-color: green;
 	border-radius: 15px;
 }
@@ -107,8 +111,10 @@
 }
 
 .imagenMundo{
-	background-color: #1d3557;
-	height: 600px;
+	background-image: url("../images/mundo.gif");
+	background-position: center;
+	background-size: cover;
+	height: 924px;
 	
 }
 .contenido{
