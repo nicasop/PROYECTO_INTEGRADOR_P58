@@ -8,6 +8,7 @@ html,body{
 	text-align: center;
 	font-size: 1rem;
 	height: 45px;
+	background-color: #040509;
 }
 
 
@@ -16,7 +17,6 @@ html,body{
 	text-align: center;
 	font-size: 1.2rem;
 	height: 100px;
-	padding-top: 5px;
 }
 
 .autores{
@@ -45,7 +45,6 @@ html,body{
 	display:flex;
 	flex-flow: row wrap;
 	flex: 90%;
-	background-color:green;
 }
 .imagen-mundo{
 	background-image: url("../images/mundo.png");
@@ -56,8 +55,8 @@ html,body{
 }
 
 .link{
-	border-bottom: solid 5px;
-	background-color: red;
+	text-decoration: none;
+	color: white; 
 }
 
 .link1{
@@ -65,17 +64,23 @@ html,body{
 	justify-content: center;
 	align-items: center;
 	flex: 10%;
-	background-color: fuchsia;
+	border-bottom: solid 2px white;
 }
 
 .link2{
 	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex: 10%;
+	border-bottom: solid 2px white;
+}
+
+.espacio{
+	display:flex;
 	justify-content: flex-start;
 	align-items: center;
-	flex: 70%;
-	background-color: gray;
+	flex: 40%;
 	padding-left: 40px;
-	
 }
 
 .link3{
@@ -83,7 +88,6 @@ html,body{
 	justify-content: center;
 	align-items: center;
 	flex:10%;
-	background-color: maroon;
 }
 
 .ini-sesion{
@@ -91,14 +95,13 @@ html,body{
 	justify-content: center;
 	align-items: center;
 	width:80%;
-	height:50%;
-	background-color: green;
+	height:70%;
+	background-color: #2A68B2;
 	border-radius: 15px;
 }
 
 .ini-sesion:hover{
-	color: white;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow:0 4px 8px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.5);
 	cursor: pointer;
 }
 
@@ -133,29 +136,61 @@ html,body{
 	justify-content: space-around;
 	align-items: center;
 	flex: 30%;
-	background-color: navy;
-	height: 80vh;
+	height: 50vh;
 }
 
 .texto{
 	flex: 70%;
 	background-color: orange;
-	/* height: 100vh; */
 }
 
 .imagen1{
-	width: 100px;
-	height: 100px;
-	background-color: red;
+	width: 160px;
+	height: 160px;
+	background-image: url("../images/cohete.png");
+	background-position: center;
+	background-size: cover;
 }
 
 .imagen2{
-	width: 100px;
-	height: 100px;
-	background-color: red;
+	width: 160px;
+	height: 160px;
+	background-image: url("../images/foco.png");
+	background-position: center;
+	background-size: cover;
 }
 
 .contenido-link{
-	background-color:red;
-	height: 20vh;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("../images/github.png");
+	background-position: center;
+	/* background-size: cover; */
+	background-repeat: no-repeat;
+	background-color: gray;
+	height: 200px;
+}
+
+.github{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #2A68B2;
+	border-radius: 15px;
+	height: 40px;
+	width: 140px;
+	
+	margin-right: 10px;
+	
+}
+
+.github>a{
+	color: white;
+	text-decoration: none;
+}
+
+.imagen-autor{
+	height: 300px;
+	width: 200px;
 }

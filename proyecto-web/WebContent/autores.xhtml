@@ -6,37 +6,38 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<link rel="stylesheet" href="resource/css/main.css" />
+	<link rel="stylesheet" href="resources/css/main.css" />
 </h:head>
 <h:body>
 	<div class="header flex-container">
-		<div class="container1">
-			<h:link styleClass="" outcome="inicio">
-				<div class="imagen-mundo"></div>
-			</h:link>
-		</div>
-		<div class="container2">
-			<div class="link1">
-				<h:link styleClass="" outcome="autores" value="Autores" />
+			<div class="container1">
+				<h:link styleClass="" outcome="inicio">
+					<div class="imagen-mundo"></div>
+				</h:link>
 			</div>
-			<div class="link2">
-				<h:link styleClass="" outcome="reporte" value="Reporte" />
-			</div>
-			<div class="link3">
-				<div class="ini-sesion">
-					<h:link styleClass="" outcome="" value="Iniciar Sesion" />
+			<div class="container2">
+				<div class="link1">
+					<h:link styleClass="link" outcome="autores" value="Autores" />
+				</div>
+				<div class="link2">
+					<h:link styleClass="link" outcome="reporte" value="Reporte" />
+				</div>
+				<div class="espacio"></div>
+				<div class="link3">
+					<div class="ini-sesion">
+						<h:link styleClass="link" outcome="" value="Iniciar Sesion" />
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
 	<div class="body">
 		<h2 align="center">Desarrolladores</h2>
 		<h2>Anthony Grijalva</h2>
 		<p:tabView orientation="bottom">
-			<p:tab title="Godfather Part I">
+			<p:tab title="Información">
 				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage url="http://placekitten.com/200/300" />
+					<p:graphicImage name="images/anthony.jpeg" styleClass="imagen-autor"  />
 					<h:panelGrid columns="2">
 
 						<h:outputText value="Name:" />
@@ -53,7 +54,7 @@
 					</h:panelGrid>
 				</h:panelGrid>
 			</p:tab>
-			<p:tab title="Godfather Part II">
+			<p:tab title="Cursos">
 				<p:panelGrid columns="2">
 					<f:facet name="header">
 						<p:graphicImage url="http://placekitten.com/200/300" />
@@ -72,15 +73,7 @@
 					<h:outputText value="24" />
 				</p:panelGrid>
 			</p:tab>
-			<p:tab title="Godfather Part III">
-				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage url="http://placekitten.com/200/300" />
-					<h:outputText
-						value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family.
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
-				</h:panelGrid>
-			</p:tab>
-			<p:tab title="Godfather Part III">
+			<p:tab title="Destrezas">
 				<h:panelGrid columns="2" cellpadding="10">
 					<p:graphicImage url="http://placekitten.com/200/300" />
 					<h:outputText
@@ -92,9 +85,9 @@
 		<br />
 		<h2>Sebastian Sandoval</h2>
 		<p:tabView orientation="bottom">
-			<p:tab title="Godfather Part I">
+			<p:tab title="Información">
 				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage url="http://placekitten.com/200/300" />
+					<p:graphicImage name="images/sebastian.jpg" styleClass="imagen-autor"  />
 					<h:panelGrid columns="2">
 
 						<h:outputText value="Name:" />
@@ -111,7 +104,7 @@
 					</h:panelGrid>
 				</h:panelGrid>
 			</p:tab>
-			<p:tab title="Godfather Part II">
+			<p:tab title="Cursos">
 				<p:panelGrid columns="2">
 					<f:facet name="header">
 						<p:graphicImage url="http://placekitten.com/200/300" />
@@ -130,15 +123,7 @@
 					<h:outputText value="24" />
 				</p:panelGrid>
 			</p:tab>
-			<p:tab title="Godfather Part III">
-				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage url="http://placekitten.com/200/300" />
-					<h:outputText
-						value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family.
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
-				</h:panelGrid>
-			</p:tab>
-			<p:tab title="Godfather Part III">
+			<p:tab title="Destrezas">
 				<h:panelGrid columns="2" cellpadding="10">
 					<p:graphicImage url="http://placekitten.com/200/300" />
 					<h:outputText
@@ -150,9 +135,9 @@
 
 		<h2>Alexis Villavicencio</h2>
 		<p:tabView orientation="bottom">
-			<p:tab title="Godfather Part I">
+			<p:tab title="Información">
 				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage url="http://placekitten.com/200/300" />
+					<p:graphicImage name="images/alexis.jpg" styleClass="imagen-autor"  />
 					<h:panelGrid columns="2">
 
 						<h:outputText value="Name:" />
@@ -169,7 +154,7 @@
 					</h:panelGrid>
 				</h:panelGrid>
 			</p:tab>
-			<p:tab title="Godfather Part II">
+			<p:tab title="Cursos">
 				<p:panelGrid columns="2">
 					<f:facet name="header">
 						<p:graphicImage url="http://placekitten.com/200/300" />
@@ -188,15 +173,7 @@
 					<h:outputText value="24" />
 				</p:panelGrid>
 			</p:tab>
-			<p:tab title="Godfather Part III">
-				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage url="http://placekitten.com/200/300" />
-					<h:outputText
-						value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family.
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
-				</h:panelGrid>
-			</p:tab>
-			<p:tab title="Godfather Part III">
+			<p:tab title="Destrezas">
 				<h:panelGrid columns="2" cellpadding="10">
 					<p:graphicImage url="http://placekitten.com/200/300" />
 					<h:outputText
@@ -208,9 +185,9 @@
 
 		<h2>Ricardo Villegas</h2>
 		<p:tabView orientation="bottom">
-			<p:tab title="Godfather Part I">
+			<p:tab title="Información">
 				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage url="http://placekitten.com/200/300" />
+					<p:graphicImage name="images/ricardo.jpg" styleClass="imagen-autor"  />
 					<h:panelGrid columns="2">
 
 						<h:outputText value="Name:" />
@@ -227,7 +204,7 @@
 					</h:panelGrid>
 				</h:panelGrid>
 			</p:tab>
-			<p:tab title="Godfather Part II">
+			<p:tab title="Cursos">
 				<p:panelGrid columns="2">
 					<f:facet name="header">
 						<p:graphicImage url="http://placekitten.com/200/300" />
@@ -246,15 +223,7 @@
 					<h:outputText value="24" />
 				</p:panelGrid>
 			</p:tab>
-			<p:tab title="Godfather Part III">
-				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage url="http://placekitten.com/200/300" />
-					<h:outputText
-						value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family.
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
-				</h:panelGrid>
-			</p:tab>
-			<p:tab title="Godfather Part III">
+			<p:tab title="Destrezas">
 				<h:panelGrid columns="2" cellpadding="10">
 					<p:graphicImage url="http://placekitten.com/200/300" />
 					<h:outputText
