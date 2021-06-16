@@ -19,7 +19,7 @@ reportes sobre la información relevante acerca de alrededor de 260 paises. Para
     <li>Se nos abrira una venta y nos dirigimos a la pestaña de "Opciones avanzadas" y al final de la pestaña tenemos la opcion de Variables de entorno y damos clic</li>
     <li>En el apartado de Variables del sistema le daremos click en Nueva y en la ventana que nos aparece le damos el nombre de "JAVA_HOME" en el campo de "Nombre de la Variable" y en campo de "Valor de la variable" escogemos la opcion de Examinar Directorio y buscamos nuestro JDK que por lo general se guarda en C:/ProgramFile/jdk1.8.0_271</li>
   </ul>
-  <li>Wildflyd 16.0.0.0</li>
+  <li>Wildflyd 22.0.0.0</li>
   <li>Primefaces jar 8.0 Community</li>
 </ol>
   
