@@ -3,13 +3,13 @@ Proyecto Integrador correspondiente a las materias de Gestión de Base de Datos,
 proyecto tiene la finalidad de crear un sistema de información orientado a cumplir la función de un software en el nivel de conocimiento. Este tiene la finalidad de mostrar 
 reportes sobre la información relevante acerca de alrededor de 260 paises. Para el almacenamiento de la información, se utilizará un DataWareHouse implementado con PostgreSQL.
 # Formas para obtener una copia del Sistema:
-  1. Para poder utilizar el codigo lo puede encontrara dentro de este repositorio y podra descargar los diferentes complementos que necesita para ejecutarlo
+  1. Para poder utilizar el código lo puede encontrara dentro de este repositorio y podra descargar los diferentes complementos que necesita para ejecutarlo
   1. Puede tambien recurrir a descargar el IDE de desarollo Eclipse o NetBeans y configurarlo para que pueda capturar nuestro repositorio publico y de esta forma descargarlo de manera local.
 
 # Pre requisitos para ejecutar el Sistema:
 <ol>
   <li>IDE de desarrollo Eclipse o NetBeans</li>
-  <li>JDK minimo 11</li><br/>
+  <li>JDK mínimo 11</li><br/>
     Nota: EN WIndows debemos colocar el JDK instalado como variable de entorno para lo cual debe seguir los siguientes pasos:
     <ul>
     <li>Ingresamos a Equipo y damos click derecho en un espacio en blanco de la ventana de equipo y abrimos propierdades</li>
