@@ -23,6 +23,11 @@ reportes sobre la información relevante acerca de alrededor de 260 paises. Para
   <li>Primefaces jar 8.0 Community</li>
 </ol>
   
+# LICENCIA
+
+<ul>
+  <li> MIT License </li>
+</ul>
 
 # COLABORADORES
 
