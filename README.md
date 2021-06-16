@@ -25,8 +25,7 @@ reportes sobre la información relevante acerca de alrededor de 260 paises. Para
   
 # LICENCIA
 
-
- *  MIT License 
+ *  Este proyecto fue desarrollado bajo la licecia MIT. Para mas información sobre la licencia utilizada click [[LICENSE]]
 
 # COLABORADORES
 
