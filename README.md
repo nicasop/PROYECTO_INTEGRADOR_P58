@@ -2,13 +2,13 @@
 Proyecto Integrador correspondiente a las materias de Gestión de Base de Datos, Sistemas de Información y Software Libre de la Universidad Politécnica Salesiana. El presente 
 proyecto tiene la finalidad de crear un sistema de información orientado a cumplir la función de un software en el nivel de conocimiento. Este tiene la finalidad de mostrar 
 reportes sobre la información relevante acerca de alrededor de 260 paises. Para el almacenamiento de la información, se utilizará un DataWareHouse implementado con PostgreSQL.
-* Formas para obtener una copia del Sistema:
+# Formas para obtener una copia del Sistema:
 <ol>
   <li>Para poder utilizar el codigo lo puede encontrara dentro de este repositorio y podra descargar los diferentes complementos que necesita para ejecutarlo</li>
   <li>Puede tambien recurrir a descargar el IDE de desarollo Eclipse o NetBeans y configurarlo para que pueda capturar nuestro repositorio publico y de esta forma descargarlo de manera local.</li>
 </ol>
 
- * Pre requisitos para ejecutar el Sistema:
+# Pre requisitos para ejecutar el Sistema:
 <ol>
   <li>IDE de desarrollo Eclipse o NetBeans</li>
   <li>JDK minimo 1.8 o más modernos</li><br>
