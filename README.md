@@ -25,15 +25,14 @@ reportes sobre la información relevante acerca de alrededor de 260 paises. Para
   
 # LICENCIA
 
-<ul>
-  <li> MIT License </li>
-</ul>
+
+ +  MIT License 
 
 # COLABORADORES
 
-<ul>
-  <li>ANTHONY GRIJALVA</li>
-  <li>SEBASTIAN SANDOVAL</li>
-  <li>ALEXIS VILLAVICENCIO</li>
-  <li>RICARDO VILLEGAS</li>
-</ul> 
+
+  + ANTHONY GRIJALVA
+  + SEBASTIAN SANDOVAL
+  + ALEXIS VILLAVICENCIO
+  + RICARDO VILLEGAS
+
