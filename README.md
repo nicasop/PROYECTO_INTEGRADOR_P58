@@ -26,7 +26,7 @@ reportes sobre la información relevante acerca de alrededor de 260 paises. Para
 # LICENCIA
 
 
- +  MIT License 
+ *  MIT License 
 
 # COLABORADORES
 
