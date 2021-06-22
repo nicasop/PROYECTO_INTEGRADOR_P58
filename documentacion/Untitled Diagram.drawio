@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-22T16:46:29.486Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="4vn5yJkL10kPCEPGtZIl" version="14.8.0" type="github" pages="16">
+<mxfile host="app.diagrams.net" modified="2021-06-22T17:00:22.383Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="ziylZMGClVjkDWs_v7S8" version="14.8.0" type="github" pages="16">
   <diagram id="Qo67FTmliE1w1b_2kEDf" name="Ingreso al portal web">
-    <mxGraphModel dx="275" dy="914" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="41" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -426,7 +426,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="yyrsZVzCvkJrxsExwq6A" name="Modificar Clave">
-    <mxGraphModel dx="-228" dy="332" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="41" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="SjN4rdEZjOHK5zL8AUIx-0" />
         <mxCell id="SjN4rdEZjOHK5zL8AUIx-1" parent="SjN4rdEZjOHK5zL8AUIx-0" />
@@ -892,7 +892,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="yBnx1AR_hfavbXik-Ci6" name="Registro de actividades">
-    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="413" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="mOxobfAqYiGH9bt11qK5-0" />
         <mxCell id="mOxobfAqYiGH9bt11qK5-1" parent="mOxobfAqYiGH9bt11qK5-0" />
@@ -929,7 +929,7 @@
         <mxCell id="oC4CWFdcnYzKHEWiUZZL-0" value="Descarga de reportes&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" parent="mOxobfAqYiGH9bt11qK5-1" vertex="1">
           <mxGeometry x="1150" y="360" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="oC4CWFdcnYzKHEWiUZZL-1" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="mOxobfAqYiGH9bt11qK5-1" vertex="1">
+        <mxCell id="oC4CWFdcnYzKHEWiUZZL-1" value="Operador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="mOxobfAqYiGH9bt11qK5-1" vertex="1">
           <mxGeometry x="980" y="150" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="FJKEkv_vZFy3g-6TRleZ-0" value="" style="endArrow=none;dashed=1;html=1;exitX=1.007;exitY=0.414;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" parent="mOxobfAqYiGH9bt11qK5-1" source="3DkSVWjTtjTeA_lVovYz-2" target="3DkSVWjTtjTeA_lVovYz-4" edge="1">
@@ -1035,12 +1035,6 @@
         </mxCell>
         <mxCell id="le3EVQixT_5CGndW2HnR-3" value="Visualizar usuarios&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" parent="mOxobfAqYiGH9bt11qK5-1" vertex="1">
           <mxGeometry x="1150" y="880" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="le3EVQixT_5CGndW2HnR-4" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="mOxobfAqYiGH9bt11qK5-1" source="3DkSVWjTtjTeA_lVovYz-1" target="le3EVQixT_5CGndW2HnR-3" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1200" y="860" as="sourcePoint" />
-            <mxPoint x="1250" y="810" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="cemOdhOuDa1LsmaYq7MH-0" value="" style="endArrow=none;dashed=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="mOxobfAqYiGH9bt11qK5-1" source="3DkSVWjTtjTeA_lVovYz-9" target="3DkSVWjTtjTeA_lVovYz-4" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -1150,6 +1144,12 @@
         <mxCell id="cemOdhOuDa1LsmaYq7MH-19" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="cemOdhOuDa1LsmaYq7MH-18" vertex="1" connectable="0">
           <mxGeometry x="0.3514" y="-2" relative="1" as="geometry">
             <mxPoint x="-17" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fyRieZJFL0aQE50I9HJR-1" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="mOxobfAqYiGH9bt11qK5-1" source="3DkSVWjTtjTeA_lVovYz-1" target="le3EVQixT_5CGndW2HnR-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1210" y="780" as="sourcePoint" />
+            <mxPoint x="1260" y="730" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
@@ -1604,7 +1604,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="XLGDW-KbCP0QGkrhWKl1" name="Recuperar clave">
-    <mxGraphModel dx="275" dy="914" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="41" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="uJDPwyhkcvLG7q1F8JM3-0" />
         <mxCell id="uJDPwyhkcvLG7q1F8JM3-1" parent="uJDPwyhkcvLG7q1F8JM3-0" />
