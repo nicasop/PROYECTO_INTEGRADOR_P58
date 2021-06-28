@@ -1,57 +1,56 @@
 @charset "ISO-8859-1";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
+@import
+	url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap')
+	;
 
-
-
-html,body{
+html, body {
 	font-size: 1.2rem;
 	font-family: 'Montserrat', sans-serif;
 }
 
-.header{
+.header {
 	text-align: center;
 	font-size: 1rem;
 	height: 45px;
 	background-color: #040509;
 }
 
-
-.footer{
+.footer {
 	background-color: #FF9900;
 	text-align: center;
 	font-size: 1.2rem;
 	height: 100px;
 }
 
-.autores{
+.autores {
 	display: flex;
 	justify-content: space-around;
-	
 }
 
-.body{
-	min-height: calc(100vh - 250px);
+.body {
+	min-height: calc(100vh - 195px);
 }
 
-.flex-container{
-	display:flex;
+.flex-container {
+	display: flex;
 	flex-flow: row wrap;
 }
 
-.container1{
-	display:flex;
+.container1 {
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex: 10%;
 }
 
-.container2{
-	display:flex;
+.container2 {
+	display: flex;
 	flex-flow: row wrap;
 	flex: 90%;
 }
-.imagen-mundo{
+
+.imagen-mundo {
 	background-image: url("../images/mundo.png");
 	background-position: center;
 	background-size: cover;
@@ -59,58 +58,59 @@ html,body{
 	height: 45px;
 }
 
-.link{
+.link {
 	text-decoration: none;
-	color: white; 
+	color: white;
 }
 
-.link1{
-	display:flex;
+.link1 {
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex: 10%;
 	border-bottom: solid 2px white;
 }
 
-.link2{
-	display:flex;
+.link2 {
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex: 10%;
 	border-bottom: solid 2px white;
 }
 
-.espacio{
-	display:flex;
+.espacio {
+	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	flex: 40%;
 	padding-left: 40px;
 }
 
-.link3{
-	display:flex;
+.link3 {
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex:10%;
+	flex: 10%;
 }
 
-.ini-sesion{
-	display:flex;
+.ini-sesion {
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	width:80%;
-	height:70%;
+	width: 80%;
+	height: 70%;
 	background-color: #2A68B2;
 	border-radius: 15px;
 }
 
-.ini-sesion:hover{
-	box-shadow:0 4px 8px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.5);
+.ini-sesion:hover {
+	box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0
+		rgba(255, 255, 255, 0.5);
 	cursor: pointer;
 }
 
-.reporte{
+.reporte {
 	display: block;
 	margin: auto;
 	/*background-color: black;
@@ -118,24 +118,24 @@ html,body{
 	height: 450px; */
 }
 
-.imagenMundo{
+.imagenMundo {
 	background-image: url("../images/mundo.gif");
 	background-position: center;
 	background-size: cover;
 	height: 924px;
-	
 }
-.contenido{
+
+.contenido {
 	display: flex;
 	flex-direction: column;
 }
 
-.contenido-texto{
+.contenido-texto {
 	display: flex;
 	flex-flow: row wrap;
 }
 
-.fotos{
+.fotos {
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: space-around;
@@ -144,12 +144,12 @@ html,body{
 	height: 50vh;
 }
 
-.texto{
+.texto {
 	flex: 70%;
 	background-color: orange;
 }
 
-.imagen1{
+.imagen1 {
 	width: 160px;
 	height: 160px;
 	background-image: url("../images/cohete.png");
@@ -157,7 +157,7 @@ html,body{
 	background-size: cover;
 }
 
-.imagen2{
+.imagen2 {
 	width: 160px;
 	height: 160px;
 	background-image: url("../images/foco.png");
@@ -165,8 +165,8 @@ html,body{
 	background-size: cover;
 }
 
-.contenido-link{
-	display:flex;
+.contenido-link {
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-image: url("../images/github.png");
@@ -177,25 +177,105 @@ html,body{
 	height: 200px;
 }
 
-.github{
-	display:flex;
+.github {
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: #2A68B2;
 	border-radius: 15px;
 	height: 40px;
 	width: 140px;
-	
 	margin-right: 10px;
-	
 }
 
-.github>a{
+.github>a {
 	color: white;
 	text-decoration: none;
 }
 
-.imagen-autor{
+.imagen-autor {
 	height: 300px;
 	width: 200px;
+}
+
+.imagen-404 {
+	background-image: url("../images/error404.png");
+	background-position: center;
+	background-size: cover;
+	height: 924px;
+}
+
+.imagen-admin {
+	background-image: url("../images/adminFondo.png");
+	background-position: center;
+	background-size: cover;
+	height: 930px;
+}
+
+.imagen-operador {
+	background-image: url("../images/operadorFondo.png");
+	background-position: center;
+	background-size: cover;
+	height: 930px;
+}
+
+.boton {
+	text-decoration: none;
+	padding: 10px;
+	font-weight: 600;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: #1883ba;
+	border-radius: 6px;
+	border: 2px solid #0016b0;
+}
+
+.boton:hover {
+	color: #1883ba;
+	background-color: #ffffff;
+}
+
+.formulario {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
+	/* background-color: gray; */
+	
+}
+
+.fondo{
+	background-color: rgba(5,46,77,0.6);
+	padding: 55px 60px;
+	border-radius: 10px;
+}
+
+.fondoT{
+	background-color: rgba(5,46,77,0.6);
+	padding: 20px 10px;
+	border-radius: 10px;
+	text-align: center;
+	font: 100% sans-serif;
+	
+}
+
+
+
+.mss_eme{
+	text-align: right;
+	font-style: oblique;
+	font-weight: 800;	
+}
+
+.link-log{
+	font-family: 'Oswald', sans-serif;
+	text-decoration: none;
+	margin-right: 10px;	
+	margin-left: 10px;
+	color: white;
+	font-weight: 900;
+}
+
+.link-log:hover {
+	text-shadow: 2px 2px 5px red;	
 }

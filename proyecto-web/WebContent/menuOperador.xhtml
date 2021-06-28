@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" href="resources/css/main.css" />
+	<link rel="stylesheet" href="resources/css/primeflex.css" />
+
+</h:head>
+<h:body>
+	<div class="imagen-operador">
+		<div class="fondoT">
+			<h1>MENÚ OPERADOR</h1>
+		</div>
+		<p:stack icon="resources/images/canasta2.png" expanded="true">
+					
+			<p:menuitem value="Reportes" icon="resources/images/repo.png"
+				outcome="repoOpe" />
+			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
+				outcome="editarPsw" />
+			<p:menuitem value="Salir" icon="resources/images/salir.png"
+				outcome="index" />
+		</p:stack>
+
+	</div>
+	<div class="footer">
+		<h4>Desarrollado por</h4>
+		<div class="autores">
+			<span>Anthony Grijalva</span> <span>Sebastian Sandoval</span> <span>Alexis
+				Villavicencio</span> <span>Ricardo Villegas</span>
+		</div>
+	</div>
+</h:body>
+</html>

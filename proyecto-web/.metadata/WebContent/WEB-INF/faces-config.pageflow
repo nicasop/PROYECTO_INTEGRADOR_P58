@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16234174223370" configfile="/proyecto-web/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="96" y="180" id="pf16234176793991" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" outlinks="pf16234176793992 pf16234176794003 pf162342620902410" inlinks="pf16234176794004 pf16234176794005 pf162342620902410" path="/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="reporte.xhtml" x="300" y="300" id="pf16234176794006" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf16234176794005 pf16234176794007" inlinks="pf16234176794003 pf16234176794008" path="/reporte.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="96" y="180" id="pf16234176793991" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" outlinks="pf16234176793992 pf16234176794003 pf162342620902410 pf16242800194930" inlinks="pf16234176794004 pf16234176794005 pf162342620902410 pf16243809376610 pf16248369452654" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="reporte.xhtml" x="348" y="264" id="pf16234176794006" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf16234176794005 pf16234176794007" inlinks="pf16234176794003 pf16234176794008" path="/reporte.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="autores.xhtml" x="300" y="72" id="pf16234176794009" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf16234176794004 pf16234176794008" inlinks="pf16234176793992 pf16234176794007" path="/autores.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="97" y="360" id="pf16242800194941" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf16242800194943" inlinks="pf16242800194930" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="RecuContra.xhtml" x="192" y="528" id="pf16242800194945" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf16243809376610" inlinks="pf16242800194943" path="/RecuContra.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="menuAdmin.xhtml" x="300" y="492" id="pf16248363913361" outlinks="pf16248369452654 pf162484198887110 pf162485637797622 pf162488932746240" path="/menuAdmin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarioOp.xhtml" x="428" y="384" id="pf162484198887213" outlinks="pf162484250008014 pf162484354808116 pf162485911288934 pf162486062511236 pf162486116020838 pf162489151862642 pf162489278133843" inlinks="pf162484198887110 pf162489278133844 pf162489278133845 pf162489278133846 pf162489278133847 pf162489278133848 pf162489278133849 pf162489278133850 pf162489278133851 pf162489278133852 pf162489278133853" path="/usuarioOp.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="editUsuario.xhtml" x="444" y="137" id="pf162484250008015" outlinks="pf162489278133844 pf162489278133854" inlinks="pf162484250008014" path="/editUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registro.xhtml" x="584" y="156" id="pf162484354808117" outlinks="pf162489278133845 pf162489278133855" inlinks="pf162484354808116" path="/registro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="auditoria.xhtml" x="757" y="425" id="pf162485207687121" outlinks="pf162489278133849 pf162489278133856" inlinks="pf162489151862642" path="/auditoria.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="repoGeneral.xhtml" x="516" y="581" id="pf162485637797623" outlinks="pf162485797258228 pf162485804536930 pf162485886348632 pf162489278133850" inlinks="pf162485637797622 pf162489278133854 pf162489278133855 pf162489278133857 pf162489278133858 pf162489278133859 pf162489278133856 pf162489278133843" path="/repoGeneral.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="repoEspe.xhtml" x="749" y="581" id="pf162485797258229" outlinks="pf162489278133851" inlinks="pf162485797258228" path="/repoEspe.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="crearReporte.xhtml" x="730" y="649" id="pf162485804536931" outlinks="pf162489278133852" inlinks="pf162485804536930" path="/crearReporte.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="desRepo.xhtml" x="706" y="732" id="pf162485886348633" outlinks="pf162489278133853" inlinks="pf162485886348632" path="/desRepo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="bloUsuario.xhtml" x="668" y="180" id="pf162485911288935" outlinks="pf162489278133846 pf162489278133857" inlinks="pf162485911288934" path="/bloUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="consUsuario.xhtml" x="696" y="264" id="pf162486062511237" outlinks="pf162489278133847 pf162489278133858" inlinks="pf162486062511236" path="/consUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="eliUser.xhtml" x="768" y="348" id="pf162486116020839" outlinks="pf162489278133848 pf162489278133859" inlinks="pf162486116020838" path="/eliUser.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="editarPsw.xhtml" x="400" y="696" id="pf162488932746241" inlinks="pf162488932746240" path="/editarPsw.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="menuOperador.xhtml" x="456" y="900" id="pf162489790794160" outlinks="pf162489790794161" path="/menuOperador.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="repoOpe.xhtml" x="679" y="900" id="pf162489790794162" inlinks="pf162489790794161" path="/repoOpe.xhtml"/>
   <links id="pf16234176793992" target="pf16234176794009" source="pf16234176793991" outcome="autores"/>
   <links id="pf16234176794003" target="pf16234176794006" source="pf16234176793991" outcome="reporte"/>
   <links id="pf16234176794004" target="pf16234176793991" source="pf16234176794009" outcome="inicio"/>
@@ -14,4 +31,38 @@
     <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
     <bendPoints d1Width="-64" d2Width="-64"/>
   </links>
+  <links id="pf16242800194930" target="pf16242800194941" source="pf16234176793991" outcome="login"/>
+  <links id="pf16242800194943" target="pf16242800194945" source="pf16242800194941" outcome="RecuContra"/>
+  <links id="pf16243809376610" target="pf16234176793991" source="pf16242800194945" outcome="index"/>
+  <links id="pf16248369452654" target="pf16234176793991" source="pf16248363913361" outcome="index"/>
+  <links id="pf162484198887110" target="pf162484198887213" source="pf16248363913361" outcome="usuarioOp"/>
+  <links id="pf162484250008014" target="pf162484250008015" source="pf162484198887213" outcome="editUsuario"/>
+  <links id="pf162484354808116" target="pf162484354808117" source="pf162484198887213" outcome="registro"/>
+  <links id="pf162485637797622" target="pf162485637797623" source="pf16248363913361" outcome="repoGeneral"/>
+  <links id="pf162485797258228" target="pf162485797258229" source="pf162485637797623" outcome="repoEspe"/>
+  <links id="pf162485804536930" target="pf162485804536931" source="pf162485637797623" outcome="repoGenerar"/>
+  <links id="pf162485886348632" target="pf162485886348633" source="pf162485637797623" outcome="desRepo"/>
+  <links id="pf162485911288934" target="pf162485911288935" source="pf162484198887213" outcome="blUser"/>
+  <links id="pf162486062511236" target="pf162486062511237" source="pf162484198887213" outcome="cnUsr"/>
+  <links id="pf162486116020838" target="pf162486116020839" source="pf162484198887213" outcome="eliUsr"/>
+  <links id="pf162488932746240" target="pf162488932746241" source="pf16248363913361" outcome="ediPsw"/>
+  <links id="pf162489151862642" target="pf162485207687121" source="pf162484198887213" outcome="auditoria"/>
+  <links id="pf162489278133844" target="pf162484198887213" source="pf162484250008015" outcome="usuarioOp"/>
+  <links id="pf162489278133845" target="pf162484198887213" source="pf162484354808117" outcome="usuarioOp"/>
+  <links id="pf162489278133846" target="pf162484198887213" source="pf162485911288935" outcome="usuarioOp"/>
+  <links id="pf162489278133847" target="pf162484198887213" source="pf162486062511237" outcome="usuarioOp"/>
+  <links id="pf162489278133848" target="pf162484198887213" source="pf162486116020839" outcome="usuarioOp"/>
+  <links id="pf162489278133849" target="pf162484198887213" source="pf162485207687121" outcome="usuarioOp"/>
+  <links id="pf162489278133854" target="pf162485637797623" source="pf162484250008015" outcome="repoGeneral"/>
+  <links id="pf162489278133855" target="pf162485637797623" source="pf162484354808117" outcome="repoGeneral"/>
+  <links id="pf162489278133857" target="pf162485637797623" source="pf162485911288935" outcome="repoGeneral"/>
+  <links id="pf162489278133858" target="pf162485637797623" source="pf162486062511237" outcome="repoGeneral"/>
+  <links id="pf162489278133859" target="pf162485637797623" source="pf162486116020839" outcome="repoGeneral"/>
+  <links id="pf162489278133856" target="pf162485637797623" source="pf162485207687121" outcome="repoGeneral"/>
+  <links id="pf162489278133843" target="pf162485637797623" source="pf162484198887213" outcome="repoGeneral"/>
+  <links id="pf162489278133850" target="pf162484198887213" source="pf162485637797623" outcome="usuarioOp"/>
+  <links id="pf162489278133851" target="pf162484198887213" source="pf162485797258229" outcome="usuarioOp"/>
+  <links id="pf162489278133852" target="pf162484198887213" source="pf162485804536931" outcome="usuarioOp"/>
+  <links id="pf162489278133853" target="pf162484198887213" source="pf162485886348633" outcome="usuarioOp"/>
+  <links id="pf162489790794161" target="pf162489790794162" source="pf162489790794160" outcome="repoOpe"/>
 </pageflow:Pageflow>

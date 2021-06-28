@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" href="resources/css/main.css" />
+	<link rel="stylesheet" href="resources/css/primeflex.css" />
+
+</h:head>
+<h:body>
+	<div class="imagen-admin">
+		<div class="fondoT">
+			<h1>REGISTRO USUSARIO</h1>
+		</div>
+		<br /> <br />
+		<div class="body formulario">
+			<div class="fondo">
+				<h:form>
+					<h:panelGrid columns="1">
+						<div class="p-field">
+							<p:outputLabel for="nom" styleClass="p-d-block">Nombre y Apellido</p:outputLabel>
+							<p:inputText id="nom" styleClass="p-d-block" />
+
+							<p:outputLabel for="tusr" value="Tipo de Usuario" />
+							<p:selectOneMenu id="tusr" value="" effect="fold" editable="true"
+								required="true">
+								<f:selectItem itemLabel="Seleccione uno" itemValue="" />
+								<f:selectItem itemLabel="Administrador" itemValue="" />
+								<f:selectItem itemLabel="Operador" itemValue="" />
+							</p:selectOneMenu>
+
+							<p:outputLabel for="mail" styleClass="p-d-block">Correo Electrónico</p:outputLabel>
+							<p:inputText id="mail" styleClass="p-d-block" />
+
+							<p:outputLabel for="fnacimiento" styleClass="p-d-block">Fecha de Nacimiento</p:outputLabel>
+							<p:calendar id="fnacimiento" />
+
+							<p:outputLabel for="gen" styleClass="p-d-block">Genero</p:outputLabel>
+							<p:selectOneRadio id="gen" value="#{radioView.console}"
+								unselectable="true">
+								<f:selectItem itemLabel="Masculino" itemValue="M" />
+								<f:selectItem itemLabel="Femenino" itemValue="F" />
+								<f:selectItem itemLabel="Sin especificar" itemValue="S" />
+							</p:selectOneRadio>
+							<p:outputLabel for="pasw1" styleClass="p-d-block">Contraseña</p:outputLabel>
+							<p:password id="pasw1" value="#{passwordView.password2}"
+								feedback="true" promptLabel="Ingrese una contraseña"
+								weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
+								styleClass="p-d-block" match="pasw2" />
+
+							<p:outputLabel for="pasw2" styleClass="p-d-block">Confirmar Contraseña</p:outputLabel>
+							<p:password id="pasw2" value="#{passwordView.password2}"
+								feedback="true" promptLabel="Ingrese una contraseña"
+								weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
+								styleClass="p-d-block" />
+
+
+						</div>
+					</h:panelGrid>
+					<br />
+					<div align="center">
+
+						<h:commandButton action="#{autos.registrar}" outcome="login"
+							value="Registrar" styleClass="boton" />
+					</div>
+				</h:form>
+			</div>
+		</div>
+
+		<p:stack icon="resources/images/canasta2.png" expanded="true">
+			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
+				outcome="usuarioOp" />
+			<p:menuitem value="Reportes" icon="resources/images/repo.png"
+				outcome="repoGeneral" />
+			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
+				outcome="editarPsw" />
+			<p:menuitem value="Salir" icon="resources/images/salir.png"
+				outcome="index" />
+		</p:stack>
+	</div>
+	<div class="footer">
+		<h4>Desarrollado por</h4>
+		<div class="autores">
+			<span>Anthony Grijalva</span> <span>Sebastian Sandoval</span> <span>Alexis
+				Villavicencio</span> <span>Ricardo Villegas</span>
+		</div>
+	</div>
+</h:body>
+</html>
