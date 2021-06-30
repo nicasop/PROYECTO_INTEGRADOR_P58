@@ -2,6 +2,7 @@
 Proyecto Integrador correspondiente a las materias de Gestión de Base de Datos, Sistemas de Información y Software Libre de la Universidad Politécnica Salesiana. El presente 
 proyecto tiene la finalidad de crear un sistema de información orientado a cumplir la función de un software en el nivel de conocimiento. Este tiene la finalidad de mostrar 
 reportes sobre la información relevante acerca de alrededor de 260 paises. Para el almacenamiento de la información, se utilizará un DataWareHouse implementado con PostgreSQL.
+Hemos decidido nombrar a nuestro sitio Data World el cual tiene una pagina web que se centra en la creación y visualización de reportes sociales y económicos de todos los paises del mundo de forma ordena. En los reportes sociales se mostrara información importante como la extensión de territorio, la tasa de natalidad o de defunción, personas con enfermedades, personas que se encuentran en servicio militar, entre otros campos importantes y a su vez los económicos se visualizara campos como la deuda externa de cada pais, producción, exportación de recursos como el petróleo, electricidad, minería, gas natural y muchos mas.
 # Formas para obtener una copia del Sistema:
   1. Para poder utilizar el código lo puede encontrara dentro de este repositorio y podra descargar los diferentes complementos que necesita para ejecutarlo
   1. Puede tambien recurrir a descargar el IDE de desarollo Eclipse o NetBeans y configurarlo para que pueda capturar nuestro repositorio publico y de esta forma descargarlo de manera local.
