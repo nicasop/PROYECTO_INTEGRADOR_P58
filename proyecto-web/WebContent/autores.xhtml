@@ -10,36 +10,36 @@
 </h:head>
 <h:body>
 	<div class="header flex-container">
-			<div class="container1">
-				<h:link styleClass="" outcome="inicio">
-					<div class="imagen-mundo"></div>
-				</h:link>
+		<div class="container1">
+			<h:link styleClass="" outcome="inicio">
+				<div class="imagen-mundo"></div>
+			</h:link>
+		</div>
+		<div class="container2">
+			<div class="link1">
+				<h:link styleClass="link" outcome="autores" value="Autores" />
 			</div>
-			<div class="container2">
-				<div class="link1">
-					<h:link styleClass="link" outcome="autores" value="Autores" />
-				</div>
-				<div class="link2">
-					<h:link styleClass="link" outcome="reporte" value="Reporte" />
-				</div>
-				<div class="espacio"></div>
-				<div class="link3">
-					<div class="ini-sesion">
-						<h:link styleClass="link" outcome="" value="Iniciar Sesion" />
-					</div>
+			<div class="link2">
+				<h:link styleClass="link" outcome="reporte" value="Reporte" />
+			</div>
+			<div class="espacio"></div>
+			<div class="link3">
+				<div class="ini-sesion">
+					<h:link styleClass="link" outcome="" value="Iniciar Sesion" />
 				</div>
 			</div>
 		</div>
+	</div>
 
 	<div class="body">
 		<h2 align="center">Desarrolladores</h2>
-		
+
 
 		<h2>Alexis</h2>
 		<p:tabView orientation="bottom">
 			<p:tab title="Información">
 				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage name="images/alexis.jpg" styleClass="imagen-autor"  />
+					<p:graphicImage name="images/alexis.jpg" styleClass="imagen-autor" />
 					<h:panelGrid columns="2">
 
 						<h:outputText value="Nombre:" />
@@ -56,39 +56,38 @@
 					</h:panelGrid>
 				</h:panelGrid>
 			</p:tab>
-			
+
 			<p:tab title="Cursos">
-					<h:panelGrid columns="2" cellpadding="10">
-						<p:graphicImage name="images/curso.png"  />
-						<h:panelGrid columns="1" >
+				<h:panelGrid columns="2" cellpadding="10">
+					<p:graphicImage name="images/curso.png" />
+					<h:panelGrid columns="1">
 						<h:outputText
 							value="• Ingles básico nivel B1 - Universidad Politécnica Salesiana " />
-						<h:outputText
-							value="• HTML5 and CSS Fundamentals - edx " />
+						<h:outputText value="• HTML5 and CSS Fundamentals - edx " />
 						<h:outputText
 							value="• Introduction to IoT - Cisco Networking Acadm" />
 						<h:outputText
 							value="• VIM, aumenta tu velocidad de desarrollo - udemy" />
-						</h:panelGrid>
 					</h:panelGrid>
+				</h:panelGrid>
 			</p:tab>
-			
+
 			<p:tab title="Destrezas">
 				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage name="images/destreza.png"  />
+					<p:graphicImage name="images/destreza.png" />
 					<h:outputText
 						value="Tengo experiencia trabajando bajo presión y lo he manejado de manera correcta, por tanto considero que soy una persona capaz de resolver problemas, bajo presión, de manera eficiente. La programación es uno de mis fuertes, tambien lo es la facilidad que tengo para entender códigos desarrollados por terceros y adaptarlos a lo que necesite realizar." />
 				</h:panelGrid>
 			</p:tab>
 		</p:tabView>
-		
-		
+
+
 
 		<h2>Ricardo Villegas</h2>
 		<p:tabView orientation="bottom">
 			<p:tab title="Información">
 				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage name="images/ricardo.jpg" styleClass="imagen-autor"  />
+					<p:graphicImage name="images/ricardo.jpg" styleClass="imagen-autor" />
 					<h:panelGrid columns="2">
 
 						<h:outputText value="Nombre:" />
@@ -105,31 +104,73 @@
 					</h:panelGrid>
 				</h:panelGrid>
 			</p:tab>
-			
+
 			<p:tab title="Cursos">
-					<h:panelGrid columns="2" cellpadding="10">
-						<p:graphicImage name="images/curso.png"  />
-						<h:panelGrid columns="1" >
-						
-						<h:outputText
-							value="• Curso de exel y word basico - Cenadepro " />
-						<h:outputText
-							value="• Licencia tipo b - Aneta " />
-						<h:outputText
-							value="• Ingles básico - Politecnica" />
-						<h:outputText
-							value="• Curso de AutoCad - Cenadepro" />
-						<h:outputText
-							value="• Cusos de TSS" />
-							</h:panelGrid>
+				<h:panelGrid columns="2" cellpadding="10">
+					<p:graphicImage name="images/curso.png" />
+					<h:panelGrid columns="1">
+
+						<h:outputText value="• Curso de exel y word basico - Cenadepro " />
+						<h:outputText value="• Licencia tipo b - Aneta " />
+						<h:outputText value="• Ingles básico - Politecnica" />
+						<h:outputText value="• Curso de AutoCad - Cenadepro" />
+						<h:outputText value="• Cusos de TSS" />
 					</h:panelGrid>
+				</h:panelGrid>
 			</p:tab>
-			
+
 			<p:tab title="Destrezas">
 				<h:panelGrid columns="2" cellpadding="10">
-					<p:graphicImage name="images/destreza.png"  />
+					<p:graphicImage name="images/destreza.png" />
 					<h:outputText
 						value="Tengo experiencia trabajando para cnt, movistar y claro en mantenimiento, TSS en torres y dibujos 3D en AutoCAD. Tambien tengo un pensamiento critico y reflexivo en el cual busco formas realistas de resolver problemas. Me considero capaz de comprender y escuchar a las personas." />
+				</h:panelGrid>
+			</p:tab>
+		</p:tabView>
+
+		<h2>Sebastian Sandoval</h2>
+		<p:tabView orientation="bottom">
+			<p:tab title="Información">
+				<h:panelGrid columns="2" cellpadding="10">
+					<p:graphicImage name="images/san.jpg" styleClass="imagen-autor" />
+					<h:panelGrid columns="2">
+
+						<h:outputText value="Nombre:" />
+						<h:outputText value="Sebastián Josue Sandoval Haro" />
+
+						<h:outputText value="Correo Institucional:" />
+						<h:outputText value="ssandovalh@est.ups.edu.ec" />
+
+						<h:outputText value="Correo Personal:" />
+						<h:outputText value="sebassan.997@gmail.com" />
+
+						<h:outputText value="Edad:" />
+						<h:outputText value="24 Años" />
+					</h:panelGrid>
+				</h:panelGrid>
+			</p:tab>
+
+			<p:tab title="Cursos">
+				<h:panelGrid columns="2" cellpadding="10">
+					<p:graphicImage name="images/curso.png" />
+					<h:panelGrid columns="1">
+
+						<h:outputText
+							value="• Ingles Básico - Universidad Politécnica Salesiana" />
+						<h:outputText value="• Hacking Ético - CEC-EPN" />
+						<h:outputText
+							value="• Introduction to IoT - Cisco Networking Acadm" />
+						<h:outputText
+							value="• Introduction to Packet Tracer - Cisco Networking Acadm" />
+					</h:panelGrid>
+				</h:panelGrid>
+			</p:tab>
+
+			<p:tab title="Destrezas">
+				<h:panelGrid columns="2" cellpadding="10">
+					<p:graphicImage name="images/destreza.png" />
+					<h:outputText
+						value="Soy una persona de mente abierta que le gusta conocer a las personas antes de juzgarlas. Tengo experiencia en manejo de redes sociales y uso básico en software de Diseño Gráfico.También realice pasantías en el Gobierno autónomo de Pichincha en el cual adquirí las destrezas en Help Desk y redes, también tengo experiencia en reparación de computadores tanto en Software y Hardware." />
 				</h:panelGrid>
 			</p:tab>
 		</p:tabView>
