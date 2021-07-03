@@ -19,7 +19,7 @@
 		<div align="center">
 			<h:panelGrid columns="3">
 
-				<p:outputLabel for="filtro" styleClass="p-d-block">Nombre Y Apellido:</p:outputLabel>
+				<p:outputLabel for="filtro" styleClass="p-d-block">Usuario:</p:outputLabel>
 				<p:inputText id="filtro" styleClass="p-d-block" />
 
 				<h:commandButton action="#{autos.registrar}" value="ELIMINAR"
@@ -27,6 +27,8 @@
 
 			</h:panelGrid>
 		</div>
+		
+	
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
 			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
 				outcome="usuarioOp" />

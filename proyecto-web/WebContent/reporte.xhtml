@@ -12,50 +12,47 @@
 
 <h:body>
 	<div class="header flex-container">
-			<div class="container1">
-				<h:link styleClass="" outcome="inicio">
-					<div class="imagen-mundo"></div>
-				</h:link>
+		<div class="container1">
+			<h:link styleClass="" outcome="inicio">
+				<div class="imagen-mundo"></div>
+			</h:link>
+		</div>
+		<div class="container2">
+			<div class="link1">
+				<h:link styleClass="link" outcome="autores" value="Autores" />
 			</div>
-			<div class="container2">
-				<div class="link1">
-					<h:link styleClass="link" outcome="autores" value="Autores" />
-				</div>
-				<div class="link2">
-					<h:link styleClass="link" outcome="reporte" value="Reporte" />
-				</div>
-				<div class="espacio"></div>
-				<div class="link3">
-					<div class="ini-sesion">
-						<h:link styleClass="link" outcome="" value="Iniciar Sesion" />
-					</div>
+			<div class="link2">
+				<h:link styleClass="link" outcome="reporte" value="Reporte" />
+			</div>
+			<div class="espacio"></div>
+			<div class="link3">
+				<div class="ini-sesion">
+					<h:link styleClass="link" outcome="login" value="Iniciar Sesion" />
 				</div>
 			</div>
 		</div>
+	</div>
 
 
 
 	<div class="body">
-		<h2 align="center">Reporte sobre .....</h2>
-		<p:graphicImage name="images/world.png" styleClass="reporte"/>
-
-		<!-- <h:form>
-				 	<p:commandButton value="grafico" id="graficar"
-						actionListener="#{grafico.init()}" update="pg" />
-
-					<h:panelGrid id="pg">
-						<p:chart type="pie" model="#{grafico.pieModel1}"
-							rendered="#{pastel.pieModel1 != null}" />
-					</h:panelGrid>
-
-
-				</h:form> -->
-
-
-		<!-- <div class="reporte"></div> -->
-	
-
-
+	<br/>
+	<br/>
+		<!-- <h2 align="center">Reporte sobre .....</h2> -->
+		<!-- <p:dataTable id="reporte" var="pais" value="#{reporte.paises}"
+			rows="10" paginator="true"
+			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
+			rowsPerPageTemplate="5,10,15">
+			<p:column headerText="Pais">
+				<h:outputText value="#{pais.get(0)}" />
+			</p:column>
+			<p:column headerText="Area(sq km)">
+				<h:outputText value="#{pais.get(1)}" />
+			</p:column>
+		</p:dataTable> -->
+		<!-- <p:graphicImage name="images/world.png" styleClass="reporte" /> -->
+		<p:chart type="bar" model="#{reporte.grafico}" style="height:600px"/>
+		
 	</div>
 
 

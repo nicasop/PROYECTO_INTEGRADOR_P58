@@ -13,10 +13,35 @@
 <h:body>
 	<div class="imagen-operador">
 		<div class="fondoT">
-			<h1>MENÚ OPERADOR</h1>
+			<h1>REPORTES</h1>
 		</div>
-		<p:stack icon="resources/images/canasta2.png" expanded="true">
-					
+
+		<br /> <br />
+		<div align="center">
+			<h:panelGrid columns="1">
+
+				<h:link outcome="repoOpe" value="REPORTE 1" styleClass="link-log" />
+				<br />
+				<h:link outcome="reporte1" value="REPORTE 2" styleClass="link-log" />
+				<br />
+				<h:link outcome="reporte2" value="REPORTE 3" styleClass="link-log" />
+				<br />
+				<h:link outcome="reporte3" value="REPORTE 4" styleClass="link-log" />
+				<br />
+				<h:link outcome="reporte4" value="REPORTE 5" styleClass="link-log" />
+				<br />
+				<h:link outcome="reporte5" value="REPORTE 6" styleClass="link-log" />
+				<br />
+				<h:link outcome="reporte6" value="REPORTE 7" styleClass="link-log" />
+			</h:panelGrid>
+		</div>
+
+
+		<div align="center">
+			<p:graphicImage name="images/world.png" styleClass="reporte" />
+		</div>
+		<p:stack icon="resources/images/canasta2.png" expanded="false">
+
 			<p:menuitem value="Reportes" icon="resources/images/repo.png"
 				outcome="menuRepo" />
 			<p:menuitem value="Contraseña" icon="resources/images/contra.png"

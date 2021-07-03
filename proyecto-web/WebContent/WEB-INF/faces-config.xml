@@ -325,11 +325,91 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
+		<display-name>login.xhtml</display-name>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
 		<display-name>menuOperador.xhtml</display-name>
 		<from-view-id>/menuOperador.xhtml</from-view-id>
 		<navigation-case>
+			<from-outcome>menOpe</from-outcome>
+			<to-view-id>/menuRepo.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuRepo.xhtml</display-name>
+		<from-view-id>/menuRepo.xhtml</from-view-id>
+		<navigation-case>
 			<from-outcome>repoOpe</from-outcome>
 			<to-view-id>/repoOpe.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuRepo.xhtml</display-name>
+		<from-view-id>/menuRepo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>reporte1</from-outcome>
+			<to-view-id>/reporte1.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuRepo.xhtml</display-name>
+		<from-view-id>/menuRepo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>reporte2</from-outcome>
+			<to-view-id>/reporte2.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuRepo.xhtml</display-name>
+		<from-view-id>/menuRepo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>reporte3</from-outcome>
+			<to-view-id>/reporte3.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuRepo.xhtml</display-name>
+		<from-view-id>/menuRepo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>reporte4</from-outcome>
+			<to-view-id>/reporte4.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuRepo.xhtml</display-name>
+		<from-view-id>/menuRepo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>reporte5</from-outcome>
+			<to-view-id>/reporte5.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuRepo.xhtml</display-name>
+		<from-view-id>/menuRepo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>reporte6</from-outcome>
+			<to-view-id>/reporte6.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuOperador.xhtml</display-name>
+		<from-view-id>/menuOperador.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>index</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuOperador.xhtml</display-name>
+		<from-view-id>/menuOperador.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>editarPswOpe</from-outcome>
+			<to-view-id>/cambPswOpe.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
