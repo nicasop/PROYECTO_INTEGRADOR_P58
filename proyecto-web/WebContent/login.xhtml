@@ -43,13 +43,13 @@
 
 					<div class="p-field">
 						<p:outputLabel for="username1" styleClass="p-d-block">Usuario</p:outputLabel>
-						<p:inputText id="username1" styleClass="p-d-block" />
+						<p:inputText id="username1" styleClass="p-d-block" value="#{login.usuario.usuario}"/>
 						<small class="p-d-block mss_eme">Enter your username.</small>
 					</div>
 
 					<div class="p-field">
 						<p:outputLabel for="pasww" styleClass="p-d-block">Contraseña</p:outputLabel>
-						<p:password id="pasww" value="#{passwordView.password2}"
+						<p:password id="pasww" value="#{login.usuario.cronta}"
 							feedback="true" promptLabel="Ingrese una contraseña"
 							weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
 							styleClass="p-d-block" />
@@ -59,7 +59,7 @@
 				</h:panelGrid>
 				<div align="center">
 
-					<h:commandButton action="#{autos.registrar}" value="Ingresar"
+					<h:commandButton action="#{login.iniciarSesion}" value="Ingresar"
 						styleClass="boton"/>
 					<hr />
 					<h:panelGrid columns="1">
