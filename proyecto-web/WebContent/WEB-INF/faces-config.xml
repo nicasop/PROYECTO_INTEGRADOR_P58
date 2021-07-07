@@ -428,5 +428,13 @@
 			<to-view-id>/menuOperador.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<display-name>registro.xhtml</display-name>
+		<from-view-id>/registro.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>registrado</from-outcome>
+			<to-view-id>/menuAdmin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>

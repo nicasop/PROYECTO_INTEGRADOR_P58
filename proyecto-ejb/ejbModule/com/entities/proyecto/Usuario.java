@@ -10,11 +10,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name="usuario",catalog="dataworld",schema="public")
+@NamedQueries({
+	@NamedQuery(name = "Usuario.todos", query = "SELECT u FROM Usuario u")
+})
 public class Usuario implements Serializable {
 
 	/**
@@ -39,7 +44,7 @@ public class Usuario implements Serializable {
 	@Column(name = "contrasena")
 	private String contra;
 	@Column(name = "activo")
-	private boolean estado;
+	private int estado;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_tipo")
@@ -101,11 +106,11 @@ public class Usuario implements Serializable {
 		this.contra = contra;
 	}
 
-	public boolean isEstado() {
+	public int getEstado() {
 		return estado;
 	}
 
-	public void setEstado(boolean estado) {
+	public void setEstado(int estado) {
 		this.estado = estado;
 	}
 

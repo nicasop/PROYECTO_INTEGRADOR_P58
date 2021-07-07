@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import com.entities.proyecto.Usuario;
 
@@ -32,7 +33,7 @@ public class UsuarioDao {
 		Usuario usuario = null;
 		String consulta;
 		try {
-			consulta = "select u from Usuario u where u.usuario = ?1 and u.contra = ?2";
+			consulta = "SELECT u FROM Usuario u WHERE u.usuario = ?1 AND u.contra = ?2";
 			Query query = em.createQuery(consulta);
 			query.setParameter(1, user.getUsuario());
 			query.setParameter(2, user.getContra());
@@ -44,6 +45,11 @@ public class UsuarioDao {
 			throw e;
 		}
 		return usuario;
+	}
+	
+	public List<Usuario>getUsuarios(){
+		TypedQuery<Usuario> consulta = em.createNamedQuery("Usuario.todos", Usuario.class);
+		return consulta.getResultList();
 	}
 
 }

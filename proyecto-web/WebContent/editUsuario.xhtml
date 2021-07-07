@@ -13,7 +13,7 @@
 <h:body>
 	<div class="imagen-admin">
 		<div class="fondoT">
-			<h1>EDITAR USUSARIO</h1>
+			<h1>EDITAR USUARIO</h1>
 		</div>
 		<br /> <br />
 		<div class="body formulario">
@@ -21,25 +21,21 @@
 				<h:form>
 					<h:panelGrid columns="1">
 						<div class="p-field">
+						
+							<p:outputLabel for="nomUser" styleClass="p-d-block">Nombre de Usuario</p:outputLabel>
+							<p:inputText id="nomUser" styleClass="p-d-block" value="#{usuario.us.usuario}" />
+							
 							<p:outputLabel for="nom" styleClass="p-d-block">Nombre y Apellido</p:outputLabel>
-							<p:inputText id="nom" styleClass="p-d-block" />
-
-							<p:outputLabel for="@next" value="Tipo de Usuario" />
-							<p:selectOneMenu id="tusr" value="" effect="fold" editable="true"
-								required="true">
-								<f:selectItem itemLabel="Seleccione uno" itemValue="" />
-								<f:selectItem itemLabel="Administrador" itemValue="" />
-								<f:selectItem itemLabel="Operador" itemValue="" />
-							</p:selectOneMenu>
+							<p:inputText id="nom" styleClass="p-d-block" value="#{usuario.us.nombreUsuario}" />
 
 							<p:outputLabel for="mail" styleClass="p-d-block">Correo Electrónico</p:outputLabel>
-							<p:inputText id="mail" styleClass="p-d-block" />
+							<p:inputText id="mail" styleClass="p-d-block" value="#{usuario.us.correo}"/>
 
 							<p:outputLabel for="fnacimiento" styleClass="p-d-block">Fecha de Nacimiento</p:outputLabel>
-							<p:calendar id="fnacimiento" />
+							<p:calendar id="fnacimiento" value="#{usuario.us.fechaNa}"/>
 
 							<p:outputLabel for="gen" styleClass="p-d-block">Genero</p:outputLabel>
-							<p:selectOneRadio id="gen" value="#{radioView.console}"
+							<p:selectOneRadio id="gen" value="#{usuario.us.genero}"
 								unselectable="true">
 								<f:selectItem itemLabel="Masculino" itemValue="M" />
 								<f:selectItem itemLabel="Femenino" itemValue="F" />
@@ -49,8 +45,7 @@
 					</h:panelGrid>
 					<div align="center">
 
-						<h:commandButton action="#{autos.registrar}" outcome="login"
-							value="Registrar" styleClass="boton" />
+						<h:commandButton action="#{usuario.actualizar}" value="Actualizar" styleClass="boton" />
 
 					</div>
 				</h:form>

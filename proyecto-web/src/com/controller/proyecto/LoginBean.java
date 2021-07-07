@@ -2,6 +2,7 @@ package com.controller.proyecto;
 
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -33,6 +34,11 @@ public class LoginBean implements Serializable {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+	
+	@PostConstruct
+	public void init() {
+		usuario = new Usuario();
 	}
 
 	public String iniciarSesion() {
