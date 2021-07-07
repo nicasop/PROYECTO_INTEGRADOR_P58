@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="usuario",catalog="Base_DataWorld",schema="public")
+@Table(name="usuario",catalog="dataworld",schema="public")
 public class Usuario implements Serializable {
 
 	/**
@@ -31,7 +31,7 @@ public class Usuario implements Serializable {
 	@Column(name = "nombre")
 	private String nombreUsuario;
 	@Column(name = "email")
-	private String corre;
+	private String correo;
 	@Column(name = "fecha_nacimiento")
 	private Date fechaNa;
 	@Column(name = "genero")
@@ -69,12 +69,12 @@ public class Usuario implements Serializable {
 		this.nombreUsuario = nombreUsuario;
 	}
 
-	public String getCorre() {
-		return corre;
+	public String getCorreo() {
+		return correo;
 	}
 
-	public void setCorre(String corre) {
-		this.corre = corre;
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 
 	public Date getFechaNa() {
@@ -116,8 +116,4 @@ public class Usuario implements Serializable {
 	public void setTipo(TipoUsuario tipo) {
 		this.tipo = tipo;
 	}
-	
-	
-	
-
 }

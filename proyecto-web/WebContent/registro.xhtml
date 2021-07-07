@@ -22,10 +22,10 @@
 					<h:panelGrid columns="1">
 						<div class="p-field">
 							<p:outputLabel for="nom" styleClass="p-d-block">Nombre y Apellido</p:outputLabel>
-							<p:inputText id="nom" styleClass="p-d-block" />
+							<p:inputText id="nom" styleClass="p-d-block" required="true" />
 
 							<p:outputLabel for="tusr" value="Tipo de Usuario" />
-							<p:selectOneMenu id="tusr" value="" effect="fold" editable="true"
+							<p:selectOneMenu id="tusr" value="" effect="fold" editable="false"
 								required="true">
 								<f:selectItem itemLabel="Seleccione uno" itemValue="" />
 								<f:selectItem itemLabel="Administrador" itemValue="" />
@@ -33,10 +33,10 @@
 							</p:selectOneMenu>
 
 							<p:outputLabel for="mail" styleClass="p-d-block">Correo Electrónico</p:outputLabel>
-							<p:inputText id="mail" styleClass="p-d-block" />
+							<p:inputText id="mail" styleClass="p-d-block" required="true" />
 
 							<p:outputLabel for="fnacimiento" styleClass="p-d-block">Fecha de Nacimiento</p:outputLabel>
-							<p:calendar id="fnacimiento" />
+							<p:calendar id="fnacimiento" required="true" />
 
 							<p:outputLabel for="gen" styleClass="p-d-block">Genero</p:outputLabel>
 							<p:selectOneRadio id="gen" value="#{radioView.console}"
@@ -48,13 +48,13 @@
 							<p:password id="pasw1" value="#{passwordView.password2}"
 								feedback="true" promptLabel="Ingrese una contraseña"
 								weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
-								styleClass="p-d-block" match="pasw2" />
+								styleClass="p-d-block" match="pasw2" required="true"/>
 
 							<p:outputLabel for="pasw2" styleClass="p-d-block">Confirmar Contraseña</p:outputLabel>
 							<p:password id="pasw2" value="#{passwordView.password2}"
 								feedback="true" promptLabel="Ingrese una contraseña"
 								weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
-								styleClass="p-d-block" />
+								styleClass="p-d-block" required="true"/>
 
 
 						</div>
