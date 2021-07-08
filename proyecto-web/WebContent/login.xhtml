@@ -36,14 +36,11 @@
 	<div class="body formulario">
 		<div class="fondo">
 			<h:form>
+			 <!-- <p:growl id="mssError" for="sticky-key" showDetail="true" sticky="true" /> -->
 				<h:panelGrid columns="1">
-
-
-
-
 					<div class="p-field">
 						<p:outputLabel for="username1" styleClass="p-d-block">Usuario</p:outputLabel>
-						<p:inputText id="username1" styleClass="p-d-block" value="#{login.usuario.usuario}"/>
+						<p:inputText id="username1" styleClass="p-d-block" value="#{login.usuario.usuario}" required="true"/>
 						<small class="p-d-block mss_eme">Enter your username.</small>
 					</div>
 
@@ -52,15 +49,21 @@
 						<p:password id="pasww" value="#{login.usuario.contra}"
 							feedback="true" promptLabel="Ingrese una contraseña"
 							weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
-							styleClass="p-d-block" />
+							styleClass="p-d-block" required="true" />
 						<small class="p-d-block mss_eme">Enter your password.</small>
 
 					</div>
 				</h:panelGrid>
 				<div align="center">
 
+					<!-- <p:commandButton actionListener="#{growlView.showSticky}" update="mssError" value="Ingresar"  styleClass="boton" /> -->
+					<!-- <h:commandButton action="#{autos.registrar}" value="Ingresar"
+						styleClass="boton"/> -->
+
+
 					<h:commandButton action="#{login.iniciarSesion}" value="Ingresar"
 						styleClass="boton"/>
+
 					<hr />
 					<h:panelGrid columns="1">
 						<h:link outcome="RecuContra" value="Recuperar"

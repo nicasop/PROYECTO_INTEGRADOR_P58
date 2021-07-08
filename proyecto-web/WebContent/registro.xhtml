@@ -26,10 +26,10 @@
 							<p:inputText id="nomUser" styleClass="p-d-block" value="#{usuario.usuario}" />
 							
 							<p:outputLabel for="nom" styleClass="p-d-block">Nombre y Apellido</p:outputLabel>
-							<p:inputText id="nom" styleClass="p-d-block" value="#{usuario.nombre}" />
+							<p:inputText id="nom" styleClass="p-d-block" required="true" value="#{usuario.nombre}" />
 
 							<p:outputLabel for="tusr" value="Tipo de Usuario" />
-							<p:selectOneMenu id="tusr" value="#{usuario.tipo}" effect="fold" editable="true"
+							<p:selectOneMenu id="tusr" value="#{usuario.tipo}" effect="fold" editable="false"
 								required="true" converter="converter">
 								<f:selectItem itemLabel="Seleccione uno" itemValue="#{null}" />
 								<f:selectItems value="#{usuario.tipos}" var="tip" 
@@ -37,29 +37,30 @@
 							</p:selectOneMenu>
 
 							<p:outputLabel for="mail" styleClass="p-d-block">Correo Electrónico</p:outputLabel>
-							<p:inputText id="mail" styleClass="p-d-block" value="#{usuario.correo}"/>
-
+							<p:inputText id="mail" styleClass="p-d-block" required="true"  value="#{usuario.correo}"/>
+							
 							<p:outputLabel for="fnacimiento" styleClass="p-d-block">Fecha de Nacimiento</p:outputLabel>
-							<p:calendar id="fnacimiento" value="#{usuario.fechaN}"/>
+							<p:calendar id="fnacimiento" value="#{usuario.fechaN}" required="true"/>
+
 
 							<p:outputLabel for="gen" styleClass="p-d-block">Genero</p:outputLabel>
 							<p:selectOneRadio id="gen" value="#{usuario.genero}"
-								unselectable="true">
+								unselectable="true" required="true">
 								<f:selectItem itemLabel="Masculino" itemValue="M" />
 								<f:selectItem itemLabel="Femenino" itemValue="F" />
-								<f:selectItem itemLabel="Sin especificar" itemValue="S" />
 							</p:selectOneRadio>
+							
 							<p:outputLabel for="pasw1" styleClass="p-d-block">Contraseña</p:outputLabel>
 							<p:password id="pasw1" value="#{usuario.contra}"
 								feedback="true" promptLabel="Ingrese una contraseña"
 								weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
-								styleClass="p-d-block" match="pasw2" />
+								styleClass="p-d-block" match="pasw2" required="true"/>
 
 							<p:outputLabel for="pasw2" styleClass="p-d-block">Confirmar Contraseña</p:outputLabel>
 							<p:password id="pasw2" value="#{usuario.contra1}"
 								feedback="true" promptLabel="Ingrese una contraseña"
 								weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
-								styleClass="p-d-block" />
+								styleClass="p-d-block" required="true"/>
 
 
 						</div>
