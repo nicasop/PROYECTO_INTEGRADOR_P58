@@ -46,7 +46,7 @@ public class LoginBean implements Serializable {
 		String destino = null;
 		try {
 			user = usuarioDao.verificarUsuario(usuario);
-			if( user != null) {
+			if( user != null && user.getEstado() == 1) {
 				PrimeFacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", user);
 				
 				if(user.getTipo().getCodigo_tipo() == 1) {

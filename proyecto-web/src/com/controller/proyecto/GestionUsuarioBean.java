@@ -31,15 +31,11 @@ public class GestionUsuarioBean implements Serializable {
 	@EJB
 	private TipoUsuarioDao tipoUsDao;
 	
-	private String usuario,nombre,correo,contra,contra1,genero,mensaje;
+	private String usuario,nombre,correo,contra,contra1,genero;
 	private TipoUsuario tipo;
 	private Date fechaN;
-	private Usuario user,us;
-	private boolean renderizar,bloqueo,desbloqueo;
-	
+	private Usuario us;
 	private List<TipoUsuario> tipos;
-	private List<Usuario> usuarios;
-	
 	
 	public String getUsuario() {
 		return usuario;
@@ -113,60 +109,12 @@ public class GestionUsuarioBean implements Serializable {
 		this.tipos = tipos;
 	}
 	
-	public Usuario getUser() {
-		return user;
-	}
-
-	public void setUser(Usuario user) {
-		this.user = user;
-	}
-	
 	public Usuario getUs() {
 		return us;
 	}
 
 	public void setUs(Usuario us) {
 		this.us = us;
-	}
-
-	public List<Usuario> getUsuarios() {
-		return usuarios;
-	}
-
-	public void setUsuarios(List<Usuario> usuarios) {
-		this.usuarios = usuarios;
-	}
-	
-	public boolean getRenderizar() {
-		return renderizar;
-	}
-
-	public void setRenderizar(boolean renderizar) {
-		this.renderizar = renderizar;
-	}
-	
-	public boolean getBloqueo() {
-		return bloqueo;
-	}
-
-	public void setBloqueo(boolean bloque) {
-		this.bloqueo = bloque;
-	}
-
-	public boolean getDesbloqueo() {
-		return desbloqueo;
-	}
-
-	public void setDesbloqueo(boolean desbloqueo) {
-		this.desbloqueo = desbloqueo;
-	}
-
-	public String getMensaje() {
-		return mensaje;
-	}
-
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
 	}
 	
 	@PostConstruct
@@ -179,11 +127,6 @@ public class GestionUsuarioBean implements Serializable {
 		fechaN = null;
 		contra = null;
 		genero = null;
-		user = null;
-		usuarios = usuarioDao.getUsuarios();
-		renderizar = false;
-		bloqueo = false;
-		desbloqueo = false;
 		us = (Usuario)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
 	}
 	
@@ -198,36 +141,8 @@ public class GestionUsuarioBean implements Serializable {
 		us.setContra(contra);
 		us.setEstado(1);
 		usuarioDao.crear(us);
-		
+		init();
 		return "registrado";
-	}
-	
-	public void render() {
-		us = user;
-		user = null;
-		setRenderizar(true);
-		if (us.getEstado() == 1) {
-			mensaje = "El usuario "+ us.getUsuario() +" esta actualmente activo desea Bloquearlo?";
-			bloqueo = true;
-			desbloqueo = false;
-		}else if(us.getEstado() == 0) {
-			mensaje = "El usuario "+ us.getUsuario() +" esta actualmente inactivo desea "
-					+ "Desbloquearlo?";
-			bloqueo = false;
-			desbloqueo = true;
-		}
-	}
-	
-	public void bloquear() {
-		us.setEstado(0);
-		usuarioDao.actulizar(us);
-		renderizar = false;
-	}
-	
-	public void desbloquear() {
-		us.setEstado(1);
-		usuarioDao.actulizar(us);
-		renderizar = false;
 	}
 	
 	public void actualizar() {

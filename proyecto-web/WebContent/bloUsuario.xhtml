@@ -20,47 +20,36 @@
 			<h:form>
 				<h:panelGrid columns="4">
 
-					<p:selectOneMenu id="trepo" value="#{usuario.user}" effect="fold"
-						editable="true" required="true" converter="converter">
+					<p:selectOneMenu id="trepo" value="#{bloqueo.user}" effect="fold"
+						editable="false" required="true" converter="converter">
 						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
-						<f:selectItems value="#{usuario.usuarios}" var="user"
+						<f:selectItems value="#{bloqueo.usuarios}" var="user"
 							itemValue="#{user}" itemLabel="#{user.usuario}" />
-						<!-- <f:selectItem itemLabel="Nombre" itemValue="" />
-					<f:selectItem itemLabel="Cargo" itemValue="" /> -->
-
 					</p:selectOneMenu>
-
-					<!-- <p:outputLabel for="filtro" styleClass="p-d-block">Filtro</p:outputLabel>
-				<p:inputText id="filtro" styleClass="p-d-block" /> -->
-
-					<h:commandButton action="#{usuario.render}" value="Consultar"
+					<h:commandButton action="#{bloqueo.render}" value="Consultar"
 						styleClass="boton" />
 
 				</h:panelGrid>
 			</h:form>
-			<hr/>
+			<hr />
 			<h:form>
 				<h:panelGrid columns="1">
 					<div class="p-field">
 						<h:panelGrid columns="1" styleClass="fondo"
-							rendered="#{usuario.renderizar}">
-							<p:outputLabel styleClass="aler" value="#{usuario.mensaje}" />
+							rendered="#{bloqueo.renderizar}">
+							<p:outputLabel styleClass="aler" value="#{bloqueo.mensaje}" />
 							<div align="center">
-							<h:commandButton action="#{usuario.bloquear}" value="Bloquear"
-								styleClass="boton" rendered="#{usuario.bloqueo}" />
+								<h:commandButton action="#{bloqueo.bloquear}" value="Bloquear"
+									styleClass="boton" rendered="#{bloqueo.bloqueo}" />
 							</div>
-							<h:commandButton action="#{usuario.desbloquear}"
+							<h:commandButton action="#{bloqueo.desbloquear}"
 								value="Desbloquear" styleClass="boton"
-								rendered="#{usuario.desbloqueo}" />
+								rendered="#{bloqueo.desbloqueo}" />
 
 						</h:panelGrid>
 					</div>
 				</h:panelGrid>
 			</h:form>
-			<!-- <div class="body formulario"></div>
-			<div align="center">
-				<p:button value="BLOQUEAR"></p:button>
-			</div> -->
 		</div>
 
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
