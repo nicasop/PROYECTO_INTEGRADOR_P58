@@ -259,7 +259,18 @@ html, body {
 	
 }
 
+.fondoT>h1{
+	color: white;
+}
 
+
+.p-d-block{
+	color: white;
+}
+.aler{
+	color: orange;
+	font: 100% sans-serif;
+}
 
 .mss_eme{
 	text-align: right;
@@ -316,3 +327,6 @@ table tbody .ui-widget-content {
 		right: 20px;
 	}
 }
+
+
+

@@ -15,7 +15,7 @@
 		<div class="fondoT">
 			<h1>REGISTRO USUARIO</h1>
 		</div>
-		<br /> <br />
+		<br /> 
 		<div class="body formulario">
 			<div class="fondo">
 				<h:form>
@@ -23,12 +23,12 @@
 						<div class="p-field">
 						
 							<p:outputLabel for="nomUser" styleClass="p-d-block">Nombre de Usuario</p:outputLabel>
-							<p:inputText id="nomUser" styleClass="p-d-block" value="#{usuario.usuario}" />
+							<p:inputText id="nomUser"  value="#{usuario.usuario}" required="true"/>
 							
 							<p:outputLabel for="nom" styleClass="p-d-block">Nombre y Apellido</p:outputLabel>
-							<p:inputText id="nom" styleClass="p-d-block" required="true" value="#{usuario.nombre}" />
+							<p:inputText id="nom"  required="true" value="#{usuario.nombre}" />
 
-							<p:outputLabel for="tusr" value="Tipo de Usuario" />
+							<p:outputLabel for="tusr" styleClass="p-d-block" value="Tipo de Usuario" />
 							<p:selectOneMenu id="tusr" value="#{usuario.tipo}" effect="fold" editable="false"
 								required="true" converter="converter">
 								<f:selectItem itemLabel="Seleccione uno" itemValue="#{null}" />
@@ -37,7 +37,7 @@
 							</p:selectOneMenu>
 
 							<p:outputLabel for="mail" styleClass="p-d-block">Correo Electrónico</p:outputLabel>
-							<p:inputText id="mail" styleClass="p-d-block" required="true"  value="#{usuario.correo}"/>
+							<p:inputText id="mail"  required="true"  value="#{usuario.correo}"/>
 							
 							<p:outputLabel for="fnacimiento" styleClass="p-d-block">Fecha de Nacimiento</p:outputLabel>
 							<p:calendar id="fnacimiento" value="#{usuario.fechaN}" required="true"/>
@@ -46,21 +46,21 @@
 							<p:outputLabel for="gen" styleClass="p-d-block">Genero</p:outputLabel>
 							<p:selectOneRadio id="gen" value="#{usuario.genero}"
 								unselectable="true" required="true">
-								<f:selectItem itemLabel="Masculino" itemValue="M" />
-								<f:selectItem itemLabel="Femenino" itemValue="F" />
+								<f:selectItem  itemLabel="Masculino" itemValue="M" />
+								<f:selectItem styleClass="p-d-block" itemLabel="Femenino" itemValue="F" />
 							</p:selectOneRadio>
 							
 							<p:outputLabel for="pasw1" styleClass="p-d-block">Contraseña</p:outputLabel>
 							<p:password id="pasw1" value="#{usuario.contra}"
 								feedback="true" promptLabel="Ingrese una contraseña"
 								weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
-								styleClass="p-d-block" match="pasw2" required="true"/>
+								 match="pasw2" required="true"/>
 
 							<p:outputLabel for="pasw2" styleClass="p-d-block">Confirmar Contraseña</p:outputLabel>
 							<p:password id="pasw2" value="#{usuario.contra1}"
 								feedback="true" promptLabel="Ingrese una contraseña"
 								weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
-								styleClass="p-d-block" required="true"/>
+								 required="true"/>
 
 
 						</div>
@@ -78,8 +78,8 @@
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
 			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
 				outcome="usuarioOp" />
-			<p:menuitem value="Reportes" icon="resources/images/repo.png"
-				outcome="repoGeneral" />
+			<p:menuitem value="Auditoria" icon="resources/images/repo.png"
+				outcome="crearReporte" />
 			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
 				outcome="editarPsw" />
 			<p:menuitem value="Salir" icon="resources/images/salir.png"

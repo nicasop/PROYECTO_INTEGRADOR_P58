@@ -13,7 +13,7 @@
 <h:body>
 	<div class="imagen-admin">
 		<div class="fondoT">
-			<h1>CREAR O PUBLICAR REPORTES</h1>
+			<h1>CREAR REPORTES</h1>
 		</div>
 		<br /> <br />
 		<div align="center" class="fondo">
@@ -45,7 +45,7 @@
 			<h:panelGrid columns="2">
 				<h:commandButton action="#{autos.registrar}" value="GENERAR"
 					styleClass="boton" />
-				<h:commandButton action="#{autos.registrar}" value="PUBLICAR"
+				<h:commandButton action="#{autos.registrar}" value="DESCARGAR"
 					styleClass="boton" />
 			</h:panelGrid>
 
@@ -55,14 +55,13 @@
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
 			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
 				outcome="usuarioOp" />
-			<p:menuitem value="Reportes" icon="resources/images/repo.png"
-				outcome="repoGeneral" />
+			<p:menuitem value="Auditoria" icon="resources/images/repo.png"
+				outcome="crearReporte" />
 			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
 				outcome="editarPsw" />
 			<p:menuitem value="Salir" icon="resources/images/salir.png"
 				outcome="index" />
 		</p:stack>
-
 	</div>
 	<div class="footer">
 		<h4>Desarrollado por</h4>

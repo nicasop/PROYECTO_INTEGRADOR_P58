@@ -44,11 +44,11 @@
 					<div class="p-field">
 						<h:panelGrid columns="1" styleClass="fondo"
 							rendered="#{usuario.renderizar}">
-							<p:outputLabel value="#{usuario.mensaje}" />
-
+							<p:outputLabel styleClass="aler" value="#{usuario.mensaje}" />
+							<div align="center">
 							<h:commandButton action="#{usuario.bloquear}" value="Bloquear"
 								styleClass="boton" rendered="#{usuario.bloqueo}" />
-
+							</div>
 							<h:commandButton action="#{usuario.desbloquear}"
 								value="Desbloquear" styleClass="boton"
 								rendered="#{usuario.desbloqueo}" />
@@ -66,8 +66,8 @@
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
 			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
 				outcome="usuarioOp" />
-			<p:menuitem value="Reportes" icon="resources/images/repo.png"
-				outcome="repoGeneral" />
+			<p:menuitem value="Auditoria" icon="resources/images/repo.png"
+				outcome="crearReporte" />
 			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
 				outcome="editarPsw" />
 			<p:menuitem value="Salir" icon="resources/images/salir.png"

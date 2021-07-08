@@ -23,13 +23,13 @@
 						<div class="p-field">
 						
 							<p:outputLabel for="nomUser" styleClass="p-d-block">Nombre de Usuario</p:outputLabel>
-							<p:inputText id="nomUser" styleClass="p-d-block" value="#{usuario.us.usuario}" />
+							<p:inputText id="nomUser"  value="#{usuario.us.usuario}" />
 							
 							<p:outputLabel for="nom" styleClass="p-d-block">Nombre y Apellido</p:outputLabel>
-							<p:inputText id="nom" styleClass="p-d-block" value="#{usuario.us.nombreUsuario}" />
+							<p:inputText id="nom"  value="#{usuario.us.nombreUsuario}" />
 
 							<p:outputLabel for="mail" styleClass="p-d-block">Correo Electrónico</p:outputLabel>
-							<p:inputText id="mail" styleClass="p-d-block" value="#{usuario.us.correo}"/>
+							<p:inputText id="mail"  value="#{usuario.us.correo}"/>
 
 							<p:outputLabel for="fnacimiento" styleClass="p-d-block">Fecha de Nacimiento</p:outputLabel>
 							<p:calendar id="fnacimiento" value="#{usuario.us.fechaNa}"/>
@@ -55,8 +55,8 @@
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
 			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
 				outcome="usuarioOp" />
-			<p:menuitem value="Reportes" icon="resources/images/repo.png"
-				outcome="repoGeneral" />
+			<p:menuitem value="Auditoria" icon="resources/images/repo.png"
+				outcome="crearReporte" />
 			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
 				outcome="editarPsw" />
 			<p:menuitem value="Salir" icon="resources/images/salir.png"

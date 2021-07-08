@@ -27,17 +27,15 @@
 				<h:link outcome="blUser" value="BLOQUEAR" styleClass="link-log" />
 				<br />
 				<h:link outcome="cnUsr" value="CONSULTAR" styleClass="link-log" />
-				<br />
-				<h:link outcome="audUser" value="AUDITAR" styleClass="link-log" />
-				<br />
+							<br />
 				<h:link outcome="eliUsr" value="ELIMINAR" styleClass="link-log" />
 			</h:panelGrid>
 		</div>
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
 			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
 				outcome="usuarioOp" />
-			<p:menuitem value="Reportes" icon="resources/images/repo.png"
-				outcome="repoGeneral" />
+			<p:menuitem value="Auditoria" icon="resources/images/repo.png"
+				outcome="crearReporte" />
 			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
 				outcome="editarPsw" />
 			<p:menuitem value="Salir" icon="resources/images/salir.png"

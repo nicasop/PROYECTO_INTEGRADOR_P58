@@ -15,7 +15,7 @@
 		<div class="fondoT">
 			<h1>CAMBIO DE CONTRASEÑA</h1>
 		</div>
-		<br /> <br />
+		<br />
 		<div class="body formulario">
 			<div class="fondo">
 				<h:form>
@@ -23,15 +23,15 @@
 						<h:panelGrid columns="3">
 
 							<p:outputLabel for="pswAct" styleClass="p-d-block">Contraseña Actual:</p:outputLabel>
-							<p:inputText id="pswAct" styleClass="p-d-block" />
+							<p:inputText id="pswAct" />
 							<h:commandButton action="#{autos.registrar}" outcome="#"
 								value="VERIFICAR" styleClass="boton" />
 						</h:panelGrid>
 						<h:panelGrid columns="2">
 							<p:outputLabel for="nPsw1" styleClass="p-d-block">Nueva Contraseña:</p:outputLabel>
-							<p:inputText id="nPsw1" styleClass="p-d-block" />
+							<p:inputText id="nPsw1" />
 							<p:outputLabel for="nPsw2" styleClass="p-d-block">Confirmar Contraseña:</p:outputLabel>
-							<p:inputText id="nPsw2" styleClass="p-d-block" />
+							<p:inputText id="nPsw2" />
 						</h:panelGrid>
 						<br />
 						<div align="center">
@@ -39,24 +39,24 @@
 								value="CONFIRMAR" styleClass="boton" />
 						</div>
 					</div>
-					<h:panelGrid columns="2">
-						<p:outputLabel for="cod" styleClass="p-d-block">Código de Confirmación:</p:outputLabel>
-						<p:inputText id="cod" styleClass="p-d-block" />
-						<n>
-						<h3>Ingrese el código enviado a su correo</h3>
-						</n>
-					</h:panelGrid>
-					<div align="center">
+					<h:panelGrid columns="1" rendered="true">
+						<h:panelGrid columns="2">
+							<p:outputLabel for="cod" styleClass="p-d-block">Código de Confirmación:</p:outputLabel>
+							<p:inputText id="cod" />
+
+							<h3 class="aler">Ingrese el código enviado a su correo</h3>
+
+						</h:panelGrid>
+
 						<p:button title="GUARDAR CAMBIO DE CONTRASEÑA"
 							action="#{autos.registrar}" value="GUARDAR" disabled="true"></p:button>
-					</div>
+
+					</h:panelGrid>
 
 				</h:form>
 			</div>
 		</div>
-		<div align="center">
-			<p:graphicImage name="images/world.png" styleClass="reporte" />
-		</div>
+
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
 
 			<p:menuitem value="Reportes" icon="resources/images/repo.png"
