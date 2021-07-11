@@ -29,7 +29,7 @@ html, body {
 }
 
 .body {
-	min-height: calc(100vh - 195px);
+	min-height: calc(100vh - 100px);
 }
 
 .flex-container {
@@ -209,14 +209,16 @@ html, body {
 	background-image: url("../images/adminFondo.png");
 	background-position: center;
 	background-size: cover;
-	height: 930px;
+	/* height: 930px; */
+	min-height: calc(100vh - 100px);
 }
 
 .imagen-operador {
 	background-image: url("../images/operadorFondo.png");
 	background-position: center;
 	background-size: cover;
-	height: 930px;
+	/* height: 930px; */
+	min-height: calc(100vh - 100px);
 }
 
 .boton {

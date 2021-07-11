@@ -29,6 +29,11 @@ public class UsuarioDao {
 		return em.find(Usuario.class,nombre);
 	}
 	
+	public void borrar(Integer codigo) {
+		Usuario user = em.find(Usuario.class, codigo);
+		em.remove(user);
+	}
+	
 	public Usuario verificarUsuario(Usuario user) {
 		Usuario usuario = null;
 		String consulta;

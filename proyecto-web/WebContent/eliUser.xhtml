@@ -13,22 +13,42 @@
 <h:body>
 	<div class="imagen-admin">
 		<div class="fondoT">
-			<h1>BLOQUEAR USUARIO</h1>
+			<h1>ELIMINAR USUARIO</h1>
 		</div>
 
 		<div align="center">
-			<h:panelGrid columns="3">
+			<h:form>
+				<h:panelGrid columns="4">
 
-				<p:outputLabel for="filtro" styleClass="p-d-block">Usuario:</p:outputLabel>
-				<p:inputText id="filtro" styleClass="p-d-block" />
+					<p:selectOneMenu id="trepo" value="#{usuario.user}" effect="fold"
+						editable="false" required="true" converter="converter">
+						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
+						<f:selectItems value="#{usuario.usuarios}" var="user"
+							itemValue="#{user}" itemLabel="#{user.usuario}" />
+					</p:selectOneMenu>
+					<h:commandButton action="#{usuario.mostrar}" value="Consultar"
+						styleClass="boton" />
 
-				<h:commandButton action="#{autos.registrar}" value="ELIMINAR"
-					styleClass="boton" />
-
-			</h:panelGrid>
+				</h:panelGrid>
+			</h:form>
+			<hr />
+			
+			<h:form>
+				<h:panelGrid columns="1">
+					<div class="p-field">
+						<h:panelGrid columns="1" styleClass="fondo"
+							rendered="#{usuario.render}">
+							<p:outputLabel styleClass="aler" value="#{usuario.mensaje}" />
+								<h:commandButton action="#{usuario.eliminar}" value="Eliminar"
+									styleClass="boton"/>
+						</h:panelGrid>
+					</div>
+				</h:panelGrid>
+			</h:form>
+			
 		</div>
-		
-	
+
+
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
 			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
 				outcome="usuarioOp" />

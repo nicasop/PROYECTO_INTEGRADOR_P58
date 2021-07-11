@@ -31,11 +31,13 @@ public class GestionUsuarioBean implements Serializable {
 	@EJB
 	private TipoUsuarioDao tipoUsDao;
 	
-	private String usuario,nombre,correo,contra,contra1,genero;
+	private String usuario,nombre,correo,contra,contra1,genero,mensaje;
 	private TipoUsuario tipo;
 	private Date fechaN;
-	private Usuario us;
+	private Usuario us,user;
 	private List<TipoUsuario> tipos;
+	private List<Usuario> usuarios;
+	private boolean render;
 	
 	public String getUsuario() {
 		return usuario;
@@ -109,6 +111,14 @@ public class GestionUsuarioBean implements Serializable {
 		this.tipos = tipos;
 	}
 	
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
 	public Usuario getUs() {
 		return us;
 	}
@@ -117,9 +127,34 @@ public class GestionUsuarioBean implements Serializable {
 		this.us = us;
 	}
 	
+	public Usuario getUser() {
+		return user;
+	}
+
+	public void setUser(Usuario user) {
+		this.user = user;
+	}
+
+	public boolean getRender() {
+		return render;
+	}
+
+	public void setRender(boolean render) {
+		this.render = render;
+	}
+	
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+
 	@PostConstruct
 	public void init() {
 		tipos = tipoUsDao.getTipos();
+		usuarios = usuarioDao.getUsuarios();
 		usuario = null;
 		nombre = null;
 		tipo = null;
@@ -127,7 +162,13 @@ public class GestionUsuarioBean implements Serializable {
 		fechaN = null;
 		contra = null;
 		genero = null;
+		render = false;
 		us = (Usuario)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+	}
+	
+	public void mostrar() {
+		render = true;
+		mensaje = "Esta seguro que desea eliminar al usuario "+ user.getUsuario() +"?";
 	}
 	
 	public String registrar () {
@@ -147,6 +188,12 @@ public class GestionUsuarioBean implements Serializable {
 	
 	public void actualizar() {
 		usuarioDao.actulizar(us);
+	}
+	
+	public void eliminar() {
+		usuarioDao.borrar(user.getIdentificador());
+		user = null;
+		render = false;
 	}
 	
 }
