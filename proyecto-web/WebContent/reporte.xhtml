@@ -39,7 +39,7 @@
 	<br/>
 	<br/>
 		<!-- <h2 align="center">Reporte sobre .....</h2> -->
-		<!-- <p:dataTable id="reporte" var="pais" value="#{reporte.paises}"
+		<p:dataTable id="reporte" var="pais" value="#{reporte.paises}"
 			rows="10" paginator="true"
 			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
 			rowsPerPageTemplate="5,10,15">
@@ -49,7 +49,7 @@
 			<p:column headerText="Area(sq km)">
 				<h:outputText value="#{pais.get(1)}" />
 			</p:column>
-		</p:dataTable> -->
+		</p:dataTable> 
 		<!-- <p:graphicImage name="images/world.png" styleClass="reporte" /> -->
 		<p:chart type="bar" model="#{reporte.grafico}" style="height:600px"/>
 		
