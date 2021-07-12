@@ -22,12 +22,12 @@ public class LoginBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@EJB
 	private UsuarioDao usuarioDao;
-	
+
 	private Usuario usuario;
-	
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -35,7 +35,7 @@ public class LoginBean implements Serializable {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
+
 	@PostConstruct
 	public void init() {
 		usuario = new Usuario();
@@ -46,15 +46,15 @@ public class LoginBean implements Serializable {
 		String destino = null;
 		try {
 			user = usuarioDao.verificarUsuario(usuario);
-			if( user != null && user.getEstado() == 1) {
+			if (user != null && user.getEstado() == 1) {
 				PrimeFacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", user);
-				
-				if(user.getTipo().getCodigo_tipo() == 1) {
+
+				if (user.getTipo().getCodigo_tipo() == 1) {
 					destino = "admin";
-				}else if(user.getTipo().getCodigo_tipo() == 2) {
+				} else if (user.getTipo().getCodigo_tipo() == 2) {
 					destino = "operador";
 				}
-			}else {
+			} else {
 				FacesContext.getCurrentInstance().addMessage(null,
 						new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Credenciales Incorrectas"));
 			}
@@ -64,17 +64,40 @@ public class LoginBean implements Serializable {
 		}
 		return destino;
 	}
-	
+
 	public void verificarSesion() {
 		try {
-			Usuario us = (Usuario)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
-			if ( us == null) {
+			Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+					.get("usuario");
+			if (us == null) {
 				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
-	
+
+	public void verificarSesionO() {
+		try {
+			Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+					.get("usuario");
+			if (us == null) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	public void cerrarSesion() {
+		try {
+
+			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+			FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 }

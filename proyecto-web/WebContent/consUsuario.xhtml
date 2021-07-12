@@ -8,17 +8,23 @@
 <h:head>
 	<link rel="stylesheet" href="resources/css/main.css" />
 	<link rel="stylesheet" href="resources/css/primeflex.css" />
-
+	<f:event listener="#{login.verificarSesion}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
 	<div class="imagen-admin">
 		<div class="fondoT">
-			<h1>CONSULTA DE USUARIOS</h1>
+			<div class="autoresEN">
+				<div class="imagen-logo"></div>
+				<div></div>
+				<h1>CONSULTA DE USUARIOS</h1>
+				<p:outputLabel styleClass="aler" value="#{usuario.us.nombreUsuario}" />
+			</div>
 		</div>
 		<h:form>
 			<div align="center">
+			<br/>
 				<h:panelGrid columns="4">
-					<p:outputLabel for="conUsr" styleClass="p-d-block">Filtro:</p:outputLabel>
+					<p:outputLabel for="conUsr" styleClass="p-d-block">Típo de Consulta:</p:outputLabel>
 					<p:selectOneMenu id="conUsr" value="#{consulta.opcion}"
 						effect="fold" editable="false" required="true">
 						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
@@ -26,130 +32,135 @@
 						<f:selectItem itemLabel="Rol" itemValue="2" />
 						<f:selectItem itemLabel="Estado" itemValue="3" />
 					</p:selectOneMenu>
-					<h:commandButton action="#{consulta.verificarfiltro}" value="APLICAR"
-						styleClass="boton" />
+					<h:commandButton action="#{consulta.verificarfiltro}"
+						value="APLICAR" styleClass="boton" />
 
 				</h:panelGrid>
+				<hr/>
 			</div>
 		</h:form>
 		<div align="center">
-		<h:form>
-				<h:panelGrid columns="1" rendered="#{consulta.pn1}" >
+			<h:form>
+				<h:panelGrid columns="1" rendered="#{consulta.pn1}">
 					<div class="p-field">
 						<h:panelGrid columns="1" styleClass="fondo">
 							<p:outputLabel for="gen" styleClass="p-d-block">Género por el que desea filtrar</p:outputLabel>
 							<p:selectOneRadio id="gen" value="#{consulta.genero}"
 								unselectable="true" required="true" style="color: white;">
-								<f:selectItem  itemLabel="Masculino" itemValue="M" />
-								<f:selectItem styleClass="p-d-block" itemLabel="Femenino" itemValue="F" />
+								<f:selectItem itemLabel="Masculino" itemValue="M" />
+								<f:selectItem styleClass="p-d-block" itemLabel="Femenino"
+									itemValue="F" />
 							</p:selectOneRadio>
-							<h:commandButton action="#{consulta.filtroGenero}" value="Consultar"
-						styleClass="boton" />
+							<h:commandButton action="#{consulta.filtroGenero}"
+								value="Consultar" styleClass="boton" />
 						</h:panelGrid>
 					</div>
 				</h:panelGrid>
-				
+
 				<h:panelGrid columns="1" rendered="#{consulta.pn2}">
 					<div class="p-field">
-						<h:panelGrid columns="1" styleClass="fondo" >
+						<h:panelGrid columns="1" styleClass="fondo">
 							<p:outputLabel for="rol" styleClass="p-d-block">Rol por el que desea filtrar</p:outputLabel>
 							<p:selectOneRadio id="rol" value="#{consulta.rol}"
 								unselectable="true" required="true" style="color: white;">
-								<f:selectItem  itemLabel="Administrador" itemValue="1" />
-								<f:selectItem styleClass="p-d-block" itemLabel="Operador" itemValue="2" />
+								<f:selectItem itemLabel="Administrador" itemValue="1" />
+								<f:selectItem styleClass="p-d-block" itemLabel="Operador"
+									itemValue="2" />
 							</p:selectOneRadio>
 							<h:commandButton action="#{consulta.filtroRol}" value="Consultar"
-						styleClass="boton" />
+								styleClass="boton" />
 						</h:panelGrid>
 					</div>
 				</h:panelGrid>
-		
+
 				<h:panelGrid columns="1" rendered="#{consulta.pn3}">
 					<div class="p-field">
-						<h:panelGrid columns="1" styleClass="fondo" >
+						<h:panelGrid columns="1" styleClass="fondo">
 							<p:outputLabel for="est" styleClass="p-d-block">Estado por el que desea filtrar</p:outputLabel>
 							<p:selectOneRadio id="est" value="#{consulta.estado}"
 								unselectable="true" required="true" style="color: white;">
-								<f:selectItem  itemLabel="Activo" itemValue="1" />
-								<f:selectItem styleClass="p-d-block" itemLabel="Inactivo" itemValue="0" />
+								<f:selectItem itemLabel="Activo" itemValue="1" />
+								<f:selectItem styleClass="p-d-block" itemLabel="Inactivo"
+									itemValue="0" />
 							</p:selectOneRadio>
-							<h:commandButton action="#{consulta.filtroEstado}" value="Consultar"
-						styleClass="boton" />
+							<h:commandButton action="#{consulta.filtroEstado}"
+								value="Consultar" styleClass="boton" />
 						</h:panelGrid>
 					</div>
 				</h:panelGrid>
 			</h:form>
-			
+
 			<!-- tablas -->
-			<br/>
-			<br/>
-		<p:dataTable id="reporte" var="user" value="#{consulta.usuarios}"
-			rows="10" paginator="true"
-			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
-			rowsPerPageTemplate="5,10,15" rendered="#{consulta.tb1}">
-			<p:column headerText="Nombre">
-				<h:outputText value="#{user.nombreUsuario}" />
-			</p:column>
-			<p:column headerText="Email">
-				<h:outputText value="#{user.correo}" />
-			</p:column>
-			<p:column headerText="Fecha de Nacimiento">
-				<h:outputText value="#{user.fechaNa}" />
-			</p:column>
-			<p:column headerText="Genero">
-				<h:outputText value="#{user.genero}" />
-			</p:column>
-		</p:dataTable>
-		
-		
-		<p:dataTable id="reporte1" var="user" value="#{consulta.usuarios}"
-			rows="10" paginator="true"
-			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
-			rowsPerPageTemplate="5,10,15" rendered="#{consulta.tb2}">
-			<p:column headerText="Nombre">
-				<h:outputText value="#{user.nombreUsuario}" />
-			</p:column>
-			<p:column headerText="Email">
-				<h:outputText value="#{user.correo}" />
-			</p:column>
-			<p:column headerText="Fecha de Nacimiento">
-				<h:outputText value="#{user.fechaNa}" />
-			</p:column>
-			<p:column headerText="Rol">
-				<h:outputText value="#{user.tipo.tipo}" />
-			</p:column>
-		</p:dataTable>
-		
-		<p:dataTable id="reporte2" var="user" value="#{consulta.usuarios}"
-			rows="10" paginator="true"
-			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
-			rowsPerPageTemplate="5,10,15" rendered="#{consulta.tb3}">
-			<p:column headerText="Nombre">
-				<h:outputText value="#{user.nombreUsuario}" />
-			</p:column>
-			<p:column headerText="Email">
-				<h:outputText value="#{user.correo}" />
-			</p:column>
-			<p:column headerText="Fecha de Nacimiento">
-				<h:outputText value="#{user.fechaNa}" />
-			</p:column>
-			<p:column headerText="Rol">
-				<h:outputText value="#{user.estado}" />
-			</p:column>
-		</p:dataTable>
-			
+			<br /> <br />
+			<p:dataTable id="reporte" var="user" value="#{consulta.usuarios}"
+				rows="10" paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
+				rowsPerPageTemplate="5,10,15" rendered="#{consulta.tb1}">
+				<p:column headerText="Nombre">
+					<h:outputText value="#{user.nombreUsuario}" />
+				</p:column>
+				<p:column headerText="Email">
+					<h:outputText value="#{user.correo}" />
+				</p:column>
+				<p:column headerText="Fecha de Nacimiento">
+					<h:outputText value="#{user.fechaNa}" />
+				</p:column>
+				<p:column headerText="Genero">
+					<h:outputText value="#{user.genero}" />
+				</p:column>
+			</p:dataTable>
+
+
+			<p:dataTable id="reporte1" var="user" value="#{consulta.usuarios}"
+				rows="10" paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
+				rowsPerPageTemplate="5,10,15" rendered="#{consulta.tb2}">
+				<p:column headerText="Nombre">
+					<h:outputText value="#{user.nombreUsuario}" />
+				</p:column>
+				<p:column headerText="Email">
+					<h:outputText value="#{user.correo}" />
+				</p:column>
+				<p:column headerText="Fecha de Nacimiento">
+					<h:outputText value="#{user.fechaNa}" />
+				</p:column>
+				<p:column headerText="Rol">
+					<h:outputText value="#{user.tipo.tipo}" />
+				</p:column>
+			</p:dataTable>
+
+			<p:dataTable id="reporte2" var="user" value="#{consulta.usuarios}"
+				rows="10" paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
+				rowsPerPageTemplate="5,10,15" rendered="#{consulta.tb3}">
+				<p:column headerText="Nombre">
+					<h:outputText value="#{user.nombreUsuario}" />
+				</p:column>
+				<p:column headerText="Email">
+					<h:outputText value="#{user.correo}" />
+				</p:column>
+				<p:column headerText="Fecha de Nacimiento">
+					<h:outputText value="#{user.fechaNa}" />
+				</p:column>
+				<p:column headerText="Rol">
+					<h:outputText value="#{user.estado}" />
+				</p:column>
+			</p:dataTable>
+
 		</div>
-		
-		<p:stack icon="resources/images/canasta2.png" expanded="true">
-			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
-				outcome="usuarioOp" />
-			<p:menuitem value="Auditoria" icon="resources/images/repo.png"
-				outcome="crearReporte" />
-			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
-				outcome="editarPsw" />
-			<p:menuitem value="Salir" icon="resources/images/salir.png"
-				outcome="index" />
-		</p:stack>
+
+		<h:form>
+			<p:stack icon="resources/images/canasta2.png" expanded="true">
+				<p:menuitem value="Usuario" icon="resources/images/modificar.png"
+					outcome="usuarioOp" />
+				<p:menuitem value="Auditoria" icon="resources/images/repo.png"
+					outcome="crearReporte" />
+				<p:menuitem value="Contraseña" icon="resources/images/contra.png"
+					outcome="editarPsw" />
+				<p:menuitem value="Salir" icon="resources/images/salir.png"
+					action="#{login.cerrarSesion()}" />
+			</p:stack>
+		</h:form>
 
 	</div>
 	<div class="footer">

@@ -8,31 +8,36 @@
 <h:head>
 	<link rel="stylesheet" href="resources/css/main.css" />
 	<link rel="stylesheet" href="resources/css/primeflex.css" />
-
+	<f:event listener="#{login.verificarSesion}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
 	<div class="imagen-admin">
 		<div class="fondoT">
-			<h1>EDITAR USUARIO</h1>
+			<div class="autoresEN">
+				<div class="imagen-logo"></div>
+				<div></div>
+				<h1>EDITAR USUARIO</h1>
+				<p:outputLabel styleClass="aler" value="#{usuario.us.nombreUsuario}" />
+			</div>
 		</div>
-		<br /> <br />
+		<br />
 		<div class="body formulario">
 			<div class="fondo">
 				<h:form>
 					<h:panelGrid columns="1">
 						<div class="p-field">
-						
+
 							<p:outputLabel for="nomUser" styleClass="p-d-block">Nombre de Usuario</p:outputLabel>
-							<p:inputText id="nomUser"  value="#{usuario.us.usuario}" />
-							
+							<p:inputText id="nomUser" value="#{usuario.us.usuario}" />
+
 							<p:outputLabel for="nom" styleClass="p-d-block">Nombre y Apellido</p:outputLabel>
-							<p:inputText id="nom"  value="#{usuario.us.nombreUsuario}" />
+							<p:inputText id="nom" value="#{usuario.us.nombreUsuario}" />
 
 							<p:outputLabel for="mail" styleClass="p-d-block">Correo Electrónico</p:outputLabel>
-							<p:inputText id="mail"  value="#{usuario.us.correo}"/>
+							<p:inputText id="mail" value="#{usuario.us.correo}" />
 
 							<p:outputLabel for="fnacimiento" styleClass="p-d-block">Fecha de Nacimiento</p:outputLabel>
-							<p:calendar id="fnacimiento" value="#{usuario.us.fechaNa}"/>
+							<p:calendar id="fnacimiento" value="#{usuario.us.fechaNa}" />
 
 							<p:outputLabel for="gen" styleClass="p-d-block">Genero</p:outputLabel>
 							<p:selectOneRadio id="gen" value="#{usuario.us.genero}"
@@ -44,23 +49,26 @@
 					</h:panelGrid>
 					<div align="center">
 
-						<h:commandButton action="#{usuario.actualizar}" value="Actualizar" styleClass="boton" />
+						<h:commandButton action="#{usuario.actualizar}" value="Actualizar"
+							styleClass="boton" />
 
 					</div>
 				</h:form>
 			</div>
 		</div>
 
-		<p:stack icon="resources/images/canasta2.png" expanded="true">
-			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
-				outcome="usuarioOp" />
-			<p:menuitem value="Auditoria" icon="resources/images/repo.png"
-				outcome="crearReporte" />
-			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
-				outcome="editarPsw" />
-			<p:menuitem value="Salir" icon="resources/images/salir.png"
-				outcome="index" />
-		</p:stack>
+		<h:form>
+			<p:stack icon="resources/images/canasta2.png" expanded="true">
+				<p:menuitem value="Usuario" icon="resources/images/modificar.png"
+					outcome="usuarioOp" />
+				<p:menuitem value="Auditoria" icon="resources/images/repo.png"
+					outcome="crearReporte" />
+				<p:menuitem value="Contraseña" icon="resources/images/contra.png"
+					outcome="editarPsw" />
+				<p:menuitem value="Salir" icon="resources/images/salir.png"
+					action="#{login.cerrarSesion()}" />
+			</p:stack>
+		</h:form>
 
 	</div>
 	<div class="footer">

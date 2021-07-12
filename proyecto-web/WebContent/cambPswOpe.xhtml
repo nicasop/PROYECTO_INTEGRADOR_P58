@@ -8,12 +8,17 @@
 <h:head>
 	<link rel="stylesheet" href="resources/css/main.css" />
 	<link rel="stylesheet" href="resources/css/primeflex.css" />
-
+	<f:event listener="#{login.verificarSesionO}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
 	<div class="imagen-operador">
 		<div class="fondoT">
-			<h1>CAMBIO DE CONTRASEÑA</h1>
+			<div class="autoresEN">
+				<div class="imagen-logo"></div>
+				<div></div>
+				<h1>CAMBIO DE CONTRASEÑA</h1>
+				<p:outputLabel styleClass="aler" value="#{usuario.us.nombreUsuario}" />
+			</div>
 		</div>
 		<br />
 		<div class="body formulario">
@@ -57,15 +62,19 @@
 			</div>
 		</div>
 
-		<p:stack icon="resources/images/canasta2.png" expanded="true">
+		<h:form>
+			<p:stack icon="resources/images/canasta2.png" expanded="true">
 
-			<p:menuitem value="Reportes" icon="resources/images/repo.png"
-				outcome="menuRepo" />
-			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
-				outcome="cambPswOpe" />
-			<p:menuitem value="Salir" icon="resources/images/salir.png"
-				outcome="index" />
-		</p:stack>
+				<p:menuitem value="Reportes" icon="resources/images/repo.png"
+					outcome="menuRepo" />
+				<p:menuitem value="Contraseña" icon="resources/images/contra.png"
+					outcome="cambPswOpe" />
+				<p:menuitem value="Salir" icon="resources/images/salir.png"
+					action="#{login.cerrarSesion()}" />
+
+
+			</p:stack>
+		</h:form>
 
 	</div>
 	<div class="footer">
