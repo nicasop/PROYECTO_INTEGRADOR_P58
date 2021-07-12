@@ -65,5 +65,16 @@ public class LoginBean implements Serializable {
 		return destino;
 	}
 	
+	public void verificarSesion() {
+		try {
+			Usuario us = (Usuario)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+			if ( us == null) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
 
 }

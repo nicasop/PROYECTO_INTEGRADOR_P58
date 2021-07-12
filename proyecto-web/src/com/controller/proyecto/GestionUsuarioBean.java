@@ -172,18 +172,27 @@ public class GestionUsuarioBean implements Serializable {
 	}
 	
 	public String registrar () {
-		Usuario us = new Usuario();
-		us.setUsuario(usuario);
-		us.setNombreUsuario(nombre);
-		us.setTipo(tipo);
-		us.setCorreo(correo);
-		us.setFechaNa(fechaN);
-		us.setGenero(genero);
-		us.setContra(contra);
-		us.setEstado(1);
-		usuarioDao.crear(us);
-		init();
-		return "registrado";
+		
+		String respuesta = null;
+		if (contra.equals(contra1)) {
+			Usuario us = new Usuario();
+			us.setUsuario(usuario);
+			us.setNombreUsuario(nombre);
+			us.setTipo(tipo);
+			us.setCorreo(correo);
+			us.setFechaNa(fechaN);
+			us.setGenero(genero);
+			us.setContra(contra);
+			us.setEstado(1);
+			usuarioDao.crear(us);
+			init();
+			respuesta = "registrado";
+		}
+		else {
+			//mensaje de contraseña erronea
+		}
+		
+		return respuesta;
 	}
 	
 	public void actualizar() {
@@ -194,6 +203,5 @@ public class GestionUsuarioBean implements Serializable {
 		usuarioDao.borrar(user.getIdentificador());
 		user = null;
 		render = false;
-	}
-	
+	}	
 }

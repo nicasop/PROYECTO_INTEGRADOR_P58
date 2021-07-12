@@ -23,21 +23,21 @@
 						<h:panelGrid columns="3">
 
 							<p:outputLabel for="pswAct" styleClass="p-d-block">Contraseña Actual:</p:outputLabel>
-							<p:inputText id="pswAct" />
-							<h:commandButton action="#{autos.registrar}" outcome="#"
+							<p:inputText id="pswAct" value="#{cambio.contra}" />
+							<h:commandButton action="#{cambio.verificarContra()}"
 								value="VERIFICAR" styleClass="boton" />
 						</h:panelGrid>
-						<h:panelGrid columns="2">
+						<h:panelGrid columns="2" rendered="#{cambio.render}">
 							<p:outputLabel for="nPsw1" styleClass="p-d-block">Nueva Contraseña:</p:outputLabel>
-							<p:inputText id="nPsw1" />
+							<p:inputText id="nPsw1" value="#{cambio.contra}" />
 							<p:outputLabel for="nPsw2" styleClass="p-d-block">Confirmar Contraseña:</p:outputLabel>
-							<p:inputText id="nPsw2" />
+							<p:inputText id="nPsw2" value="#{cambio.contra1}" />
+							<div align="center">
+								<h:commandButton action="#{cambio.verificarContraNueva()}"
+									value="CONFIRMAR" styleClass="boton" />
+							</div>
 						</h:panelGrid>
 						<br />
-						<div align="center">
-							<h:commandButton action="#{autos.registrar}" outcome="#"
-								value="CONFIRMAR" styleClass="boton" />
-						</div>
 					</div>
 					<h:panelGrid columns="1" rendered="true">
 						<h:panelGrid columns="2">
