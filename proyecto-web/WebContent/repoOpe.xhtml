@@ -15,44 +15,45 @@
 		<div class="fondoT">
 			<h1>COMPARACIONES</h1>
 		</div>
-
+		<br />
 		<div align="center">
-			<h:panelGrid columns="4">
+			<h:form>
+				<h:panelGrid columns="4">
 
-				<p:outputLabel for="trepo" styleClass="p-d-block">Típo de Reporte:</p:outputLabel>
-				<p:selectOneMenu id="trepo" value="" effect="fold" editable="false"
-					required="true">
-					<f:selectItem itemLabel="Elegir Uno" itemValue="" />
-					<f:selectItem itemLabel="Electricidad" itemValue="" />
-					<f:selectItem itemLabel="Internet" itemValue="" />
-					<f:selectItem itemLabel="Natalidad" itemValue="" />
-					<f:selectItem itemLabel="Importacón/Exportacion" itemValue="" />
-					<f:selectItem itemLabel="Consumo/Produccion Aceite" itemValue="" />
-					<f:selectItem itemLabel="Consumo/produccion Gas" itemValue="" />
+					<p:outputLabel for="trepo" styleClass="p-d-block">Típo de Reporte:</p:outputLabel>
+					<p:selectOneMenu id="trepo" value="#{comparacion.opcion}"
+						effect="fold" editable="false" required="true">
+						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
+						<f:selectItem itemLabel="Electricidad Consumo/Produccion"
+							itemValue="1" />
+						<f:selectItem itemLabel="Internet hosts/usuarios" itemValue="2" />
+						<f:selectItem itemLabel="Natalidad/Mortalidad" itemValue="3" />
+						<f:selectItem itemLabel="Importacón/Exportacion" itemValue="4" />
+						<f:selectItem itemLabel="Aceite Consumo/Produccion" itemValue="5" />
+						<f:selectItem itemLabel="Gas Consumo/produccion" itemValue="6" />
 
-				</p:selectOneMenu>
+					</p:selectOneMenu>
 
-				<p:outputLabel for="pais" styleClass="p-d-block">País:</p:outputLabel>
-				<p:selectOneMenu id="pais" value="" effect="fold" editable="false"
-					required="true">
-					<f:selectItem itemLabel="Elegir Uno" itemValue="" />
-					<f:selectItem itemLabel="Afghanistan" itemValue="" />
-					<f:selectItem itemLabel="Albania" itemValue="" />
-					<f:selectItem itemLabel="Algeria" itemValue="" />
-					<f:selectItem itemLabel="American Samoa" itemValue="" />
-					<f:selectItem itemLabel="Andorra" itemValue="" />
-					<f:selectItem itemLabel="Angola" itemValue="" />
+					<p:outputLabel for="pais" styleClass="p-d-block">País:</p:outputLabel>
+					<p:selectOneMenu id="pais" value="#{comparacion.paisEle}"
+						effect="fold" editable="false" required="true"
+						converter="converter">
+						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
+						<f:selectItems value="#{comparacion.paises}" var="pais"
+							itemValue="#{pais}" itemLabel="#{pais.nombre}" />
+					</p:selectOneMenu>
 
-				</p:selectOneMenu>
-
-			</h:panelGrid>
-			<br /> <br />
-			<h:commandButton action="#{autos.registrar}" value="GENERAR"
-				styleClass="boton" />
+				</h:panelGrid>
+				<br />
+				<h:commandButton action="#{comparacion.crearGrafico}"
+					value="GENERAR" styleClass="boton" />
+			</h:form>
 		</div>
 		<br /> <br />
 		<div align="center">
-			<p:graphicImage name="images/world.png" styleClass="reporte" />
+			<!-- <p:graphicImage name="images/world.png" styleClass="reporte" /> -->
+			<p:chart type="pie" model="#{comparacion.pastel}" rendered="#{comparacion.pastel != null}"
+				style="width:800px;height:600px" />
 		</div>
 		<p:stack icon="resources/images/canasta2.png" expanded="true">
 

@@ -2,21 +2,18 @@ package com.graphics.proyecto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Vector;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import org.primefaces.model.chart.Axis;
 import org.primefaces.model.chart.AxisType;
+import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.ChartSeries;
-import org.primefaces.model.chart.HorizontalBarChartModel;
+//import org.primefaces.model.chart.HorizontalBarChartModel;
 
 import com.daos.proyecto.PaisDao;
 import com.entities.proyecto.Pais;
@@ -35,10 +32,11 @@ public class ReporteInvitado implements Serializable {
 	private PaisDao paisDao;
 
 	private List<Vector<Object>> paisValor;
-	private HorizontalBarChartModel grafico;
+	private BarChartModel grafico;
 
 	public List<Vector<Object>> getPaises() {
 		List<Pais> paises = paisDao.todos();
+		
 		paisValor = new ArrayList<Vector<Object>>();
 		for (Pais p : paises) {
 			Vector<Object> datos = new Vector<Object>();
@@ -51,7 +49,6 @@ public class ReporteInvitado implements Serializable {
 			}
 			paisValor.add(datos);
 		}
-		ordenar();
 		horizontalP();
 		return paisValor;
 	}
@@ -69,63 +66,25 @@ public class ReporteInvitado implements Serializable {
 		}
 	}
 
-//	private List<Vector<Object>> burbuja(List<Vector<Object>>) {
-//		int auxiliar;
-//		int[] arregloOrdenado;
-//		for (int i = 2; i < arreglo.length; i++) {
-//			for (int j = 0; j < arreglo.length - i; j++) {
-//				if (arreglo[j] > arreglo[j + 1]) {
-//					auxiliar = arreglo[j];
-//					arreglo[j] = arreglo[j + 1];
-//					arreglo[j + 1] = auxiliar;
-//				}
-//			}
-//		}
-//		arregloOrdenado = arreglo;
-//		return arregloOrdenado;
-//	}
-	
-//	public static int[] burbuja(int[] arreglo)
-//    {
-//      int auxiliar;
-//      int[] arregloOrdenado;
-//      for(int i = 2; i < arreglo.length; i++)
-//      {
-//        for(int j = 0;j < arreglo.length-i;j++)
-//        {
-//          if(arreglo[j] > arreglo[j+1])
-//          {
-//            auxiliar = arreglo[j];
-//            arreglo[j] = arreglo[j+1];
-//            arreglo[j+1] = auxiliar;
-//          }   
-//        }
-//      }
-//      arregloOrdenado = arreglo;
-//      return arregloOrdenado;
-//    }
-	
-
-	public HorizontalBarChartModel getGrafico() {
+	public BarChartModel getGrafico() {
 		return grafico;
 	}
 
-	public void setGrafico(HorizontalBarChartModel grafico) {
+	public void setGrafico(BarChartModel grafico) {
 		this.grafico = grafico;
 	}
 
 	private void horizontalP() {
-		grafico = new HorizontalBarChartModel();
-
+		grafico = new BarChartModel();
+		ordenar();
 		ChartSeries paises = new ChartSeries();
 		paises.setLabel("Area(sq km)");
-
+		double max = 0.0;
 		for (int i = 0; i < 10; i++) {
 			paises.set(paisValor.get(i).get(0), Double.parseDouble(paisValor.get(i).get(1).toString()));
+			
+			if (i == 0) {max = Double.parseDouble(paisValor.get(i).get(1).toString());}
 		}
-//        for(Vector<Object> pais : prueba) {
-//        	paises.set(pais.get(0), Double.parseDouble(pais.get(1).toString()));
-//        }
 
 		grafico.addSeries(paises);
 
@@ -136,15 +95,10 @@ public class ReporteInvitado implements Serializable {
 		Axis xAxis = grafico.getAxis(AxisType.X);
 		xAxis.setLabel("Extension");
 		xAxis.setMin(0);
-		xAxis.setMax(3000000);
+		xAxis.setMax(max+1000000);
 
 		Axis yAxis = grafico.getAxis(AxisType.Y);
 		yAxis.setLabel("Pais");
 	}
-
-//	@PostConstruct
-//	public void init() {
-//		getPaises();
-//	}
 
 }

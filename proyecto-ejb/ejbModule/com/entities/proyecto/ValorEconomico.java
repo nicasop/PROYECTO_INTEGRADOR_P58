@@ -5,13 +5,15 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="indicadores_economicos_valores",catalog="Base_DataWorld",schema="public")
+@Table(name="indicadores_economicos_valores",catalog="dataworld",schema="public")
+@IdClass(ValorEconomico.class)
 public class ValorEconomico implements Serializable {
 
 	/**
@@ -19,16 +21,22 @@ public class ValorEconomico implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name="valor_indicador_e")
+	private int id_pais;
+	
+	@Id
+	private int id_indicador_economico;
+	
+	
+	@Column(name="valor_indicador")
 	private double valor;
 	
 	@ManyToOne
-	@JoinColumn(name="id_indicador_economico")
-	private IndicadorEconomico indi;
+	@JoinColumn(name="id_pais",referencedColumnName = "id_pais", insertable = false, updatable = false)
+	private Pais pais;
 	
 	@ManyToOne
-	@JoinColumn(name="id_pais")
-	private Pais pais;
+	@JoinColumn(name="id_indicador_economico",referencedColumnName = "id_indicador_economico", insertable = false, updatable = false)
+	private IndicadorEconomico indi;
 	
 	public ValorEconomico() {}
 

@@ -2,10 +2,13 @@ package com.entities.proyecto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -32,8 +35,8 @@ public class Pais implements Serializable {
 	@Column(name="nombre_pais")
 	private String nombre;
 	
-//	@OneToMany(fetch = FetchType.EAGER, mappedBy ="pais", cascade = CascadeType.ALL)
-//	private List<ValorEconomico> economicos;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy ="pais", cascade = CascadeType.ALL)
+	private Set<ValorEconomico> economicos = new HashSet<ValorEconomico>();
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy ="pais", cascade = CascadeType.ALL)
 	private List<ValorSocial> sociales = new ArrayList<ValorSocial>();
@@ -55,7 +58,7 @@ public class Pais implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	
 //	public List<ValorEconomico> getEconomicos() {
 //		return economicos;
 //	}
@@ -63,6 +66,14 @@ public class Pais implements Serializable {
 //	public void setEconomicos(List<ValorEconomico> economicos) {
 //		this.economicos = economicos;
 //	}
+
+	public Set<ValorEconomico> getEconomicos() {
+		return economicos;
+	}
+
+	public void setEconomicos(Set<ValorEconomico> economicos) {
+		this.economicos = economicos;
+	}
 
 	public List<ValorSocial> getSociales() {
 		return sociales;

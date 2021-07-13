@@ -67,14 +67,37 @@ public class LoginBean implements Serializable {
 	
 	public void verificarSesion() {
 		try {
-			Usuario us = (Usuario)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
-			if ( us == null) {
+			Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+					.get("usuario");
+			if (us == null) {
 				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	public void verificarSesionO() {
+		try {
+			Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+					.get("usuario");
+			if (us == null) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	public void cerrarSesion() {
+		try {
+
+			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+			FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
+
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
 	
-
 }

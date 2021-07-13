@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="indicadores_sociales_valores",catalog="Base_DataWorld",schema="public")
+@Table(name="indicadores_sociales_valores",catalog="dataworld",schema="public")
 @IdClass(ValorSocial.class)
 public class ValorSocial implements Serializable {
 
@@ -25,7 +25,7 @@ public class ValorSocial implements Serializable {
 	@Id
 	private int id_indicador_social;
 	
-	@Column(name="valor_indicador_s")
+	@Column(name="valor_indicador")
 	private double valor;
 	
 	@ManyToOne
