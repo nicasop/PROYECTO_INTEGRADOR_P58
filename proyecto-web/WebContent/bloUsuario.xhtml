@@ -8,12 +8,17 @@
 <h:head>
 	<link rel="stylesheet" href="resources/css/main.css" />
 	<link rel="stylesheet" href="resources/css/primeflex.css" />
-
+	<f:event listener="#{login.verificarSesion}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
 	<div class="imagen-admin">
 		<div class="fondoT">
-			<h1>BLOQUEAR USUARIO</h1>
+			<div class="autoresEN">
+				<div class="imagen-logo"></div>
+				<div></div>
+				<h1>BLOQUEAR USUARIO</h1>
+				<p:outputLabel styleClass="aler" value="#{usuario.us.nombreUsuario}" />
+			</div>
 		</div>
 		<br /> <br />
 		<div align="center">
@@ -52,16 +57,18 @@
 			</h:form>
 		</div>
 
-		<p:stack icon="resources/images/canasta2.png" expanded="true">
-			<p:menuitem value="Usuario" icon="resources/images/modificar.png"
-				outcome="usuarioOp" />
-			<p:menuitem value="Auditoria" icon="resources/images/repo.png"
-				outcome="crearReporte" />
-			<p:menuitem value="Contraseña" icon="resources/images/contra.png"
-				outcome="editarPsw" />
-			<p:menuitem value="Salir" icon="resources/images/salir.png"
-				outcome="index" />
-		</p:stack>
+		<h:form>
+			<p:stack icon="resources/images/canasta2.png" expanded="true">
+				<p:menuitem value="Usuario" icon="resources/images/modificar.png"
+					outcome="usuarioOp" />
+				<p:menuitem value="Auditoria" icon="resources/images/repo.png"
+					outcome="crearReporte" />
+				<p:menuitem value="Contraseña" icon="resources/images/contra.png"
+					outcome="editarPsw" />
+				<p:menuitem value="Salir" icon="resources/images/salir.png"
+					action="#{login.cerrarSesion()}" />
+			</p:stack>
+		</h:form>
 
 	</div>
 	<div class="footer">
