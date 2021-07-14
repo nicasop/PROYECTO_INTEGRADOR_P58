@@ -49,7 +49,7 @@ public class ReporteInvitado implements Serializable {
 			}
 			paisValor.add(datos);
 		}
-		horizontalP();
+		initGrafico();
 		return paisValor;
 	}
 	
@@ -74,7 +74,7 @@ public class ReporteInvitado implements Serializable {
 		this.grafico = grafico;
 	}
 
-	private void horizontalP() {
+	private void initGrafico() {
 		grafico = new BarChartModel();
 		ordenar();
 		ChartSeries paises = new ChartSeries();
@@ -93,12 +93,12 @@ public class ReporteInvitado implements Serializable {
 		grafico.setStacked(true);
 
 		Axis xAxis = grafico.getAxis(AxisType.X);
-		xAxis.setLabel("Extension");
+		xAxis.setLabel("Paises");
 		xAxis.setMin(0);
-		xAxis.setMax(max+1000000);
+		xAxis.setMax(max+100000);
 
 		Axis yAxis = grafico.getAxis(AxisType.Y);
-		yAxis.setLabel("Pais");
+		yAxis.setLabel("Extensión");
 	}
 
 }

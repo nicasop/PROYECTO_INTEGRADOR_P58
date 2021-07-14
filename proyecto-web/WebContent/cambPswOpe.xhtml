@@ -23,40 +23,50 @@
 		<br />
 		<div class="body formulario">
 			<div class="fondo">
-				<h:form>
-					<div class="p-field">
+				<div class="p-field">
+					<h:form>
 						<h:panelGrid columns="3">
-
 							<p:outputLabel for="pswAct" styleClass="p-d-block">Contraseña Actual:</p:outputLabel>
-							<p:inputText id="pswAct" value="#{cambio.contra}" />
+							<p:password id="pswAct" value="#{cambio.contra}" />
 							<h:commandButton action="#{cambio.verificarContra()}"
 								value="VERIFICAR" styleClass="boton" />
 						</h:panelGrid>
+					</h:form>
+					<h:form>
 						<h:panelGrid columns="2" rendered="#{cambio.render}">
 							<p:outputLabel for="nPsw1" styleClass="p-d-block">Nueva Contraseña:</p:outputLabel>
-							<p:inputText id="nPsw1" value="#{cambio.contra}" />
+							<p:password id="nPsw1" value="#{cambio.ncontra}" feedback="true"
+								promptLabel="Ingrese una contraseña" weakLabel="Debil"
+								goodLabel="Buena" strongLabel="Fuerte" match="nPsw2"
+								required="true" />
+
 							<p:outputLabel for="nPsw2" styleClass="p-d-block">Confirmar Contraseña:</p:outputLabel>
-							<p:inputText id="nPsw2" value="#{cambio.contra1}" />
+							<p:password id="nPsw2" value="#{cambio.ncontra1}" feedback="true"
+								promptLabel="Ingrese una contraseña" weakLabel="Debil"
+								goodLabel="Buena" strongLabel="Fuerte" required="true" />
+
 							<div align="center">
 								<h:commandButton action="#{cambio.verificarContraNueva()}"
 									value="CONFIRMAR" styleClass="boton" />
 							</div>
 						</h:panelGrid>
-						<br />
-					</div>
-					<h:panelGrid columns="1" rendered="true">
-						<h:panelGrid columns="2">
-							<p:outputLabel for="cod" styleClass="p-d-block">Código de Confirmación:</p:outputLabel>
-							<p:inputText id="cod" />
+					</h:form>
+					<br />
+				</div>
+				<h:form>
+				<h:panelGrid columns="1" rendered="#{cambio.render1}">
+					<h:panelGrid columns="2">
+						<p:outputLabel for="cod" styleClass="p-d-block">Código de Confirmación:</p:outputLabel>
+						<p:inputText id="cod" value="#{cambio.codigo}" required="true" />
 
-							<h3 class="aler">Ingrese el código enviado a su correo</h3>
-
-						</h:panelGrid>
-
-						<p:button title="GUARDAR CAMBIO DE CONTRASEÑA"
-							action="#{autos.registrar}" value="GUARDAR" disabled="true"></p:button>
+						<h3 class="aler">Ingrese el código enviado a su correo</h3>
 
 					</h:panelGrid>
+
+					<h:commandButton action="#{cambio.cambiarContraseña()}"
+						value="CAMBIAR" styleClass="boton" />
+
+				</h:panelGrid>
 
 				</h:form>
 			</div>

@@ -8,7 +8,6 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -59,14 +58,6 @@ public class Pais implements Serializable {
 		this.nombre = nombre;
 	}
 	
-//	public List<ValorEconomico> getEconomicos() {
-//		return economicos;
-//	}
-//
-//	public void setEconomicos(List<ValorEconomico> economicos) {
-//		this.economicos = economicos;
-//	}
-
 	public Set<ValorEconomico> getEconomicos() {
 		return economicos;
 	}
