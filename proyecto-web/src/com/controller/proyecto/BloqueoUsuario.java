@@ -6,6 +6,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import com.daos.proyecto.UsuarioDao;
@@ -114,12 +116,14 @@ public class BloqueoUsuario implements Serializable {
 		us.setEstado(0);
 		usuarioDao.actulizar(us);
 		renderizar = false;
+		FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Usuario Bloqueado"));
 	}
 	
 	public void desbloquear() {
 		us.setEstado(1);
 		usuarioDao.actulizar(us);
 		renderizar = false;
+		FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Usuario Desbloqueado"));
 	}
 	
 }

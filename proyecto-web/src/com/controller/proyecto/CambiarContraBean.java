@@ -6,6 +6,7 @@ import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -91,6 +92,7 @@ public class CambiarContraBean implements Serializable {
 		render = false;
 		render1 = false;
 		codigo = 0;
+		clave = -1;
 	}
 
 	public void verificarContra() {
@@ -105,10 +107,18 @@ public class CambiarContraBean implements Serializable {
 	public void verificarContraNueva() {
 		if (ncontra.equals(ncontra1)) {
 			us.setContra(ncontra);
-			clave = aleatorio();
-			render1 = true;
-			System.out.println("SI VALIO");
-			System.out.println(clave);
+//			clave = aleatorio();
+//			render1 = true;
+//			System.out.println("SI VALIO");
+//			System.out.println(clave);
+			usuarioDao.actulizar(us);
+			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+			try {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			// mensaje de error
 		}
@@ -128,12 +138,11 @@ public class CambiarContraBean implements Serializable {
 			}
 		}else {
 			//mensaje de error
-			System.out.println("No se cambio");
 		}
 	}
 
-	private int aleatorio() {
-		return (int) (Math.random() * (999999 - 100000 + 1) + 100000);
-	}
+//	private int aleatorio() {
+//		return (int) (Math.random() * (999999 - 100000 + 1) + 100000);
+//	}
 
 }

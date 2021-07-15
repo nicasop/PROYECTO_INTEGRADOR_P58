@@ -46,14 +46,20 @@ public class LoginBean implements Serializable {
 		String destino = null;
 		try {
 			user = usuarioDao.verificarUsuario(usuario);
-			if (user != null && user.getEstado() == 1) {
-				PrimeFacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", user);
+			if (user != null) {
+				if (user.getEstado() == 1) {
+					PrimeFacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", user);
 
-				if (user.getTipo().getCodigo_tipo() == 1) {
-					destino = "admin";
-				} else if (user.getTipo().getCodigo_tipo() == 2) {
-					destino = "operador";
+					if (user.getTipo().getCodigo_tipo() == 1) {
+						destino = "admin";
+					} else if (user.getTipo().getCodigo_tipo() == 2) {
+						destino = "operador";
+					}
+				} else {
+					FacesContext.getCurrentInstance().addMessage(null,
+							new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Usuario Bloqueado"));
 				}
+
 			} else {
 				FacesContext.getCurrentInstance().addMessage(null,
 						new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Credenciales Incorrectas"));
