@@ -27,7 +27,7 @@
 					<h:form>
 						<h:panelGrid columns="3">
 							<p:outputLabel for="pswAct" styleClass="p-d-block">Contraseña Actual:</p:outputLabel>
-							<p:password id="pswAct" value="#{cambio.contra}" />
+							<p:password id="pswAct" value="#{cambio.contra}" required="true" styleClass="caja"/>
 							<h:commandButton action="#{cambio.verificarContra()}"
 								value="VERIFICAR" styleClass="boton" />
 						</h:panelGrid>
@@ -35,13 +35,13 @@
 					<h:form>
 						<h:panelGrid columns="2" rendered="#{cambio.render}">
 							<p:outputLabel for="nPsw1" styleClass="p-d-block">Nueva Contraseña:</p:outputLabel>
-							<p:password id="nPsw1" value="#{cambio.ncontra}" feedback="true"
+							<p:password id="nPsw1" value="#{cambio.ncontra}" styleClass="caja" feedback="true"
 								promptLabel="Ingrese una contraseña" weakLabel="Debil"
 								goodLabel="Buena" strongLabel="Fuerte" match="nPsw2"
 								required="true" />
 
 							<p:outputLabel for="nPsw2" styleClass="p-d-block">Confirmar Contraseña:</p:outputLabel>
-							<p:password id="nPsw2" value="#{cambio.ncontra1}" feedback="true"
+							<p:password id="nPsw2" value="#{cambio.ncontra1}" styleClass="caja" feedback="true"
 								promptLabel="Ingrese una contraseña" weakLabel="Debil"
 								goodLabel="Buena" strongLabel="Fuerte" required="true" />
 
@@ -57,7 +57,7 @@
 					<h:panelGrid columns="1" rendered="#{cambio.render1}">
 						<h:panelGrid columns="2">
 							<p:outputLabel for="cod" styleClass="p-d-block">Código de Confirmación:</p:outputLabel>
-							<p:inputText id="cod" value="#{cambio.codigo}" required="true" />
+							<p:inputText id="cod" value="#{cambio.codigo}" required="true" styleClass="caja"/>
 
 							<h3 class="aler">Ingrese el código enviado a su correo</h3>
 

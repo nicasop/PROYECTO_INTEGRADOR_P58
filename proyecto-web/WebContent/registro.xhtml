@@ -11,6 +11,7 @@
 	<f:event listener="#{login.verificarSesion}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
+	<h:outputStylesheet name="css/main.css" />
 	<div class="imagen-admin">
 		<div class="fondoT">
 			<div class="autoresEN">
@@ -30,47 +31,62 @@
 
 							<p:outputLabel for="nomUser" styleClass="p-d-block">Nombre de Usuario</p:outputLabel>
 							<p:inputText id="nomUser" value="#{usuario.usuario}"
-								required="true" requiredMessage="Campo Obligatorio" />
+								styleClass="caja" required="true"
+								requiredMessage="Campo Obligatorio" />
+							<h:message for="nomUser" styleClass="aler" />
 
-							<p:outputLabel for="nom" styleClass="p-d-block">Nombre y Apellido</p:outputLabel>
-							<p:inputText id="nom" required="true" value="#{usuario.nombre}" />
+							<p:outputLabel for="nom" styleClass="p-d-block ">Nombre y Apellido</p:outputLabel>
+							<p:inputText id="nom" required="true" value="#{usuario.nombre}"
+								styleClass="caja" requiredMessage="Campo Obligatorio" />
+							<h:message for="nom" styleClass="aler" />
 
 							<p:outputLabel for="tusr" styleClass="p-d-block"
 								value="Tipo de Usuario" />
 							<p:selectOneMenu id="tusr" value="#{usuario.tipo}" effect="fold"
-								editable="false" required="true" converter="converter">
+								editable="false" required="true" converter="converter" style="background-color: white;color: black;"
+								requiredMessage="Campo Obligatorio">
 								<f:selectItem itemLabel="Seleccione uno" itemValue="#{null}" />
 								<f:selectItems value="#{usuario.tipos}" var="tip"
 									itemValue="#{tip}" itemLabel="#{tip.tipo}" />
 							</p:selectOneMenu>
+							<h:message for="tusr" styleClass="aler" />
 
 							<p:outputLabel for="mail" styleClass="p-d-block">Correo Electrónico</p:outputLabel>
-							<p:inputText id="mail" required="true" value="#{usuario.correo}" />
+							<p:inputText id="mail" required="true" value="#{usuario.correo}"
+								styleClass="caja" requiredMessage="Campo Obligatorio" />
+							<!-- <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9]@[\w\.-]*[a-zA-Z]\.[a-zA-Z][a-zA-Z\.]*[azA-Z]" validateRequired="Debe ser un correo válido" 
+ 				validatorMessage="El correo no tiene el formato correcto" /> -->
+							<h:message for="mail" styleClass="aler" />
 
 							<p:outputLabel for="fnacimiento" styleClass="p-d-block">Fecha de Nacimiento</p:outputLabel>
-							<p:calendar id="fnacimiento" value="#{usuario.fechaN}"
-								required="true" />
+							<p:calendar id="fnacimiento" value="#{usuario.fechaN}" style="background-color: white;color: black;"
+								required="true" requiredMessage="Campo Obligatorio" />
+							<h:message for="fnacimiento" styleClass="aler" />
 
 
 							<p:outputLabel for="gen" styleClass="p-d-block">Genero</p:outputLabel>
 							<p:selectOneRadio id="gen" value="#{usuario.genero}"
-								unselectable="true" required="true" style="color: white;">
+								unselectable="true" required="true" style="color: white;"
+								requiredMessage="Campo Obligatorio">
 								<f:selectItem itemLabel="Masculino" itemValue="M" />
 								<f:selectItem styleClass="p-d-block" itemLabel="Femenino"
 									itemValue="F" />
 							</p:selectOneRadio>
+							<h:message for="gen" styleClass="aler" />
 
-							<p:outputLabel for="pasw1" styleClass="p-d-block">Contraseña</p:outputLabel>
-							<p:password id="pasw1" value="#{usuario.contra}" feedback="true"
+							<p:outputLabel for="pasw1" styleClass="p-d-block caja">Contraseña</p:outputLabel>
+							<p:password id="pasw1" value="#{usuario.contra}" styleClass="caja" feedback="true"
 								promptLabel="Ingrese una contraseña" weakLabel="Debil"
 								goodLabel="Buena" strongLabel="Fuerte" match="pasw2"
-								required="true" />
+								required="true" requiredMessage="Campo Obligatorio" />
+							<h:message for="pasw1" styleClass="aler" />
 
-							<p:outputLabel for="pasw2" styleClass="p-d-block">Confirmar Contraseña</p:outputLabel>
-							<p:password id="pasw2" value="#{usuario.contra1}" feedback="true"
+							<p:outputLabel for="pasw2" styleClass="p-d-block caja">Confirmar Contraseña</p:outputLabel>
+							<p:password id="pasw2" value="#{usuario.contra1}" styleClass="caja" feedback="true"
 								promptLabel="Ingrese una contraseña" weakLabel="Debil"
-								goodLabel="Buena" strongLabel="Fuerte" required="true" />
-
+								goodLabel="Buena" strongLabel="Fuerte" required="true"
+								requiredMessage="Campo Obligatorio" />
+							<h:message for="pasw2" styleClass="aler" />
 
 						</div>
 					</h:panelGrid>

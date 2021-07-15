@@ -28,23 +28,33 @@
 						<div class="p-field">
 
 							<p:outputLabel for="nomUser" styleClass="p-d-block">Nombre de Usuario</p:outputLabel>
-							<p:inputText id="nomUser" value="#{usuario.us.usuario}" />
+							<p:inputText id="nomUser" value="#{usuario.us.usuario}" styleClass="caja" required="true"
+								requiredMessage="Campo Obligatorio" />
+							<h:message for="nomUser" styleClass="aler" />
 
 							<p:outputLabel for="nom" styleClass="p-d-block">Nombre y Apellido</p:outputLabel>
-							<p:inputText id="nom" value="#{usuario.us.nombreUsuario}" />
+							<p:inputText id="nom" value="#{usuario.us.nombreUsuario}" styleClass="caja" required="true" requiredMessage="Campo Obligatorio" />
+							<h:message for="nom" styleClass="aler" />
 
 							<p:outputLabel for="mail" styleClass="p-d-block">Correo Electrónico</p:outputLabel>
-							<p:inputText id="mail" value="#{usuario.us.correo}" />
+							<p:inputText id="mail" value="#{usuario.us.correo}" required="true" styleClass="caja" requiredMessage="Campo Obligatorio" />
+							<h:message for="mail" styleClass="aler" />
 
 							<p:outputLabel for="fnacimiento" styleClass="p-d-block">Fecha de Nacimiento</p:outputLabel>
-							<p:calendar id="fnacimiento" value="#{usuario.us.fechaNa}" />
-
+							<p:calendar id="fnacimiento" value="#{usuario.us.fechaNa}" style="background-color: white;color: black;"
+							required="true" requiredMessage="Campo Obligatorio"/>
+							<h:message for="fnacimiento" styleClass="aler" />
+							
+							
 							<p:outputLabel for="gen" styleClass="p-d-block">Genero</p:outputLabel>
 							<p:selectOneRadio id="gen" value="#{usuario.us.genero}"
-								unselectable="true" style="color: white;">
+								unselectable="true" style="color: white;" required="true"
+								requiredMessage="Campo Obligatorio">
 								<f:selectItem itemLabel="Masculino" itemValue="M" />
 								<f:selectItem itemLabel="Femenino" itemValue="F" />
 							</p:selectOneRadio>
+							<h:message for="gen" styleClass="aler" />
+							
 						</div>
 					</h:panelGrid>
 					<div align="center">

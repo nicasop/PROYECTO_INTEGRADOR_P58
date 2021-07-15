@@ -210,6 +210,10 @@ public class AuditoriaBean implements Serializable {
 		tb4 = false;
 		informacion = resultado;
 	}
+	
+	public LocalDate formatoFecha(Date fecha) {
+		return LocalDate.of(fecha.getYear()+1900, fecha.getMonth()+1, fecha.getDate());
+	}
 
 	public void filtroAcciones() {
 		List<Auditoria> aux = auditoriaDao.auditoria();

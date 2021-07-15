@@ -27,7 +27,7 @@
 				<h:panelGrid columns="3">
 					<p:outputLabel for="trepo" styleClass="p-d-block">Típo de Consulta:</p:outputLabel>
 					<p:selectOneMenu id="trepo" value="#{auditoria.opcion}"
-						effect="fold" editable="false" required="true">
+						effect="fold" editable="false" required="true" style="background-color:white;">
 						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
 						<f:selectItem itemLabel="Todos" itemValue="1" />
 						<f:selectItem itemLabel="Usuario" itemValue="2" />
@@ -45,7 +45,7 @@
 				<h:panelGrid columns="3" rendered="#{auditoria.us}">
 					<p:outputLabel for="tfilu" styleClass="p-d-block">Usuarios:</p:outputLabel>
 					<p:selectOneMenu id="tfilu" value="#{auditoria.usuario}"
-						effect="fold" editable="false" required="true">
+						effect="fold" editable="false" required="true" style="background-color:white;">
 						<f:selectItem itemLabel="Elegir Uno" itemValue="" />
 						<f:selectItem itemLabel="postgres" itemValue="postgres" />
 						<f:selectItem itemLabel="nicasop" itemValue="nicasop" />
@@ -60,9 +60,9 @@
 					<p:outputLabel styleClass="p-d-block">Elija el rango de fechas para la busqueda: </p:outputLabel>
 					<h:panelGrid columns="4">
 						<p:outputLabel for="fini" styleClass="p-d-block">Fecha Inicial: </p:outputLabel>
-						<p:calendar id="fini" value="#{auditoria.ini}" required="true" />
+						<p:calendar id="fini" value="#{auditoria.ini}" required="true" style="background-color:white;color:black;" />
 						<p:outputLabel for="ffin" styleClass="p-d-block">Fecha Final: </p:outputLabel>
-						<p:calendar id="ffin" value="#{auditoria.fin}" required="true" />
+						<p:calendar id="ffin" value="#{auditoria.fin}" required="true" style="background-color:white;color:black;"/>
 					</h:panelGrid>
 
 					<h:commandButton action="#{auditoria.filtroFechas()}"
@@ -73,7 +73,7 @@
 				<h:panelGrid columns="3" rendered="#{auditoria.ac}">
 					<p:outputLabel for="tfila" styleClass="p-d-block">Acciones:</p:outputLabel>
 					<p:selectOneMenu id="tfila" value="#{auditoria.accion}"
-						effect="fold" editable="false" required="true">
+						effect="fold" editable="false" required="true" style="background-color:white;">
 						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
 						<f:selectItem itemLabel="Insert" itemValue="I" />
 						<f:selectItem itemLabel="Update" itemValue="U" />
@@ -107,7 +107,7 @@
 				<h:outputText value="#{aud.nuevo}" />
 			</p:column>
 			<p:column headerText="Fecha">
-				<h:outputText value="#{aud.fecha}" />
+				<h:outputText value="#{auditoria.formatoFecha(aud.fecha)}" />
 			</p:column>
 			<p:column headerText="Usuario">
 				<h:outputText value="#{aud.usuario}" />
@@ -132,7 +132,7 @@
 				<h:outputText value="#{aud.nuevo}" />
 			</p:column>
 			<p:column headerText="Fecha">
-				<h:outputText value="#{aud.fecha}" />
+				<h:outputText value="#{auditoria.formatoFecha(aud.fecha)}" />
 			</p:column>
 			<p:column headerText="Usuario">
 				<h:outputText value="#{aud.usuario}" />
@@ -157,7 +157,7 @@
 				<h:outputText value="#{aud.nuevo}" />
 			</p:column>
 			<p:column headerText="Fecha">
-				<h:outputText value="#{aud.fecha}" />
+				<h:outputText value="#{auditoria.formatoFecha(aud.fecha)}" />
 			</p:column>
 			<p:column headerText="Usuario">
 				<h:outputText value="#{aud.usuario}" />
@@ -182,7 +182,7 @@
 				<h:outputText value="#{aud.nuevo}" />
 			</p:column>
 			<p:column headerText="Fecha">
-				<h:outputText value="#{aud.fecha}" />
+				<h:outputText value="#{auditoria.formatoFecha(aud.fecha)}" />
 			</p:column>
 			<p:column headerText="Usuario">
 				<h:outputText value="#{aud.usuario}" />

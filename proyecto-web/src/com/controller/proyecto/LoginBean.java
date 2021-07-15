@@ -56,7 +56,7 @@ public class LoginBean implements Serializable {
 				}
 			} else {
 				FacesContext.getCurrentInstance().addMessage(null,
-						new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Credenciales Incorrectas"));
+						new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Credenciales Incorrectas"));
 			}
 		} catch (Exception e) {
 			FacesContext.getCurrentInstance().addMessage(null,

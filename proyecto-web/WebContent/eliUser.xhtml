@@ -26,7 +26,8 @@
 				<h:panelGrid columns="4">
 
 					<p:selectOneMenu id="trepo" value="#{usuario.user}" effect="fold"
-						editable="false" required="true" converter="converter">
+						editable="false" required="true" converter="converter"
+						style="background-color: white;color: black;">
 						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
 						<f:selectItems value="#{usuario.usuarios}" var="user"
 							itemValue="#{user}" itemLabel="#{user.usuario}" />

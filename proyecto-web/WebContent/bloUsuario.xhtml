@@ -23,16 +23,19 @@
 		<br /> <br />
 		<div align="center">
 			<h:form>
-				<h:panelGrid columns="4">
+				<h:panelGrid columns="3">
 
 					<p:selectOneMenu id="trepo" value="#{bloqueo.user}" effect="fold"
-						editable="false" required="true" converter="converter">
+						editable="false" required="true" converter="converter"
+						style="background-color: white;color: black;"
+						requiredMessage="Elija el usuario a bloquear">
 						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
 						<f:selectItems value="#{bloqueo.usuarios}" var="user"
 							itemValue="#{user}" itemLabel="#{user.usuario}" />
 					</p:selectOneMenu>
+					<h:message for="trepo" styleClass="aler" />
 					<h:commandButton action="#{bloqueo.render}" value="Consultar"
-						styleClass="boton" />
+							styleClass="boton" />
 
 				</h:panelGrid>
 			</h:form>
