@@ -10,8 +10,10 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import com.daos.proyecto.AuditoriaDao;
 import com.daos.proyecto.TipoUsuarioDao;
 import com.daos.proyecto.UsuarioDao;
+import com.entities.proyecto.Auditoria;
 import com.entities.proyecto.TipoUsuario;
 import com.entities.proyecto.Usuario;
 
@@ -30,6 +32,9 @@ public class GestionUsuarioBean implements Serializable {
 	
 	@EJB
 	private TipoUsuarioDao tipoUsDao;
+	
+	@EJB
+	private AuditoriaDao auditoria;
 	
 	private String usuario,nombre,correo,contra,contra1,genero,mensaje;
 	private TipoUsuario tipo;
@@ -187,6 +192,7 @@ public class GestionUsuarioBean implements Serializable {
 			usuarioDao.crear(us);
 			init();
 			respuesta = "registrado";
+			modificarUsuarioAuditoria();
 		}
 		else {
 			//mensaje de contraseña erronea
@@ -197,11 +203,21 @@ public class GestionUsuarioBean implements Serializable {
 	
 	public void actualizar() {
 		usuarioDao.actulizar(us);
+		modificarUsuarioAuditoria();
 	}
 	
 	public void eliminar() {
 		usuarioDao.borrar(user.getIdentificador());
 		user = null;
 		render = false;
-	}	
+		modificarUsuarioAuditoria();
+	}
+	
+	private void modificarUsuarioAuditoria(){
+		System.out.println("si entro");
+		List<Auditoria> datos = auditoria.auditoria();
+		Auditoria aud = datos.get(datos.size()-1);
+		aud.setUsuario(us.getUsuario());
+		auditoria.actulizar(aud);
+	}
 }

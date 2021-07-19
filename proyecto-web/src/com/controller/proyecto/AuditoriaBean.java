@@ -10,10 +10,13 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import com.daos.proyecto.AuditoriaDao;
 import com.entities.proyecto.Auditoria;
+import com.entities.proyecto.Usuario;
 
 @Named("auditoria")
 @SessionScoped
@@ -27,7 +30,7 @@ public class AuditoriaBean implements Serializable {
 	@EJB
 	private AuditoriaDao auditoriaDao;
 
-	private boolean us, fe, ac, tb1, tb2, tb3, tb4;
+	private boolean us, fe, ac, tb1;
 	private List<Auditoria> informacion;
 	private int opcion;
 	private String usuario, accion;
@@ -63,30 +66,6 @@ public class AuditoriaBean implements Serializable {
 
 	public void setTb1(boolean tb1) {
 		this.tb1 = tb1;
-	}
-
-	public boolean getTb2() {
-		return tb2;
-	}
-
-	public void setTb2(boolean tb2) {
-		this.tb2 = tb2;
-	}
-
-	public boolean getTb3() {
-		return tb3;
-	}
-
-	public void setTb3(boolean tb3) {
-		this.tb3 = tb3;
-	}
-
-	public boolean getTb4() {
-		return tb4;
-	}
-
-	public void setTb4(boolean tb4) {
-		this.tb4 = tb4;
 	}
 
 	public List<Auditoria> getInformacion() {
@@ -143,9 +122,6 @@ public class AuditoriaBean implements Serializable {
 		ac = false;
 		fe = false;
 		tb1 = false;
-		tb2 = false;
-		tb3 = false;
-		tb4 = false;
 		ini = null;
 		fin = null;
 		accion = null;
@@ -157,17 +133,18 @@ public class AuditoriaBean implements Serializable {
 			informacion = auditoriaDao.auditoria();
 			init();
 			tb1 = true;
-
 		} else if (opcion == 2) {
 			init();
 			us = true;
-
+			tb1 = false;
 		} else if (opcion == 3) {
 			init();
 			fe = true;
+			tb1 = false;
 		} else if (opcion == 4) {
 			init();
 			ac = true;
+			tb1 = false;
 		}
 	}
 
@@ -181,34 +158,31 @@ public class AuditoriaBean implements Serializable {
 			}
 		}
 
-		tb1 = false;
-		tb2 = true;
-		tb3 = false;
-		tb4 = false;
+		tb1 = true;
 		informacion = resultado;
 	}
 
 	public void filtroFechas() {
-		List<Auditoria> aux = auditoriaDao.auditoria();
-		List<Auditoria> resultado = new ArrayList<Auditoria>();
 		LocalDate auxini = LocalDate.of(ini.getYear()+1900, ini.getMonth()+1, ini.getDate());
 		LocalDate auxfin = LocalDate.of(fin.getYear()+1900, fin.getMonth()+1, fin.getDate());
-		
-		System.out.println("ini: "+auxini + " --fin: "+auxfin);
-	
-		for (Auditoria fila : aux) {
-			LocalDate auxfecha = LocalDate.of(fila.getFecha().getYear()+1900, fila.getFecha().getMonth()+1, fila.getFecha().getDate());
-			System.out.println(auxfecha);
-			if ((auxfecha.isAfter(auxini) && auxfecha.isBefore(auxfin)) || auxfecha.isEqual(auxini) || auxfecha.isEqual(auxfin)) {
-				resultado.add(fila);
+		if(auxini.isBefore(auxfin) || auxini.isEqual(auxfin) ) {
+			List<Auditoria> aux = auditoriaDao.auditoria();
+			List<Auditoria> resultado = new ArrayList<Auditoria>();
+			for (Auditoria fila : aux) {
+				LocalDate auxfecha = LocalDate.of(fila.getFecha().getYear()+1900, fila.getFecha().getMonth()+1, fila.getFecha().getDate());
+				if ((auxfecha.isAfter(auxini) && auxfecha.isBefore(auxfin)) || auxfecha.isEqual(auxini) || auxfecha.isEqual(auxfin)) {
+					resultado.add(fila);
+				}
 			}
-		}
 
-		tb1 = false;
-		tb2 = false;
-		tb3 = true;
-		tb4 = false;
-		informacion = resultado;
+			tb1 = true;
+			informacion = resultado;
+		}else {
+			ini = null;
+			fin = null;
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "El rango de fechas fue ingresado de manera erronea"));
+		}
 	}
 	
 	public LocalDate formatoFecha(Date fecha) {
@@ -225,10 +199,7 @@ public class AuditoriaBean implements Serializable {
 			}
 		}
 
-		tb1 = false;
-		tb2 = false;
-		tb3 = false;
-		tb4 = true;
+		tb1 = true;
 		informacion = resultado;
 	}
 

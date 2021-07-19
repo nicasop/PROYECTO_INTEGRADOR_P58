@@ -13,8 +13,8 @@ public class IndicadorEconomicoDao {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public IndicadorEconomico buscar (String nombre) {
-		return em.find(IndicadorEconomico.class, nombre);
+	public IndicadorEconomico buscar (int identi) {
+		return em.find(IndicadorEconomico.class, identi);
 	}
 	
 }

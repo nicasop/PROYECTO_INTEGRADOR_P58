@@ -2,6 +2,7 @@ package com.controller.proyecto;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -10,7 +11,9 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import com.daos.proyecto.AuditoriaDao;
 import com.daos.proyecto.UsuarioDao;
+import com.entities.proyecto.Auditoria;
 import com.entities.proyecto.Usuario;
 
 @Named("cambio")
@@ -24,7 +27,8 @@ public class CambiarContraBean implements Serializable {
 
 	@EJB
 	private UsuarioDao usuarioDao;
-
+	@EJB
+	private AuditoriaDao auditoria;
 	private Usuario us;
 	private String contra, ncontra,ncontra1;
 	private boolean render, render1;
@@ -112,6 +116,7 @@ public class CambiarContraBean implements Serializable {
 //			System.out.println("SI VALIO");
 //			System.out.println(clave);
 			usuarioDao.actulizar(us);
+			modificarUsuarioAuditoria();
 			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 			try {
 				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
@@ -144,5 +149,13 @@ public class CambiarContraBean implements Serializable {
 //	private int aleatorio() {
 //		return (int) (Math.random() * (999999 - 100000 + 1) + 100000);
 //	}
+	
+	private void modificarUsuarioAuditoria(){
+		System.out.println("si entro");
+		List<Auditoria> datos = auditoria.auditoria();
+		Auditoria aud = datos.get(datos.size()-1);
+		aud.setUsuario(us.getUsuario());
+		auditoria.actulizar(aud);
+	}
 
 }

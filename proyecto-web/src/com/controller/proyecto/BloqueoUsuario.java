@@ -10,7 +10,9 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import com.daos.proyecto.AuditoriaDao;
 import com.daos.proyecto.UsuarioDao;
+import com.entities.proyecto.Auditoria;
 import com.entities.proyecto.Usuario;
 
 
@@ -25,9 +27,11 @@ public class BloqueoUsuario implements Serializable {
 	
 	@EJB
 	private UsuarioDao usuarioDao;
+	@EJB
+	private AuditoriaDao auditoria;
 	
 	private String mensaje;
-	private Usuario user,us;
+	private Usuario user,us,user1;
 	private boolean renderizar,bloqueo,desbloqueo;
 	private List<Usuario> usuarios;
 	
@@ -94,6 +98,7 @@ public class BloqueoUsuario implements Serializable {
 		renderizar = false;
 		bloqueo = false;
 		desbloqueo = false;
+		user1 = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
 	}
 
 	public void render() {
@@ -115,6 +120,7 @@ public class BloqueoUsuario implements Serializable {
 	public void bloquear() {
 		us.setEstado(0);
 		usuarioDao.actulizar(us);
+		modificarUsuarioAuditoria();
 		renderizar = false;
 		FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Usuario Bloqueado"));
 	}
@@ -122,8 +128,17 @@ public class BloqueoUsuario implements Serializable {
 	public void desbloquear() {
 		us.setEstado(1);
 		usuarioDao.actulizar(us);
+		modificarUsuarioAuditoria();
 		renderizar = false;
 		FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Usuario Desbloqueado"));
+	}
+	
+	private void modificarUsuarioAuditoria(){
+		System.out.println("si entro");
+		List<Auditoria> datos = auditoria.auditoria();
+		Auditoria aud = datos.get(datos.size()-1);
+		aud.setUsuario(user1.getUsuario());
+		auditoria.actulizar(aud);
 	}
 	
 }

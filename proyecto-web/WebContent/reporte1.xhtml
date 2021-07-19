@@ -16,14 +16,23 @@
 			<div class="autoresEN">
 				<div class="imagen-logo"></div>
 				<div></div>
-				<h1>Muertes por VHI/SIDA</h1>
+				<h1>Muertes por VIH/SIDA</h1>
 				<p:outputLabel styleClass="aler" value="#{usuario.us.nombreUsuario}" />
 			</div>
 		</div>
 
 		<br /> <br />
 		<div align="center">
-
+			<!-- <div align="right">
+				<p:commandLink>
+					<p:graphicImage value="resources/images/pdf.png" width="60" />
+					<p:dataExporter type="pdf" target="reporte" fileName="Desempleados" encoding="UTF-8"/>
+				</p:commandLink>
+				<p:commandLink>
+					<p:graphicImage value="resources/images/excel.png" width="60" />
+					<p:dataExporter type="xls" target="reporte" fileName="Desempleados" />
+				</p:commandLink>
+			</div> -->
 			<p:dataTable id="reporte" style="width:80%;" var="valor"
 				value="#{muerte.paisesValores}" rows="10" paginator="true"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
@@ -35,10 +44,10 @@
 					<h:outputText value="#{valor.get(1)}" />
 				</p:column>
 			</p:dataTable>
-			<br/>
+			<br />
 			<p:chart type="bar" model="#{muerte.mejores}" style="height:600px;" />
-			<br/>
-			<p:chart type="bar" model="#{muerte.peores}" style="height:600px;" />
+			<!-- 			<br/>
+			<p:chart type="bar" model="#{muerte.peores}" style="height:600px;" /> -->
 		</div>
 		<h:form>
 			<p:stack icon="resources/images/canasta2.png" expanded="true">
