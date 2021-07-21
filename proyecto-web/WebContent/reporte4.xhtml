@@ -23,16 +23,16 @@
 
 		<br /> <br />
 		<div align="center">
-			<!-- <div align="right">
-				<p:commandLink>
-					<p:graphicImage value="resources/images/pdf.png" width="60" />
-					<p:dataExporter type="pdf" target="reporte" fileName="Desempleados" encoding="UTF-8"/>
-				</p:commandLink>
-				<p:commandLink>
-					<p:graphicImage value="resources/images/excel.png" width="60" />
-					<p:dataExporter type="xls" target="reporte" fileName="Desempleados" />
-				</p:commandLink>
-			</div> -->
+			<h:form>
+				<div align="right">
+					<p:commandButton ajax="false" value="pdf" >
+						<p:dataExporter type="pdf" target="reporte" fileName="Desempleados" />
+					</p:commandButton>
+					<p:commandButton ajax="false" value="excel" >
+						<p:dataExporter type="xls" target="reporte" fileName="Desempleados" />
+					</p:commandButton>
+				</div>
+			</h:form>
 			<p:dataTable id="reporte" style="width:80%;" var="valor"
 				value="#{desempleo.paisesValores}" rows="10" paginator="true"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
