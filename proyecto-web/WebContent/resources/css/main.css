@@ -71,6 +71,15 @@ html, body {
 	height: 80px;
 }
 
+.imagen-info {
+	background-image: url("../images/info.png");
+	background-position: center;
+	background-size: cover;
+	width: 80px;
+	height: 80px;
+}
+
+
 .link {
 	text-decoration: none;
 	color: white;

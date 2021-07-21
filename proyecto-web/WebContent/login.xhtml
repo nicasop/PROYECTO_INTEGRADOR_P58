@@ -36,7 +36,7 @@
 	<div class="body formulario">
 		<div class="fondo">
 			<h:form>
-			 <p:growl id="growl" showDetail="true" sticky="true"/>
+				<p:growl id="growl" showDetail="true" sticky="true" />
 				<h:panelGrid columns="1">
 					<div class="p-field">
 						<p:outputLabel for="username1" styleClass="p-d-block">Usuario</p:outputLabel>
@@ -47,8 +47,6 @@
 					<div class="p-field">
 						<p:outputLabel for="pasww" styleClass="p-d-block">Contraseña</p:outputLabel>
 						<p:password id="pasww" value="#{login.usuario.contra}"
-							feedback="true" promptLabel="Ingrese una contraseña"
-							weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
 							 required="true" styleClass="caja" requiredMessage="Campo Obligatorio"/>
 						<small class="p-d-block mss_eme">Ingrese la contraseña.</small>
 
@@ -57,10 +55,10 @@
 				<div align="center">
 
 					<h:commandButton action="#{login.iniciarSesion}" value="Ingresar"
-						styleClass="boton"/>
+						styleClass="boton" />
 
-					<hr />
-					<!-- <h:panelGrid columns="1">
+					<!--	<hr />
+				 <h:panelGrid columns="1">
 						<h:link outcome="RecuContra" value="Recuperar"
 							styleClass="link-log" />
 					</h:panelGrid> -->

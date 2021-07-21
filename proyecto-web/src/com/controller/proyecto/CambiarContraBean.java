@@ -35,7 +35,7 @@ public class CambiarContraBean implements Serializable {
 	
 	private Usuario us;
 	private String contra, ncontra,ncontra1,mensaje;
-	private boolean render, render1;
+	private boolean render, render1,rendercontra;
 	private int clave, codigo;
 
 	public Usuario getUs() {
@@ -85,6 +85,14 @@ public class CambiarContraBean implements Serializable {
 	public void setRender1(boolean render1) {
 		this.render1 = render1;
 	}
+	
+	public boolean getRendercontra() {
+		return rendercontra;
+	}
+
+	public void setRendercontra(boolean rendercontra) {
+		this.rendercontra = rendercontra;
+	}
 
 	public int getCodigo() {
 		return codigo;
@@ -97,6 +105,7 @@ public class CambiarContraBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+		rendercontra = true;
 		render = false;
 		render1 = false;
 		codigo = 0;
@@ -106,9 +115,11 @@ public class CambiarContraBean implements Serializable {
 	public void verificarContra() {
 		if (us.getContra().equals(contra)) {
 			// activa la siguiente vista
+			rendercontra = false;
 			render = true;
 		} else {
-			// mensaje de error contraseña erronea
+			// mensaje de error contraseï¿½a erronea
+			FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "ERROR", "Contraseña Incorrecta"));
 		}
 	}
 
@@ -116,19 +127,11 @@ public class CambiarContraBean implements Serializable {
 		if (ncontra.equals(ncontra1)) {
 			us.setContra(ncontra);
 			clave = aleatorio();
+			render = false;
 			render1 = true;
 			mensaje = "Este es su código de confirmación\n"+clave;
 			System.out.println(mensaje);
 			enviar();
-//			usuarioDao.actulizar(us);
-//			modificarUsuarioAuditoria();
-//			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-//			try {
-//				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 		} else {
 			// mensaje de error
 		}
