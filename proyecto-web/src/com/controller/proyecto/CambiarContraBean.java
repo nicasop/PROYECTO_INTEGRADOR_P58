@@ -137,7 +137,7 @@ public class CambiarContraBean implements Serializable {
 		}
 	}
 
-	public void cambiarContraseña() {
+	public void cambiarContrasena() {
 		System.out.println(clave);
 		System.out.println(codigo);
 		if (clave == codigo) {
