@@ -13,7 +13,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_auditoria",catalog="dataworld",schema="auditoria")
+@Table(name="tb_auditoria",catalog="BD_world",schema="auditoria")
 @NamedQueries({
 	@NamedQuery(name = "Auditoria.todos", query = "SELECT a FROM Auditoria a")
 })

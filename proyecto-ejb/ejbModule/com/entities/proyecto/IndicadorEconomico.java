@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="indicadores_economicos",catalog="Base_DataWorld",schema="public")
+@Table(name="indicadores_economicos",catalog="BD_world",schema="public")
 public class IndicadorEconomico implements Serializable {
 
 	/**

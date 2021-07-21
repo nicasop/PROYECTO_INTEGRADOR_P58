@@ -12,6 +12,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import com.daos.proyecto.AuditoriaDao;
+import com.daos.proyecto.EmailDao;
 import com.daos.proyecto.UsuarioDao;
 import com.entities.proyecto.Auditoria;
 import com.entities.proyecto.Usuario;
@@ -29,8 +30,11 @@ public class CambiarContraBean implements Serializable {
 	private UsuarioDao usuarioDao;
 	@EJB
 	private AuditoriaDao auditoria;
+	@EJB
+	private EmailDao emailDao;
+	
 	private Usuario us;
-	private String contra, ncontra,ncontra1;
+	private String contra, ncontra,ncontra1,mensaje;
 	private boolean render, render1;
 	private int clave, codigo;
 
@@ -111,19 +115,20 @@ public class CambiarContraBean implements Serializable {
 	public void verificarContraNueva() {
 		if (ncontra.equals(ncontra1)) {
 			us.setContra(ncontra);
-//			clave = aleatorio();
-//			render1 = true;
-//			System.out.println("SI VALIO");
-//			System.out.println(clave);
-			usuarioDao.actulizar(us);
-			modificarUsuarioAuditoria();
-			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-			try {
-				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			clave = aleatorio();
+			render1 = true;
+			mensaje = "Este es su código de confirmación\n"+clave;
+			System.out.println(mensaje);
+			enviar();
+//			usuarioDao.actulizar(us);
+//			modificarUsuarioAuditoria();
+//			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+//			try {
+//				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 		} else {
 			// mensaje de error
 		}
@@ -134,6 +139,7 @@ public class CambiarContraBean implements Serializable {
 		System.out.println(codigo);
 		if (clave == codigo) {
 			usuarioDao.actulizar(us);
+			modificarUsuarioAuditoria();
 			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 			try {
 				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
@@ -146,9 +152,9 @@ public class CambiarContraBean implements Serializable {
 		}
 	}
 
-//	private int aleatorio() {
-//		return (int) (Math.random() * (999999 - 100000 + 1) + 100000);
-//	}
+	private int aleatorio() {
+		return (int) (Math.random() * (999999 - 100000 + 1) + 100000);
+	}
 	
 	private void modificarUsuarioAuditoria(){
 		System.out.println("si entro");
@@ -157,5 +163,15 @@ public class CambiarContraBean implements Serializable {
 		aud.setUsuario(us.getUsuario());
 		auditoria.actulizar(aud);
 	}
+	
+	private void enviar() {
+		try {
+			System.out.println(us.getCorreo());
+			emailDao.send(us.getCorreo(), "Confirmación de cambio de Contraseña", mensaje);
+
+		}
+		catch (Exception e) {}
+	}
+
 
 }

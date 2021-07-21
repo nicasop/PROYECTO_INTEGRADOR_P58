@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="indicadores_economicos_valores",catalog="dataworld",schema="public")
+@Table(name="indicadores_economicos_valores",catalog="BD_world",schema="public")
 @IdClass(ValorEconomico.class)
 public class ValorEconomico implements Serializable {
 

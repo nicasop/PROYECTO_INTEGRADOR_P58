@@ -49,7 +49,6 @@ public class LoginBean implements Serializable {
 			if (user != null) {
 				if (user.getEstado() == 1) {
 					PrimeFacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", user);
-
 					if (user.getTipo().getCodigo_tipo() == 1) {
 						destino = "admin";
 					} else if (user.getTipo().getCodigo_tipo() == 2) {

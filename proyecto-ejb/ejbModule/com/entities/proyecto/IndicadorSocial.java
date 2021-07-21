@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="indicadores_sociales",catalog="dataworld",schema="public")
+@Table(name="indicadores_sociales",catalog="BD_world",schema="public")
 @NamedQueries({
 	@NamedQuery(name = "IndicadorSocial.todos",query = "SELECT i FROM IndicadorSocial i")
 })

@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="usuario",catalog="dataworld",schema="public")
+@Table(name="usuario",catalog="BD_world",schema="public")
 @NamedQueries({
 	@NamedQuery(name = "Usuario.todos", query = "SELECT u FROM Usuario u")
 })

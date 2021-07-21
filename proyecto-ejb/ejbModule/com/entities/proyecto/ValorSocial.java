@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="indicadores_sociales_valores",catalog="dataworld",schema="public")
+@Table(name="indicadores_sociales_valores",catalog="BD_world",schema="public")
 @IdClass(ValorSocial.class)
 public class ValorSocial implements Serializable {
 

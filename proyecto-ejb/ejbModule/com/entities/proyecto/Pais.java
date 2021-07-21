@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="pais",catalog="Base_DataWorld",schema="public")
+@Table(name="pais",catalog="BD_world",schema="public")
 @NamedQueries({
 	@NamedQuery(name="Pais.todos", query = "Select p from Pais p")
 })
