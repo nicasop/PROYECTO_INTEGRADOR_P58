@@ -36,11 +36,13 @@
 	<div class="body formulario">
 		<div class="fondo">
 			<h:form>
-			 <p:growl id="growl" showDetail="true" sticky="true"/>
+				<p:growl id="growl" showDetail="true" sticky="true" />
 				<h:panelGrid columns="1">
 					<div class="p-field">
 						<p:outputLabel for="username1" styleClass="p-d-block">Usuario</p:outputLabel>
-						<p:inputText id="username1"  value="#{login.usuario.usuario}" styleClass="caja" required="true" requiredMessage="Campo Obligatorio"/>
+						<p:inputText id="username1" value="#{login.usuario.usuario}"
+							styleClass="caja" required="true"
+							requiredMessage="Campo Obligatorio" />
 						<small class="p-d-block mss_eme">Enter your username.</small>
 					</div>
 
@@ -49,7 +51,8 @@
 						<p:password id="pasww" value="#{login.usuario.contra}"
 							feedback="true" promptLabel="Ingrese una contraseña"
 							weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"
-							 required="true" styleClass="caja" requiredMessage="Campo Obligatorio"/>
+							required="true" styleClass="caja"
+							requiredMessage="Campo Obligatorio" />
 						<small class="p-d-block mss_eme">Enter your password.</small>
 
 					</div>
@@ -57,10 +60,10 @@
 				<div align="center">
 
 					<h:commandButton action="#{login.iniciarSesion}" value="Ingresar"
-						styleClass="boton"/>
+						styleClass="boton" />
 
-					<hr />
-					<!-- <h:panelGrid columns="1">
+					<!--	<hr />
+				 <h:panelGrid columns="1">
 						<h:link outcome="RecuContra" value="Recuperar"
 							styleClass="link-log" />
 					</h:panelGrid> -->

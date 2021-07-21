@@ -104,7 +104,7 @@ public class CambiarContraBean implements Serializable {
 			// activa la siguiente vista
 			render = true;
 		} else {
-			// mensaje de error contraseña erronea
+			// mensaje de error contraseï¿½a erronea
 		}
 	}
 
@@ -129,7 +129,7 @@ public class CambiarContraBean implements Serializable {
 		}
 	}
 
-	public void cambiarContraseña() {
+	public void cambiarContraseÃ±a() {
 		System.out.println(clave);
 		System.out.println(codigo);
 		if (clave == codigo) {
