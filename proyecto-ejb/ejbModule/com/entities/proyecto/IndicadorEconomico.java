@@ -8,11 +8,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="indicadores_economicos",catalog="BD_world",schema="public")
+@NamedQueries({
+	@NamedQuery(name = "IndicadorEconomico.todos",query = "SELECT e FROM IndicadorEconomico e")
+})
 public class IndicadorEconomico implements Serializable {
 
 	/**

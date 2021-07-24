@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>proyecto</name>
+	<name>dataworld-ear</name>
 	<comment></comment>
 	<projects>
-		<project>proyecto-ejb</project>
-		<project>proyecto-web</project>
+		<project>dataworld</project>
+		<project>dataworld-ejb</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

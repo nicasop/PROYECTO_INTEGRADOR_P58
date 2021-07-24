@@ -122,7 +122,6 @@ public class MuertesBean implements Serializable {
 	private void cargarMejores() {
 		mejores = new BarChartModel();
 		List<Vector<Object>> valorMejores = ordenar(getValores());
-		
 		ChartSeries datos = new ChartSeries();
 		datos.setLabel("Muertes por VIH/SIDA");
 		double max = 0.0;

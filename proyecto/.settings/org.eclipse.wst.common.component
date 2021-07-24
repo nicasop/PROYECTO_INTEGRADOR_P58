@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                            
+                                    
     
     
     
     
     
-    <wb-module deploy-name="proyecto">
-                
+    
+    
+    <wb-module deploy-name="dataworld-ear">
+                                
+        
+        
         <wb-resource deploy-path="/" source-path="/EarContent"/>
-        <dependent-module archiveName="proyecto-ejb.jar" deploy-path="/" handle="module:/resource/proyecto-ejb/proyecto-ejb">
+                
+        <dependent-module archiveName="dataworld.war" deploy-path="/" handle="module:/resource/dataworld/dataworld">
+                        
             <dependent-object/>
+                        
             <dependency-type>uses</dependency-type>
+                    
         </dependent-module>
-        <dependent-module archiveName="proyecto-web.war" deploy-path="/" handle="module:/resource/proyecto-web/proyecto-web">
+                
+        <dependent-module archiveName="dataworld-ejb.jar" deploy-path="/" handle="module:/resource/dataworld-ejb/dataworld-ejb">
+                        
             <dependent-object/>
+                        
             <dependency-type>uses</dependency-type>
+                    
         </dependent-module>
-                                                    
+                                                                    
+    
+    
     
     
     
     
     
     </wb-module>
-                        
+                                
+
+
 
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16234174223370" configfile="/proyecto-web/WebContent/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16234174223370" configfile="/dataworld/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="96" y="180" id="pf16234176793991" referenceLink="//@navigationRule.49/@navigationCase.0/@toViewId|" outlinks="pf16234176793992 pf16234176794003 pf162342620902410 pf16242800194930" inlinks="pf16234176794004 pf16234176794005 pf162342620902410 pf16243809376610 pf16248369452654 pf16251111413310 pf16251179266653" path="/index.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="reporte.xhtml" x="348" y="264" id="pf16234176794006" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf16234176794005 pf16234176794007" inlinks="pf16234176794003 pf16234176794008" path="/reporte.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="autores.xhtml" x="300" y="72" id="pf16234176794009" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf16234176794004 pf16234176794008" inlinks="pf16234176793992 pf16234176794007" path="/autores.xhtml"/>
@@ -28,62 +28,62 @@
   <nodes xsi:type="pageflow:PFPage" name="reporte5.xhtml" x="759" y="1284" id="pf162511792666616" referenceLink="//@navigationRule.47/@navigationCase.0/@toViewId|" inlinks="pf162511792666610" path="/reporte5.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="reporte6.xhtml" x="764" y="1368" id="pf162511792666617" referenceLink="//@navigationRule.48/@navigationCase.0/@toViewId|" inlinks="pf162511792666611" path="/reporte6.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="cambPswOpe.xhtml" x="457" y="1296" id="pf162511792666618" referenceLink="//@navigationRule.50/@navigationCase.0/@toViewId|" inlinks="pf16251179266664" path="/cambPswOpe.xhtml"/>
-  <links id="pf16234176793992" target="pf16234176794009" source="pf16234176793991" outcome="autores"/>
-  <links id="pf16234176794003" target="pf16234176794006" source="pf16234176793991" outcome="reporte"/>
-  <links id="pf16234176794004" target="pf16234176793991" source="pf16234176794009" outcome="inicio"/>
-  <links id="pf16234176794005" target="pf16234176793991" source="pf16234176794006" outcome="inicio"/>
-  <links id="pf16234176794007" target="pf16234176794009" source="pf16234176794006" outcome="autores"/>
-  <links id="pf16234176794008" target="pf16234176794006" source="pf16234176794009" outcome="reporte"/>
-  <links id="pf162342620902410" target="pf16234176793991" source="pf16234176793991" outcome="inicio">
+  <links id="pf16234176793992" target="pf16234176794009" source="pf16234176793991"/>
+  <links id="pf16234176794003" target="pf16234176794006" source="pf16234176793991"/>
+  <links id="pf16234176794004" target="pf16234176793991" source="pf16234176794009"/>
+  <links id="pf16234176794005" target="pf16234176793991" source="pf16234176794006"/>
+  <links id="pf16234176794007" target="pf16234176794009" source="pf16234176794006"/>
+  <links id="pf16234176794008" target="pf16234176794006" source="pf16234176794009"/>
+  <links id="pf162342620902410" target="pf16234176793991" source="pf16234176793991">
     <bendPoints d1Height="-36" d2Height="-36"/>
     <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
     <bendPoints d1Width="-64" d2Width="-64"/>
   </links>
-  <links id="pf16242800194930" target="pf16242800194941" source="pf16234176793991" outcome="login"/>
-  <links id="pf16242800194943" target="pf16242800194945" source="pf16242800194941" outcome="RecuContra"/>
-  <links id="pf16243809376610" target="pf16234176793991" source="pf16242800194945" outcome="index"/>
-  <links id="pf16248369452654" target="pf16234176793991" source="pf16248363913361" outcome="index"/>
-  <links id="pf162484198887110" target="pf162484198887213" source="pf16248363913361" outcome="usuarioOp"/>
-  <links id="pf162484250008014" target="pf162484250008015" source="pf162484198887213" outcome="editUsuario"/>
-  <links id="pf162484354808116" target="pf162484354808117" source="pf162484198887213" outcome="registro"/>
-  <links id="pf162485637797622" target="pf162485637797623" source="pf16248363913361" outcome="repoGeneral"/>
-  <links id="pf162485797258228" target="pf162485797258229" source="pf162485637797623" outcome="repoEspe"/>
-  <links id="pf162485804536930" target="pf162485804536931" source="pf162485637797623" outcome="repoGenerar"/>
-  <links id="pf162485886348632" target="pf162485886348633" source="pf162485637797623" outcome="desRepo"/>
-  <links id="pf162485911288934" target="pf162485911288935" source="pf162484198887213" outcome="blUser"/>
-  <links id="pf162486062511236" target="pf162486062511237" source="pf162484198887213" outcome="cnUsr"/>
-  <links id="pf162486116020838" target="pf162486116020839" source="pf162484198887213" outcome="eliUsr"/>
-  <links id="pf162488932746240" target="pf162488932746241" source="pf16248363913361" outcome="ediPsw"/>
-  <links id="pf162489151862642" target="pf162485207687121" source="pf162484198887213" outcome="auditoria"/>
-  <links id="pf162489278133844" target="pf162484198887213" source="pf162484250008015" outcome="usuarioOp"/>
-  <links id="pf162489278133845" target="pf162484198887213" source="pf162484354808117" outcome="usuarioOp"/>
-  <links id="pf162489278133846" target="pf162484198887213" source="pf162485911288935" outcome="usuarioOp"/>
-  <links id="pf162489278133847" target="pf162484198887213" source="pf162486062511237" outcome="usuarioOp"/>
-  <links id="pf162489278133848" target="pf162484198887213" source="pf162486116020839" outcome="usuarioOp"/>
-  <links id="pf162489278133849" target="pf162484198887213" source="pf162485207687121" outcome="usuarioOp"/>
-  <links id="pf162489278133854" target="pf162485637797623" source="pf162484250008015" outcome="repoGeneral"/>
-  <links id="pf162489278133855" target="pf162485637797623" source="pf162484354808117" outcome="repoGeneral"/>
-  <links id="pf162489278133857" target="pf162485637797623" source="pf162485911288935" outcome="repoGeneral"/>
-  <links id="pf162489278133858" target="pf162485637797623" source="pf162486062511237" outcome="repoGeneral"/>
-  <links id="pf162489278133859" target="pf162485637797623" source="pf162486116020839" outcome="repoGeneral"/>
-  <links id="pf162489278133856" target="pf162485637797623" source="pf162485207687121" outcome="repoGeneral"/>
-  <links id="pf162489278133843" target="pf162485637797623" source="pf162484198887213" outcome="repoGeneral"/>
-  <links id="pf162489278133850" target="pf162484198887213" source="pf162485637797623" outcome="usuarioOp"/>
-  <links id="pf162489278133851" target="pf162484198887213" source="pf162485797258229" outcome="usuarioOp"/>
-  <links id="pf162489278133852" target="pf162484198887213" source="pf162485804536931" outcome="usuarioOp"/>
-  <links id="pf162489278133853" target="pf162484198887213" source="pf162485886348633" outcome="usuarioOp"/>
-  <links id="pf16251111413310" target="pf16234176793991" source="pf16242800194941" outcome="inicio"/>
-  <links id="pf16251169262961" target="pf16251169262962" source="pf162489790794160" outcome="menOpe"/>
-  <links id="pf16251179266665" target="pf162489790794162" source="pf16251169262962" outcome="repoOpe"/>
-  <links id="pf16251179266666" target="pf162511792666612" source="pf16251169262962" outcome="reporte1"/>
-  <links id="pf16251179266667" target="pf162511792666613" source="pf16251169262962" outcome="reporte2"/>
-  <links id="pf16251179266668" target="pf162511792666614" source="pf16251169262962" outcome="reporte3"/>
-  <links id="pf16251179266669" target="pf162511792666615" source="pf16251169262962" outcome="reporte4"/>
-  <links id="pf162511792666610" target="pf162511792666616" source="pf16251169262962" outcome="reporte5"/>
-  <links id="pf162511792666611" target="pf162511792666617" source="pf16251169262962" outcome="reporte6"/>
-  <links id="pf16251179266653" target="pf16234176793991" source="pf162489790794160" outcome="index"/>
-  <links id="pf16251179266664" target="pf162511792666618" source="pf162489790794160" outcome="editarPswOpe"/>
-  <links id="pf16255335751710" target="pf16248363913361" source="pf16242800194941" outcome="admin"/>
-  <links id="pf16255335751711" target="pf162489790794160" source="pf16242800194941" outcome="operador"/>
-  <links id="pf16256686176640" target="pf16248363913361" source="pf162484354808117" outcome="registrado"/>
+  <links id="pf16242800194930" target="pf16242800194941" source="pf16234176793991"/>
+  <links id="pf16242800194943" target="pf16242800194945" source="pf16242800194941"/>
+  <links id="pf16243809376610" target="pf16234176793991" source="pf16242800194945"/>
+  <links id="pf16248369452654" target="pf16234176793991" source="pf16248363913361"/>
+  <links id="pf162484198887110" target="pf162484198887213" source="pf16248363913361"/>
+  <links id="pf162484250008014" target="pf162484250008015" source="pf162484198887213"/>
+  <links id="pf162484354808116" target="pf162484354808117" source="pf162484198887213"/>
+  <links id="pf162485637797622" target="pf162485637797623" source="pf16248363913361"/>
+  <links id="pf162485797258228" target="pf162485797258229" source="pf162485637797623"/>
+  <links id="pf162485804536930" target="pf162485804536931" source="pf162485637797623"/>
+  <links id="pf162485886348632" target="pf162485886348633" source="pf162485637797623"/>
+  <links id="pf162485911288934" target="pf162485911288935" source="pf162484198887213"/>
+  <links id="pf162486062511236" target="pf162486062511237" source="pf162484198887213"/>
+  <links id="pf162486116020838" target="pf162486116020839" source="pf162484198887213"/>
+  <links id="pf162488932746240" target="pf162488932746241" source="pf16248363913361"/>
+  <links id="pf162489151862642" target="pf162485207687121" source="pf162484198887213"/>
+  <links id="pf162489278133844" target="pf162484198887213" source="pf162484250008015"/>
+  <links id="pf162489278133845" target="pf162484198887213" source="pf162484354808117"/>
+  <links id="pf162489278133846" target="pf162484198887213" source="pf162485911288935"/>
+  <links id="pf162489278133847" target="pf162484198887213" source="pf162486062511237"/>
+  <links id="pf162489278133848" target="pf162484198887213" source="pf162486116020839"/>
+  <links id="pf162489278133849" target="pf162484198887213" source="pf162485207687121"/>
+  <links id="pf162489278133854" target="pf162485637797623" source="pf162484250008015"/>
+  <links id="pf162489278133855" target="pf162485637797623" source="pf162484354808117"/>
+  <links id="pf162489278133857" target="pf162485637797623" source="pf162485911288935"/>
+  <links id="pf162489278133858" target="pf162485637797623" source="pf162486062511237"/>
+  <links id="pf162489278133859" target="pf162485637797623" source="pf162486116020839"/>
+  <links id="pf162489278133856" target="pf162485637797623" source="pf162485207687121"/>
+  <links id="pf162489278133843" target="pf162485637797623" source="pf162484198887213"/>
+  <links id="pf162489278133850" target="pf162484198887213" source="pf162485637797623"/>
+  <links id="pf162489278133851" target="pf162484198887213" source="pf162485797258229"/>
+  <links id="pf162489278133852" target="pf162484198887213" source="pf162485804536931"/>
+  <links id="pf162489278133853" target="pf162484198887213" source="pf162485886348633"/>
+  <links id="pf16251111413310" target="pf16234176793991" source="pf16242800194941"/>
+  <links id="pf16251169262961" target="pf16251169262962" source="pf162489790794160"/>
+  <links id="pf16251179266665" target="pf162489790794162" source="pf16251169262962"/>
+  <links id="pf16251179266666" target="pf162511792666612" source="pf16251169262962"/>
+  <links id="pf16251179266667" target="pf162511792666613" source="pf16251169262962"/>
+  <links id="pf16251179266668" target="pf162511792666614" source="pf16251169262962"/>
+  <links id="pf16251179266669" target="pf162511792666615" source="pf16251169262962"/>
+  <links id="pf162511792666610" target="pf162511792666616" source="pf16251169262962"/>
+  <links id="pf162511792666611" target="pf162511792666617" source="pf16251169262962"/>
+  <links id="pf16251179266653" target="pf16234176793991" source="pf162489790794160"/>
+  <links id="pf16251179266664" target="pf162511792666618" source="pf162489790794160"/>
+  <links id="pf16255335751710" target="pf16248363913361" source="pf16242800194941"/>
+  <links id="pf16255335751711" target="pf162489790794160" source="pf16242800194941"/>
+  <links id="pf16256686176640" target="pf16248363913361" source="pf162484354808117"/>
 </pageflow:Pageflow>

@@ -169,9 +169,7 @@ public class CambiarContraBean implements Serializable {
 	
 	private void enviar() {
 		try {
-			System.out.println(us.getCorreo());
 			emailDao.send(us.getCorreo(), "Confirmación de cambio de Contraseña", mensaje);
-
 		}
 		catch (Exception e) {}
 	}
