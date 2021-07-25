@@ -25,7 +25,7 @@ Hemos decidido nombrar a nuestro sitio Data World el cual tiene una pagina web q
 #PRUEBAS EN SISTEMAS
 
  * [Pruebas de Rendimiento](/documentacion/Pruebas del Sistema/PruebasRendimiento_Grupo3.pdf)
- * [Pruebas de Navegación](/documentacion/Pruebas del Sistema/Prueba de Navegación_Grupo3.pdf )
+ * [Pruebas de Navegación](/documentacion/Pruebas del Sistema/Prueba de Navegación_Grupo3.pdf)
  * Pruebas de Interfaz   
 
 # LICENCIA
