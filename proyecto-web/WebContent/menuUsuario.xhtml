@@ -8,33 +8,44 @@
 <h:head>
 	<link rel="stylesheet" href="resources/css/main.css" />
 	<link rel="stylesheet" href="resources/css/primeflex.css" />
-	<f:event listener="#{login.verificarSesionO}" type="preRenderView"></f:event>
+	<f:event listener="#{login.verificarSesion}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
-	<div class="imagen-operador">
+	<div class="imagen-admin">
 		<div class="fondoT">
 			<div class="autoresEN">
 				<div class="imagen-logo"></div>
 				<div></div>
-				<h1>REPORTE 6</h1>
+				<h1>MENÚ ADMINISTRADOR</h1>
 				<p:outputLabel styleClass="aler" value="#{usuario.us.nombreUsuario}" />
 			</div>
 		</div>
+
 		<br /> <br />
 		<div align="center">
-			<p:graphicImage name="images/world.png" styleClass="reporte" />
+			<h:panelGrid columns="1">
+
+				<h:link outcome="registro" value="REGISTRAR" styleClass="link-log" />
+				<br />
+				<h:link outcome="editUsuario" value="EDITAR" styleClass="link-log" />
+				<br />
+				<h:link outcome="bloUsuario" value="BLOQUEAR" styleClass="link-log" />
+				<br />
+				<h:link outcome="consUsuario" value="CONSULTAR" styleClass="link-log" />
+				<br />
+				<h:link outcome="eliUser" value="ELIMINAR" styleClass="link-log" />
+			</h:panelGrid>
 		</div>
 		<h:form>
 			<p:stack icon="resources/images/canasta2.png" expanded="true">
-
-				<p:menuitem value="Reportes" icon="resources/images/repo.png"
-					outcome="menuRepo" />
+				<p:menuitem value="Usuario" icon="resources/images/modificar.png"
+					outcome="menuUsuario" />
+				<p:menuitem value="Auditoria" icon="resources/images/repo.png"
+					outcome="auditoria" />
 				<p:menuitem value="Contraseña" icon="resources/images/contra.png"
-					outcome="cambPswOpe" />
+					outcome="editarPsw" />
 				<p:menuitem value="Salir" icon="resources/images/salir.png"
 					action="#{login.cerrarSesion()}" />
-
-
 			</p:stack>
 		</h:form>
 

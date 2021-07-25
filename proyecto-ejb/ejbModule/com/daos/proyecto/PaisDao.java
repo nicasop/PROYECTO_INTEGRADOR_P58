@@ -15,8 +15,8 @@ public class PaisDao {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public Pais buscar (String nombre) {
-		return em.find(Pais.class, nombre);
+	public Pais buscar (int codigo) {
+		return em.find(Pais.class, codigo);
 	}
 	
 	public List<Pais> todos(){

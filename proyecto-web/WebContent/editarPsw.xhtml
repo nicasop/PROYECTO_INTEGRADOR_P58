@@ -31,7 +31,7 @@
 							<p:password id="pswAct" value="#{cambio.contra}" required="true"
 								styleClass="caja" />
 							<h:commandButton action="#{cambio.verificarContra()}"
-								value="VERIFICAR" styleClass="boton" update="@form"/>
+								value="VERIFICAR" styleClass="boton" update="@form" />
 						</h:panelGrid>
 					</h:form>
 					<h:form>
@@ -82,12 +82,13 @@
 							<h3 class="aler">Ingrese el código enviado a su correo</h3>
 
 						</h:panelGrid>
-
-						<h:commandButton action="#{cambio.cambiarContrasena()}"
-							value="CAMBIAR" styleClass="boton" />
-
+						<h:panelGrid columns="2">
+							<h:commandButton action="#{cambio.cambiarContrasena()}"
+								value="CAMBIAR" styleClass="boton" />
+							<h:commandButton action="#{cambio.init()}" value="CANCELAR"
+								styleClass="boton" />
+						</h:panelGrid>
 					</h:panelGrid>
-
 				</h:form>
 			</div>
 		</div>
@@ -95,9 +96,9 @@
 		<h:form>
 			<p:stack icon="resources/images/canasta2.png" expanded="true">
 				<p:menuitem value="Usuario" icon="resources/images/modificar.png"
-					outcome="usuarioOp" />
+					outcome="menuUsuario" />
 				<p:menuitem value="Auditoria" icon="resources/images/repo.png"
-					outcome="crearReporte" />
+					outcome="auditoria" />
 				<p:menuitem value="Contraseña" icon="resources/images/contra.png"
 					outcome="editarPsw" />
 				<p:menuitem value="Salir" icon="resources/images/salir.png"

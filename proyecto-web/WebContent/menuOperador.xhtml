@@ -8,7 +8,7 @@
 <h:head>
 	<link rel="stylesheet" href="resources/css/main.css" />
 	<link rel="stylesheet" href="resources/css/primeflex.css" />
-	<f:event listener="#{login.verificarSesionO}" type="preRenderView"></f:event>
+	<f:event listener="#{login.verificarSesion}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
 	<div class="imagen-operador">
@@ -22,15 +22,12 @@
 		</div>		
 		<h:form>
 			<p:stack icon="resources/images/canasta2.png" expanded="true">
-
 				<p:menuitem value="Reportes" icon="resources/images/repo.png"
 					outcome="menuRepo" />
 				<p:menuitem value="Contraseña" icon="resources/images/contra.png"
 					outcome="cambPswOpe" />
 				<p:menuitem value="Salir" icon="resources/images/salir.png"
 					action="#{login.cerrarSesion()}" />
-
-
 			</p:stack>
 		</h:form>
 	</div>

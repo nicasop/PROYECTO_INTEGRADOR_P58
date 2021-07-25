@@ -28,6 +28,11 @@ public class LoginBean implements Serializable {
 
 	private Usuario usuario;
 
+	private String[] pagProAd = {"/menuOperador.xhtml","/cambPswOpe.xhtml","/menuRepo.xhtml","/repoOpe.xhtml","/reporte1.xhtml","/reporte2.xhtml",
+			"/reporte3.xhtml","/reporte4.xhtml"};
+	private String[] pagProOp = {"/menuAdmin.xhtml","/editarPsw.xhtml","/auditoria.xhtml","/menuUusario.xhtml","/editUsuario.xhtml","/registro.xhtml",
+			"/bloUsuario.xhtml","/consUsuario.xhtml","/eliUser.xhtml"};
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -76,18 +81,37 @@ public class LoginBean implements Serializable {
 					.get("usuario");
 			if (us == null) {
 				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
+			} else {
+				String paginaActual = FacesContext.getCurrentInstance().getViewRoot().getViewId();
+				int tipo = us.getTipo().getCodigo_tipo();
+				if (tipo == 1) {
+					if(comprobarPaginaAd(paginaActual)) {
+						System.out.println("esta pagina es prohibida");
+						FacesContext.getCurrentInstance().getExternalContext().redirect("menuAdmin.jsf");
+					}
+				} else if ( tipo == 2) {
+					if(comprobarPaginaOp(paginaActual)) {
+						System.out.println("esta pagina es prohibida");
+						FacesContext.getCurrentInstance().getExternalContext().redirect("menuOperador.jsf");
+					}
+				}
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
-
-	public void verificarSesionO() {
+	
+	public void verificarSesionLo() {
 		try {
 			Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
 					.get("usuario");
-			if (us == null) {
-				FacesContext.getCurrentInstance().getExternalContext().redirect("login.jsf");
+			if (us != null) {
+				if (us.getTipo().getCodigo_tipo() == 1) {
+					FacesContext.getCurrentInstance().getExternalContext().redirect("menuAdmin.jsf");
+				} else if (us.getTipo().getCodigo_tipo() == 2) {
+					FacesContext.getCurrentInstance().getExternalContext().redirect("menuOperador.jsf");
+				}
+				
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -104,5 +128,24 @@ public class LoginBean implements Serializable {
 			// TODO: handle exception
 		}
 	}
-
+	
+	private boolean comprobarPaginaAd(String pagina) {
+		for (String nombre : pagProAd) {
+			if (nombre.equals(pagina)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	private boolean comprobarPaginaOp(String pagina) {
+		for (String nombre : pagProOp) {
+			if (nombre.equals(pagina)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }

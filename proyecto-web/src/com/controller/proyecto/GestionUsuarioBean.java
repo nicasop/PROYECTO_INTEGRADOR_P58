@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -204,6 +205,8 @@ public class GestionUsuarioBean implements Serializable {
 	public void actualizar() {
 		usuarioDao.actulizar(us);
 		modificarUsuarioAuditoria();
+		FacesContext.getCurrentInstance().addMessage(null,
+				new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Usuario Actualizado"));
 	}
 	
 	public void eliminar() {
@@ -214,7 +217,6 @@ public class GestionUsuarioBean implements Serializable {
 	}
 	
 	private void modificarUsuarioAuditoria(){
-		System.out.println("si entro");
 		List<Auditoria> datos = auditoria.auditoria();
 		Auditoria aud = datos.get(datos.size()-1);
 		aud.setUsuario(us.getUsuario());

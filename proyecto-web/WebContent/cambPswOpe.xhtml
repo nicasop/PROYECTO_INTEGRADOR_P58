@@ -8,7 +8,7 @@
 <h:head>
 	<link rel="stylesheet" href="resources/css/main.css" />
 	<link rel="stylesheet" href="resources/css/primeflex.css" />
-	<f:event listener="#{login.verificarSesionO}" type="preRenderView"></f:event>
+	<f:event listener="#{login.verificarSesion}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
 	<div class="imagen-operador">
@@ -31,7 +31,7 @@
 							<p:password id="pswAct" value="#{cambio.contra}" required="true"
 								styleClass="caja" />
 							<h:commandButton action="#{cambio.verificarContra()}"
-								value="VERIFICAR" styleClass="boton" update="@form"/>
+								value="VERIFICAR" styleClass="boton" update="@form" />
 						</h:panelGrid>
 					</h:form>
 					<h:form>
@@ -86,7 +86,8 @@
 
 						<h:commandButton action="#{cambio.cambiarContrasena()}"
 							value="CAMBIAR" styleClass="boton" />
-
+						<h:commandButton action="#{cambio.init()}" value="CANCELAR"
+							styleClass="boton" />
 					</h:panelGrid>
 				</h:form>
 

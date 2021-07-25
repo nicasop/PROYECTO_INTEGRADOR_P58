@@ -37,7 +37,22 @@
 
 	<div class="body">
 		<br /> <br />
-		<!-- <h2 align="center">Reporte sobre .....</h2> -->
+		<h:form>
+			<div align="right">
+				<p:commandButton ajax="false" value="pdf">
+					<p:dataExporter type="pdf" target="reporte"
+						fileName="ExtensionTerritorial" preProcessor="#{formato.preProcessPDFI}" />
+				</p:commandButton>
+				<p:commandButton ajax="false" value="excel">
+					<p:dataExporter type="xls" target="reporte"
+						fileName="ExtensionTerritorial" />
+				</p:commandButton>
+				<p:commandButton ajax="false" value="xml">
+					<p:dataExporter type="xml" target="reporte"
+						fileName="ExtensionTerritorial" />
+				</p:commandButton>
+			</div>
+		</h:form>
 		<div align="center">
 			<p:dataTable id="reporte" style="width:80%;" var="pais"
 				value="#{reporte.paises}" rows="10" paginator="true"

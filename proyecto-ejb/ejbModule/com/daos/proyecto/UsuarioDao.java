@@ -25,8 +25,8 @@ public class UsuarioDao {
 		return em.merge(usuario);
 	}
 	
-	public Usuario buscar(String nombre) {
-		return em.find(Usuario.class,nombre);
+	public Usuario buscar(int codigo) {
+		return em.find(Usuario.class,codigo);
 	}
 	
 	public void borrar(Integer codigo) {

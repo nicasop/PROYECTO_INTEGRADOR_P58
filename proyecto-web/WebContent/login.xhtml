@@ -8,6 +8,7 @@
 <h:head>
 	<link rel="stylesheet" href="resources/css/main.css" />
 	<link rel="stylesheet" href="resources/css/primeflex.css" />
+	<f:event listener="#{login.verificarSesionLo}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
 
@@ -27,7 +28,7 @@
 			<div class="espacio"></div>
 			<div class="link3">
 				<div class="ini-sesion">
-					<h:link styleClass="link" outcome="" value="Iniciar Sesion" />
+					<h:link styleClass="link" value="Iniciar Sesion" />
 				</div>
 			</div>
 		</div>
@@ -56,12 +57,6 @@
 
 					<h:commandButton action="#{login.iniciarSesion}" value="Ingresar"
 						styleClass="boton" />
-
-					<!--	<hr />
-				 <h:panelGrid columns="1">
-						<h:link outcome="RecuContra" value="Recuperar"
-							styleClass="link-log" />
-					</h:panelGrid> -->
 				</div>
 			</h:form>
 		</div>

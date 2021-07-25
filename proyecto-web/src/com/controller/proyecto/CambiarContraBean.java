@@ -125,12 +125,10 @@ public class CambiarContraBean implements Serializable {
 
 	public void verificarContraNueva() {
 		if (ncontra.equals(ncontra1)) {
-			us.setContra(ncontra);
 			clave = aleatorio();
 			render = false;
 			render1 = true;
 			mensaje = "Este es su código de confirmación\n"+clave;
-			System.out.println(mensaje);
 			enviar();
 		} else {
 			// mensaje de error
@@ -138,9 +136,8 @@ public class CambiarContraBean implements Serializable {
 	}
 
 	public void cambiarContrasena() {
-		System.out.println(clave);
-		System.out.println(codigo);
 		if (clave == codigo) {
+			us.setContra(ncontra);
 			usuarioDao.actulizar(us);
 			modificarUsuarioAuditoria();
 			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();

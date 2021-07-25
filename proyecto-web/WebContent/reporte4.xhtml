@@ -8,7 +8,7 @@
 <h:head>
 	<link rel="stylesheet" href="resources/css/main.css" />
 	<link rel="stylesheet" href="resources/css/primeflex.css" />
-	<f:event listener="#{login.verificarSesionO}" type="preRenderView"></f:event>
+	<f:event listener="#{login.verificarSesion}" type="preRenderView"></f:event>
 </h:head>
 <h:body>
 	<div class="imagen-operador">
@@ -26,7 +26,7 @@
 			<h:form>
 				<div align="right">
 					<p:commandButton ajax="false" value="pdf" >
-						<p:dataExporter type="pdf" target="reporte" fileName="Desempleados" />
+						<p:dataExporter type="pdf" target="reporte" fileName="Desempleados" preProcessor="#{formato.preProcessPDF}"/>
 					</p:commandButton>
 					<p:commandButton ajax="false" value="excel" >
 						<p:dataExporter type="xls" target="reporte" fileName="Desempleados" />
