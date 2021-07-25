@@ -21,7 +21,13 @@ Hemos decidido nombrar a nuestro sitio Data World el cual tiene una pagina web q
   <li>Wildfly 22.0.0.0 </li>
   <li>Primefaces jar 8.0 Community</li>
   </ol>
-  
+
+#PRUEBAS EN SISTEMAS
+
+ * [Pruebas de Rendimiento](/documentacion/Pruebas del Sistema/PruebasRendimiento_Grupo3.pdf)
+ * [Pruebas de Navegación](/documentacion/Pruebas del Sistema/Prueba de Navegación_Grupo3.pdf )
+ * Pruebas de Interfaz   
+
 # LICENCIA
 
  *  Este proyecto fue desarrollado bajo la licecia MIT. Para mas información sobre la licencia utilizada click [aqui](/LICENSE)
