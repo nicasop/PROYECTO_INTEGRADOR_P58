@@ -24,8 +24,8 @@ Hemos decidido nombrar a nuestro sitio Data World el cual tiene una pagina web q
 
 #PRUEBAS EN SISTEMAS
 
- * [Pruebas de Rendimiento](/Pruebas del Sistema/PruebasRendimiento_Grupo3.pdf)
- * [Pruebas de Navegación](/documentacion/Pruebas del Sistema/Prueba de Navegación_Grupo3.pdf)
+ * [Pruebas de Rendimiento](https://github.com/nicasop/PROYECTO_INTEGRADOR_P58/blob/main/documentacion/Pruebas%20del%20Sistema/PruebasRendimiento_Grupo3.pdf)
+ * [Pruebas de Navegación](https://github.com/nicasop/PROYECTO_INTEGRADOR_P58/blob/main/documentacion/Pruebas%20del%20Sistema/Prueba%20de%20Navegaci%C3%B3n_Grupo3.pdf)
  * Pruebas de Interfaz   
 
 # LICENCIA
