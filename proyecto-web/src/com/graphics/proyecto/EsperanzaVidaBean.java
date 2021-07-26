@@ -63,8 +63,8 @@ public class EsperanzaVidaBean implements Serializable {
 		List<Vector<Object>> valoresFiltro = new Vector<Vector<Object>>();
 		for (int i = 0; i < valores.size(); i += 22) {
 			Vector<Object> dato = new Vector<Object>();
-			dato.add(valores.get(i).getPais().getNombre());
-			dato.add(valores.get(i).getValor());
+			dato.add(valores.get(i).getPais().getNombre());//nombre
+			dato.add(valores.get(i).getValor());//valor de la esperanza de vida
 			valoresFiltro.add(dato);
 		}
 		return valoresFiltro;

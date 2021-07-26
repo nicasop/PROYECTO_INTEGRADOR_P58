@@ -173,6 +173,7 @@ public class AuditoriaBean implements Serializable {
 	}
 
 	public void filtroFechas() {
+		//getYear toma como inicio al año 1900
 		LocalDate auxini = LocalDate.of(ini.getYear()+1900, ini.getMonth()+1, ini.getDate());
 		LocalDate auxfin = LocalDate.of(fin.getYear()+1900, fin.getMonth()+1, fin.getDate());
 		if(auxini.isBefore(auxfin) || auxini.isEqual(auxfin) ) {

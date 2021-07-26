@@ -75,6 +75,7 @@ public class LoginBean implements Serializable {
 		return destino;
 	}
 
+	//Método de verificación de sesion activa.
 	public void verificarSesion() {
 		try {
 			Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
@@ -84,11 +85,11 @@ public class LoginBean implements Serializable {
 			} else {
 				String paginaActual = FacesContext.getCurrentInstance().getViewRoot().getViewId();
 				int tipo = us.getTipo().getCodigo_tipo();
-				if (tipo == 1) {
+				if (tipo == 1) {//administrador
 					if(comprobarPaginaAd(paginaActual)) {
 						FacesContext.getCurrentInstance().getExternalContext().redirect("menuAdmin.jsf");
 					}
-				} else if ( tipo == 2) {
+				} else if ( tipo == 2) {//Operador
 					if(comprobarPaginaOp(paginaActual)) {
 						FacesContext.getCurrentInstance().getExternalContext().redirect("menuOperador.jsf");
 					}

@@ -32,7 +32,7 @@ public class MuertesBean implements Serializable {
 	
 	private IndicadorSocial indicador;
 	private List<Vector<Object>> paisesValores;
-	private BarChartModel mejores,peores;
+	private BarChartModel mejores;
 	
 	public IndicadorSocial getIndicador() {
 		return indicador;
@@ -55,8 +55,8 @@ public class MuertesBean implements Serializable {
 		List<Vector<Object>> valoresFiltro = new Vector<Vector<Object>>();
 		for(int i = 0 ; i < valores.size();i+=22) {
 			Vector<Object> dato = new Vector<Object>();
-			dato.add(valores.get(i).getPais().getNombre());
-			dato.add(valores.get(i).getValor());
+			dato.add(valores.get(i).getPais().getNombre());//nombre del pais
+			dato.add(valores.get(i).getValor());//valor de las muertes por vih sida
 			valoresFiltro.add(dato);
 		}
 		return valoresFiltro;
@@ -68,14 +68,6 @@ public class MuertesBean implements Serializable {
 
 	public void setMejores(BarChartModel mejores) {
 		this.mejores = mejores;
-	}
-
-	public BarChartModel getPeores() {
-		return peores;
-	}
-
-	public void setPeores(BarChartModel peores) {
-		this.peores = peores;
 	}
 
 	private List<Vector<Object>> ordenar(List<Vector<Object>> vector){
@@ -94,28 +86,11 @@ public class MuertesBean implements Serializable {
 		return vectorOrdenado;
 	}
 	
-	private List<Vector<Object>> ordenarM(List<Vector<Object>> vector){
-		Vector<Object> aux;
-		List<Vector<Object>> vectorOrdenado = new Vector<Vector<Object>>();
-		for(int i = 2; i < vector.size(); i++) {
-			for(int j = 0; j < vector.size() - i; j++) {
-				if(Double.parseDouble(vector.get(j).get(1).toString()) > Double.parseDouble(vector.get(j+1).get(1).toString())) {
-					aux = vector.get(j);
-					vector.set(j, vector.get(j+1));
-					vector.set(j+1,aux);
-				}
-			}
-		}
-		vectorOrdenado = vector;
-		return vectorOrdenado;
-	}
-	
 	@PostConstruct
 	public void init() {
 		indicador = indicadorSocialDao.buscar(6);
 		paisesValores = getValores();
 		cargarMejores();
-		cargarPeores();
 	}
 	
 	private void cargarMejores() {
@@ -140,40 +115,6 @@ public class MuertesBean implements Serializable {
 		xAxis.setLabel("Paises");
 		
 		Axis yAxis = mejores.getAxis(AxisType.Y);
-		yAxis.setLabel("Muertes");
-		yAxis.setMin(0);
-		yAxis.setMax(max+100000);
-	}
-	
-	private void cargarPeores() {
-		peores = new BarChartModel();
-		List<Vector<Object>> valorPeores = ordenarM(getValores());
-		
-		ChartSeries datos = new ChartSeries();
-		datos.setLabel("Muertes por VIH/SIDA");
-		double max = 0.0;
-		int cont = 0;
-		for(Vector<Object> valor : valorPeores) {
-			if (Double.parseDouble(valor.get(1).toString()) != 0 ) {
-				datos.set(valor.get(0), Double.parseDouble(valor.get(1).toString()));
-				cont ++;
-			}
-			if (cont == 10) {
-				max = Double.parseDouble(valor.get(1).toString());
-				break;
-			}
-		}
-		
-		peores.addSeries(datos);
-
-		peores.setTitle("Paises con la menor cantidad de muertes por VIH/SIDA");
-		peores.setLegendPosition("e");
-		peores.setStacked(true);
-
-		Axis xAxis = peores.getAxis(AxisType.X);
-		xAxis.setLabel("Paises");
-
-		Axis yAxis = peores.getAxis(AxisType.Y);
 		yAxis.setLabel("Muertes");
 		yAxis.setMin(0);
 		yAxis.setMax(max+100000);

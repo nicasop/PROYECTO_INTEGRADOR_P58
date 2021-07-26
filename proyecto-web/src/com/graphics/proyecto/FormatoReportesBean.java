@@ -25,7 +25,8 @@ public class FormatoReportesBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
+	//formato de los reportes del usuario operador
 	public void preProcessPDF(Object document) throws IOException, DocumentException {
 	    final Document pdf = (Document) document;
 	    pdf.setPageSize(PageSize.A4.rotate());
@@ -44,6 +45,7 @@ public class FormatoReportesBean implements Serializable {
 		pdf.add(fecha);
 	}
 	
+	//formato de los reportes del usuario invitado
 	public void preProcessPDFI(Object document) throws IOException, DocumentException {
 	    final Document pdf = (Document) document;
 	    pdf.setPageSize(PageSize.A4.rotate());

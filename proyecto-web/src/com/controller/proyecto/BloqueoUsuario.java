@@ -134,7 +134,6 @@ public class BloqueoUsuario implements Serializable {
 	}
 	
 	private void modificarUsuarioAuditoria(){
-		System.out.println("si entro");
 		List<Auditoria> datos = auditoria.auditoria();
 		Auditoria aud = datos.get(datos.size()-1);
 		aud.setUsuario(user1.getUsuario());

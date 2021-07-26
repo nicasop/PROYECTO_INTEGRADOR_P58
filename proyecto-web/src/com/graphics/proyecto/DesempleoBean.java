@@ -61,8 +61,8 @@ public class DesempleoBean implements Serializable {
 	
 	@PostConstruct
 	public void init() {
-		indicador = indicadorSocialDao.buscar(15);
-		indicador2 = indicadorSocialDao.buscar(22);
+		indicador = indicadorSocialDao.buscar(15); //fuerza laboral
+		indicador2 = indicadorSocialDao.buscar(22);//porcentaje de desempleo
 		paisesValores = getValores();
 		cargarGrafico();
 	}
@@ -73,8 +73,8 @@ public class DesempleoBean implements Serializable {
 		List<Vector<Object>> valoresFiltro = new Vector<Vector<Object>>();
 		for (int i = 0; i < valores.size(); i += 22) {
 			Vector<Object> dato = new Vector<Object>();
-			dato.add(valores.get(i).getPais().getNombre());
-			dato.add((valores.get(i).getValor()*valores1.get(i).getValor())/100);
+			dato.add(valores.get(i).getPais().getNombre());//nombre del pais
+			dato.add((valores.get(i).getValor()*valores1.get(i).getValor())/100);//regla de tres entre la fuerza laboral y el porcentaje de desempleo
 			valoresFiltro.add(dato);
 		}
 		return valoresFiltro;
@@ -101,7 +101,7 @@ public class DesempleoBean implements Serializable {
 		List<Vector<Object>> valores = ordenar(getValores());
 		
 		ChartSeries datos = new ChartSeries();
-		datos.setLabel("Deuda Externa");
+		datos.setLabel("Desempleados");
 		double max = 0.0;
 		for (int i = 0; i < 10; i++) {
 			datos.set(valores.get(i).get(0), Double.parseDouble(valores.get(i).get(1).toString()));
@@ -119,7 +119,7 @@ public class DesempleoBean implements Serializable {
 		xAxis.setLabel("Paises");
 		
 		Axis yAxis = grafico.getAxis(AxisType.Y);
-		yAxis.setLabel("Número de Desempleador");
+		yAxis.setLabel("Número de Desempleados");
 		yAxis.setMin(0);
 		yAxis.setMax(max+10000000);
 	}

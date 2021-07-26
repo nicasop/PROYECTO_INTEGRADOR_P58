@@ -129,7 +129,7 @@ public class CambiarContraBean implements Serializable {
 			render = false;
 			render1 = true;
 			mensaje = "Este es su código de confirmación\n"+clave;
-			enviar();
+			enviar();//envio del código al correo electronico
 		} else {
 			// mensaje de error
 		}

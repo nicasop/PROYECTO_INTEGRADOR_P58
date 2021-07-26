@@ -42,8 +42,8 @@ public class ReporteInvitado implements Serializable {
 			Vector<Object> datos = new Vector<Object>();
 			for (ValorSocial v : p.getSociales()) {
 				if (v.getIndi().getNombre().equals("Area(sq km)")) {
-					datos.add(p.getNombre());
-					datos.add(v.getValor());
+					datos.add(p.getNombre());//nombre del pais
+					datos.add(v.getValor());//valor del pais
 				}
 				break;
 			}

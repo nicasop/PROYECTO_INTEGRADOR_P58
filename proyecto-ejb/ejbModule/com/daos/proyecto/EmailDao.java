@@ -17,7 +17,7 @@ import javax.mail.internet.MimeMessage;
 @Stateless
 public class EmailDao {
 	
-	@Resource(name = "java:jboss/mail/gmail")
+	@Resource(name = "java:jboss/mail/gmail")//recurso con la información del correo electrónico
 	private Session sesion;
 	
 	public void send(String destino,String asunto,String cuerpo) {
