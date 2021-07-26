@@ -43,7 +43,7 @@
 			<br />
 
 			<h:form>
-				<p:growl id="growl" showDetail="true" sticky="true" />
+				<p:growl id="growl" showDetail="true" rendered="#{not facesContext.validationFailed}"/>
 				<h:panelGrid columns="3" rendered="#{auditoria.us}">
 					<p:outputLabel for="tfilu" styleClass="p-d-block">Usuarios:</p:outputLabel>
 					<p:selectOneMenu id="tfilu" value="#{auditoria.usuario}"
