@@ -86,12 +86,10 @@ public class LoginBean implements Serializable {
 				int tipo = us.getTipo().getCodigo_tipo();
 				if (tipo == 1) {
 					if(comprobarPaginaAd(paginaActual)) {
-						System.out.println("esta pagina es prohibida");
 						FacesContext.getCurrentInstance().getExternalContext().redirect("menuAdmin.jsf");
 					}
 				} else if ( tipo == 2) {
 					if(comprobarPaginaOp(paginaActual)) {
-						System.out.println("esta pagina es prohibida");
 						FacesContext.getCurrentInstance().getExternalContext().redirect("menuOperador.jsf");
 					}
 				}
@@ -103,8 +101,7 @@ public class LoginBean implements Serializable {
 	
 	public void verificarSesionLo() {
 		try {
-			Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
-					.get("usuario");
+			Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
 			if (us != null) {
 				if (us.getTipo().getCodigo_tipo() == 1) {
 					FacesContext.getCurrentInstance().getExternalContext().redirect("menuAdmin.jsf");

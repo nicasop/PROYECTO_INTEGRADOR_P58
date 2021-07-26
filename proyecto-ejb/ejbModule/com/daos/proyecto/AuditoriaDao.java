@@ -5,10 +5,10 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import com.entities.proyecto.Auditoria;
-import com.entities.proyecto.Usuario;
 
 @Stateless
 public class AuditoriaDao {
@@ -23,5 +23,16 @@ public class AuditoriaDao {
 	public List<Auditoria> auditoria(){
 		TypedQuery<Auditoria> consulta = em.createNamedQuery("Auditoria.todos", Auditoria.class);
 		return consulta.getResultList();
+	}
+	
+	public List<String> usuarios(){
+		List<String> resul = null;
+		try {
+			Query query = em.createQuery("SELECT a.usuario from Auditoria a group by a.usuario");
+			resul = query.getResultList();
+		} catch(Exception e) {
+			throw e;
+		}
+		return resul;
 	}
 }

@@ -52,6 +52,22 @@ public class UsuarioDao {
 		return usuario;
 	}
 	
+	public boolean verificarNombreUser(String user) {
+		String consulta;
+		boolean resultado = true;
+		try {
+			consulta = "SELECT u FROM Usuario u WHERE u.usuario = ?1";
+			Query query = em.createQuery(consulta);
+			query.setParameter(1, user);
+			List<Usuario> lista = query.getResultList();
+			resultado = lista.isEmpty();
+			
+		} catch(Exception e) {
+			throw e;
+		}
+		return resultado;
+	}
+	
 	public List<Usuario>getUsuarios(){
 		TypedQuery<Usuario> consulta = em.createNamedQuery("Usuario.todos", Usuario.class);
 		return consulta.getResultList();

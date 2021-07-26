@@ -49,9 +49,9 @@
 					<p:selectOneMenu id="tfilu" value="#{auditoria.usuario}"
 						effect="fold" editable="false" required="true"
 						style="background-color:white;">
-						<f:selectItem itemLabel="Elegir Uno" itemValue="" />
-						<f:selectItem itemLabel="postgres" itemValue="postgres" />
-						<f:selectItem itemLabel="nicasop" itemValue="nicasop" />
+						<f:selectItem itemLabel="Elegir Uno" itemValue="#{null}" />
+						<f:selectItems value="#{auditoria.usuarios}" var="user"
+							itemValue="#{user}" itemLabel="#{user}" />
 					</p:selectOneMenu>
 
 					<h:commandButton action="#{auditoria.filtroUsuarios}"

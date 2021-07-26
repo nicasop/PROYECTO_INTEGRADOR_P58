@@ -32,6 +32,7 @@ public class AuditoriaBean implements Serializable {
 
 	private boolean us, fe, ac, tb1;
 	private List<Auditoria> informacion;
+	private List<String> usuarios;
 	private int opcion;
 	private String usuario, accion;
 	private Date ini, fin;
@@ -76,6 +77,14 @@ public class AuditoriaBean implements Serializable {
 		this.informacion = informacion;
 	}
 
+	public List<String> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<String> usuarios) {
+		this.usuarios = usuarios;
+	}
+
 	public int getOpcion() {
 		return opcion;
 	}
@@ -118,6 +127,7 @@ public class AuditoriaBean implements Serializable {
 
 	@PostConstruct
 	public void init() {
+		usuarios = auditoriaDao.usuarios();
 		us = false;
 		ac = false;
 		fe = false;
@@ -202,5 +212,5 @@ public class AuditoriaBean implements Serializable {
 		tb1 = true;
 		informacion = resultado;
 	}
-
+	
 }

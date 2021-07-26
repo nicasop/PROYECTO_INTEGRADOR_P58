@@ -34,7 +34,6 @@ public class MuertesBean implements Serializable {
 	private List<Vector<Object>> paisesValores;
 	private BarChartModel mejores,peores;
 	
-	
 	public IndicadorSocial getIndicador() {
 		return indicador;
 	}

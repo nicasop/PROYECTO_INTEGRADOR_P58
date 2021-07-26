@@ -24,7 +24,7 @@
 		<div align="center">
 			<h:form>
 				<h:panelGrid columns="3">
-					
+
 					<p:selectOneMenu id="trepo" value="#{bloqueo.user}" effect="fold"
 						editable="false" required="true" converter="converter"
 						style="background-color: white;color: black;"
@@ -33,16 +33,18 @@
 						<f:selectItems value="#{bloqueo.usuarios}" var="user"
 							itemValue="#{user}" itemLabel="#{user.usuario}" />
 					</p:selectOneMenu>
-					
+
 					<h:message for="trepo" styleClass="aler" />
 					<h:commandButton action="#{bloqueo.render}" value="Consultar"
-						styleClass="boton"/>
+						styleClass="boton" />
 
 				</h:panelGrid>
 			</h:form>
 			<hr />
 			<h:form>
-				<p:growl id="growl" showDetail="true" sticky="true" />
+				<!-- <p:growl id="growl" showDetail="true" sticky="true" /> -->
+				<p:growl id="growl" showDetail="true"
+					rendered="#{not facesContext.validationFailed}" />
 				<h:panelGrid columns="1">
 					<div class="p-field">
 						<h:panelGrid columns="1" styleClass="fondo"
@@ -51,11 +53,10 @@
 							<div align="center">
 								<h:commandButton action="#{bloqueo.bloquear}" value="Bloquear"
 									styleClass="boton" rendered="#{bloqueo.bloqueo}" />
+								<h:commandButton action="#{bloqueo.desbloquear}"
+									value="Desbloquear" styleClass="boton"
+									rendered="#{bloqueo.desbloqueo}" />
 							</div>
-							<p:commandButton action="#{bloqueo.desbloquear}"
-								value="Desbloquear" styleClass="boton"
-								rendered="#{bloqueo.desbloqueo}" update="@form"/>
-
 						</h:panelGrid>
 					</div>
 				</h:panelGrid>

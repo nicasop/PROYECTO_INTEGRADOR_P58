@@ -103,7 +103,7 @@
 					<h:outputText value="#{user.correo}" />
 				</p:column>
 				<p:column headerText="Fecha de Nacimiento">
-					<h:outputText value="#{user.fechaNa}" />
+					<h:outputText value="#{consulta.formatoFecha(user.fechaNa)}" />
 				</p:column>
 				<p:column headerText="Genero">
 					<h:outputText value="#{user.genero}" />
@@ -122,7 +122,7 @@
 					<h:outputText value="#{user.correo}" />
 				</p:column>
 				<p:column headerText="Fecha de Nacimiento">
-					<h:outputText value="#{user.fechaNa}" />
+					<h:outputText value="#{consulta.formatoFecha(user.fechaNa)}" />
 				</p:column>
 				<p:column headerText="Rol">
 					<h:outputText value="#{user.tipo.tipo}" />
@@ -140,13 +140,12 @@
 					<h:outputText value="#{user.correo}" />
 				</p:column>
 				<p:column headerText="Fecha de Nacimiento">
-					<h:outputText value="#{user.fechaNa}" />
+					<h:outputText value="#{consulta.formatoFecha(user.fechaNa)}" />
 				</p:column>
 				<p:column headerText="Estado">
 					<h:outputText value="#{user.estado}" />
 				</p:column>
 			</p:dataTable>
-
 		</div>
 
 		<h:form>

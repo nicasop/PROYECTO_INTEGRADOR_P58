@@ -1,7 +1,9 @@
 package com.controller.proyecto;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -171,6 +173,10 @@ public class ConsultarUsuario implements Serializable {
 		tb2 = false;
 		tb3 = true;
 		usuarios = resultado;
+	}
+	
+	public LocalDate formatoFecha(Date fecha) {
+		return LocalDate.of(fecha.getYear()+1900, fecha.getMonth()+1, fecha.getDate());
 	}
 	
 }

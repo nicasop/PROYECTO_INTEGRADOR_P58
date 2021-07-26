@@ -18,7 +18,6 @@ import com.entities.proyecto.Auditoria;
 import com.entities.proyecto.TipoUsuario;
 import com.entities.proyecto.Usuario;
 
-
 @Named("usuario")
 @SessionScoped
 public class GestionUsuarioBean implements Serializable {
@@ -27,24 +26,24 @@ public class GestionUsuarioBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@EJB
 	private UsuarioDao usuarioDao;
-	
+
 	@EJB
 	private TipoUsuarioDao tipoUsDao;
-	
+
 	@EJB
 	private AuditoriaDao auditoria;
-	
-	private String usuario,nombre,correo,contra,contra1,genero,mensaje;
+
+	private String usuario, nombre, correo, contra, contra1, genero, mensaje;
 	private TipoUsuario tipo;
 	private Date fechaN;
-	private Usuario us,user;
+	private Usuario us, user;
 	private List<TipoUsuario> tipos;
 	private List<Usuario> usuarios;
 	private boolean render;
-	
+
 	public String getUsuario() {
 		return usuario;
 	}
@@ -76,7 +75,7 @@ public class GestionUsuarioBean implements Serializable {
 	public void setContra(String contra) {
 		this.contra = contra;
 	}
-	
+
 	public String getContra1() {
 		return contra1;
 	}
@@ -116,7 +115,7 @@ public class GestionUsuarioBean implements Serializable {
 	public void setTipos(List<TipoUsuario> tipos) {
 		this.tipos = tipos;
 	}
-	
+
 	public List<Usuario> getUsuarios() {
 		return usuarios;
 	}
@@ -132,7 +131,7 @@ public class GestionUsuarioBean implements Serializable {
 	public void setUs(Usuario us) {
 		this.us = us;
 	}
-	
+
 	public Usuario getUser() {
 		return user;
 	}
@@ -148,7 +147,7 @@ public class GestionUsuarioBean implements Serializable {
 	public void setRender(boolean render) {
 		this.render = render;
 	}
-	
+
 	public String getMensaje() {
 		return mensaje;
 	}
@@ -169,56 +168,61 @@ public class GestionUsuarioBean implements Serializable {
 		contra = null;
 		genero = null;
 		render = false;
-		us = (Usuario)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+		us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
 	}
-	
+
 	public void mostrar() {
 		render = true;
-		mensaje = "Esta seguro que desea eliminar al usuario "+ user.getUsuario() +"?";
+		mensaje = "Esta seguro que desea eliminar al usuario " + user.getUsuario() + "?";
 	}
-	
-	public String registrar () {
-		
+
+	public String registrar() {
+
 		String respuesta = null;
-		if (contra.equals(contra1)) {
-			Usuario us = new Usuario();
-			us.setUsuario(usuario);
-			us.setNombreUsuario(nombre);
-			us.setTipo(tipo);
-			us.setCorreo(correo);
-			us.setFechaNa(fechaN);
-			us.setGenero(genero);
-			us.setContra(contra);
-			us.setEstado(1);
-			usuarioDao.crear(us);
-			init();
-			respuesta = "registrado";
-			modificarUsuarioAuditoria();
+		if (usuarioDao.verificarNombreUser(usuario)) {
+			if (contra.equals(contra1)) {
+				Usuario us = new Usuario();
+				us.setUsuario(usuario);
+				us.setNombreUsuario(nombre);
+				us.setTipo(tipo);
+				us.setCorreo(correo);
+				us.setFechaNa(fechaN);
+				us.setGenero(genero);
+				us.setContra(contra);
+				us.setEstado(1);
+				usuarioDao.crear(us);
+				init();
+				respuesta = "registrado";
+				modificarUsuarioAuditoria();
+			} else {
+				// mensaje de contraseña erronea
+			}
+		}else {
+			usuario = null;
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "Error", "El nombre de usuario ya existe"));
 		}
-		else {
-			//mensaje de contraseña erronea
-		}
-		
+
 		return respuesta;
 	}
-	
+
 	public void actualizar() {
 		usuarioDao.actulizar(us);
 		modificarUsuarioAuditoria();
 		FacesContext.getCurrentInstance().addMessage(null,
 				new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Usuario Actualizado"));
 	}
-	
+
 	public void eliminar() {
 		usuarioDao.borrar(user.getIdentificador());
 		user = null;
 		render = false;
 		modificarUsuarioAuditoria();
 	}
-	
-	private void modificarUsuarioAuditoria(){
+
+	private void modificarUsuarioAuditoria() {
 		List<Auditoria> datos = auditoria.auditoria();
-		Auditoria aud = datos.get(datos.size()-1);
+		Auditoria aud = datos.get(datos.size() - 1);
 		aud.setUsuario(us.getUsuario());
 		auditoria.actulizar(aud);
 	}
