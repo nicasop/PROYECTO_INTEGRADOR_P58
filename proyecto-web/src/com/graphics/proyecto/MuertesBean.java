@@ -30,6 +30,7 @@ public class MuertesBean implements Serializable {
 	@EJB
 	private  IndicadorSocialDao indicadorSocialDao;
 	
+
 	private IndicadorSocial indicador;
 	private List<Vector<Object>> paisesValores;
 	private BarChartModel mejores;

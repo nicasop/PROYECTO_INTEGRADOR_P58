@@ -45,6 +45,9 @@ public class FormatoReportesBean implements Serializable {
 		pdf.add(fecha);
 	}
 	
+	
+	
+	
 	//formato de los reportes del usuario invitado
 	public void preProcessPDFI(Object document) throws IOException, DocumentException {
 	    final Document pdf = (Document) document;
@@ -54,7 +57,7 @@ public class FormatoReportesBean implements Serializable {
 	    FacesContext.getCurrentInstance().getExternalContext().getContext();
 	    String logo = servletContext.getRealPath("/")+"/resources/images/logodoc.png";
 	    pdf.add(Image.getInstance(logo));
-		Phrase titulo = new Phrase("EXTENSIÓN TERRITORIAL\n");
+		Phrase titulo = new Phrase("EXTENSIï¿½N TERRITORIAL\n");
 		pdf.add(titulo);
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 		Phrase fecha = new Phrase(dtf.format(LocalDateTime.now()));

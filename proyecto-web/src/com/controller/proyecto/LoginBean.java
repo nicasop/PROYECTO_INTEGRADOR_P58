@@ -30,7 +30,7 @@ public class LoginBean implements Serializable {
 
 	private String[] pagProAd = {"/menuOperador.xhtml","/cambPswOpe.xhtml","/menuRepo.xhtml","/repoOpe.xhtml","/reporte1.xhtml","/reporte2.xhtml",
 			"/reporte3.xhtml","/reporte4.xhtml"};
-	private String[] pagProOp = {"/menuAdmin.xhtml","/editarPsw.xhtml","/auditoria.xhtml","/menuUusario.xhtml","/editUsuario.xhtml","/registro.xhtml",
+	private String[] pagProOp = {"/menuAdmin.xhtml","/editarPsw.xhtml","/auditoria.xhtml","/menuUsuario.xhtml","/editUsuario.xhtml","/registro.xhtml",
 			"/bloUsuario.xhtml","/consUsuario.xhtml","/eliUser.xhtml"};
 
 	public Usuario getUsuario() {
@@ -75,7 +75,7 @@ public class LoginBean implements Serializable {
 		return destino;
 	}
 
-	//Método de verificación de sesion activa.
+	//Mï¿½todo de verificaciï¿½n de sesion activa.
 	public void verificarSesion() {
 		try {
 			Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()

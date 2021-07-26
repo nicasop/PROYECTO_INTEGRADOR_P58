@@ -23,21 +23,24 @@
 
 		<br /> <br />
 		<div align="center">
-		
+
 			<h:form>
 				<div align="right">
-					<p:commandButton ajax="false" value="pdf" >
-						<p:dataExporter type="pdf" target="reporte" fileName="Muertes" preProcessor="#{formato.preProcessPDF}" />
+					<p:commandButton ajax="false" value="PDF" styleClass="botonpdf">
+						<p:dataExporter type="pdf" target="reporte" fileName="Muertes"
+							preProcessor="#{formato.preProcessPDF}" />
 					</p:commandButton>
-					<p:commandButton ajax="false" value="excel" >
+					<p:commandButton ajax="false" value="EXCEL" styleClass="botonexel">
 						<p:dataExporter type="xls" target="reporte" fileName="Muertes" />
 					</p:commandButton>
-					<p:commandButton ajax="false" value="xml" >
+					<p:commandButton ajax="false" value="XML" styleClass="botonxls">
 						<p:dataExporter type="xml" target="reporte" fileName="Muertes" />
 					</p:commandButton>
+
 				</div>
+				<br />
 			</h:form>
-			
+
 			<p:dataTable id="reporte" style="width:80%;" var="valor"
 				value="#{muerte.paisesValores}" rows="10" paginator="true"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
@@ -52,11 +55,11 @@
 			</p:dataTable>
 			<br />
 			<p:chart type="bar" model="#{muerte.mejores}" style="height:600px;" />
-			<!-- 			<br/>
-			<p:chart type="bar" model="#{muerte.peores}" style="height:600px;" /> -->
+
+
 		</div>
 		<h:form>
-			<p:stack icon="resources/images/canasta2.png" expanded="true">
+			<p:stack icon="resources/images/canasta2.png" expanded="false">
 
 				<p:menuitem value="Reportes" icon="resources/images/repo.png"
 					outcome="menuRepo" />

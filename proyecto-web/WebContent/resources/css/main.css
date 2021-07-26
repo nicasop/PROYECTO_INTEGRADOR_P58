@@ -371,4 +371,50 @@ table tbody .ui-widget-content {
 	color: black;
 }
 
+.botonpdf {
+	text-decoration: none;
+	padding: 10px;
+	font-weight: 600;
+	font-size: 20px;
+	color: #ff0000;
+	background-color: #ffff80;
+	border-radius: 50px;
+	border: 2px solid #ffff80;
+}
 
+.botonpdf:hover {
+	color: #ffffff;
+	background-color: #ff8040;
+}
+
+.botonexel {
+	text-decoration: none;
+	padding: 10px;
+	font-weight: 600;
+	font-size: 20px;
+	color: #008000;
+	background-color: #80ff00;
+	border-radius: 50px;
+	border: 2px solid #80ff00;
+}
+
+.botonexel:hover {
+	color: #ffffff;
+	background-color: #80ff80;
+}
+
+.botonxls {
+	text-decoration: none;
+	padding: 10px;
+	font-weight: 60;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: #0080ff;
+	border-radius: 50px;
+	border: 2px solid #80ffff;
+}
+
+.botonxls:hover {
+	color: #400000;
+	background-color: #80ffff;
+}

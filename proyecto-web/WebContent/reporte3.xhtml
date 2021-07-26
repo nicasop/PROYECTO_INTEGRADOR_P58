@@ -25,13 +25,13 @@
 		<div align="center">
 			<h:form>
 				<div align="right">
-					<p:commandButton ajax="false" value="pdf" >
+					<p:commandButton ajax="false" value="PDF" styleClass="botonpdf" >
 						<p:dataExporter type="pdf" target="reporte" fileName="DeudaExterna" preProcessor="#{formato.preProcessPDF}"/>
 					</p:commandButton>
-					<p:commandButton ajax="false" value="excel" >
+					<p:commandButton ajax="false" value="EXCEL" styleClass="botonexel" >
 						<p:dataExporter type="xls" target="reporte" fileName="DeudaExterna" />
 					</p:commandButton>
-					<p:commandButton ajax="false" value="xml" >
+					<p:commandButton ajax="false" value="XML" styleClass="botonxls" >
 						<p:dataExporter type="xml" target="reporte" fileName="DeudaExterna" />
 					</p:commandButton>
 				</div>
@@ -51,7 +51,7 @@
 			<!-- <p:graphicImage name="images/world.png" styleClass="reporte" /> -->
 		</div>
 		<h:form>
-			<p:stack icon="resources/images/canasta2.png" expanded="true">
+			<p:stack icon="resources/images/canasta2.png" expanded="false">
 
 				<p:menuitem value="Reportes" icon="resources/images/repo.png"
 					outcome="menuRepo" />
