@@ -1,0 +1,23 @@
+id_indicador_economico;nombre_indicador
+1;Current account balance
+2;Debt - external
+3;Electricity - consumption(kWh)
+4;Electricity - production(kWh)
+5;GDP
+6;GDP - per capita
+7;GDP - real growth rate(%)
+8;Investment (gross fixed)(% of GDP)
+9;Military expenditures - dollar figure
+10;Military expenditures - percent of GDP(%)
+11;Natural gas - consumption(cu m)
+12;Natural gas - exports(cu m)
+13;Natural gas - imports(cu m)
+14;Natural gas - production(cu m)
+15;Natural gas - proved reserves(cu m)
+16;Oil - consumption(bbl/day)
+17;Oil - exports(bbl/day)
+18;Oil - imports(bbl/day)
+19;Oil - production(bbl/day)
+20;Oil - proved reserves(bbl)
+21;Public debt(% of GDP)
+22;Reserves of foreign exchange & gold

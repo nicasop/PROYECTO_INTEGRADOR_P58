@@ -1,0 +1,1155 @@
+0    [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ArchitectUtils  - Log4J configured successfully
+765  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+1206 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+1206 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+1306 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+11916 [Thread-5] ERROR ca.sqlpower.architect.swingui.action.CheckForUpdateAction  - Fail to retrieve current version number!
+0    [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ArchitectUtils  - Log4J configured successfully
+959  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+1072 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+1073 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+1171 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+4040 [Thread-5] ERROR ca.sqlpower.architect.swingui.action.CheckForUpdateAction  - Fail to retrieve current version number!
+0    [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ArchitectUtils  - Log4J configured successfully
+714  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+830  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+831  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+923  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+3774 [Thread-5] ERROR ca.sqlpower.architect.swingui.action.CheckForUpdateAction  - Fail to retrieve current version number!
+0    [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ArchitectUtils  - Log4J configured successfully
+3580 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+3697 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+3697 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+3792 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+8750 [Thread-5] ERROR ca.sqlpower.architect.swingui.action.CheckForUpdateAction  - Fail to retrieve current version number!
+13352441 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+13356586 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.Indicadores_Economicos (
+                id_indicador_economico INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_economicos_pk PRIMARY KEY (id_indicador_economico)
+)
+13356586 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales (
+                id_indicador_social INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_sociales_pk PRIMARY KEY (id_indicador_social)
+)
+13356587 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tiempo_Conexion (
+                usuario VARCHAR(20) NOT NULL,
+                inicio_sesion DATE NOT NULL,
+                fin_sesion DATE
+)
+13356587 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tipo_Usuario (
+                id_tipo INTEGER NOT NULL,
+                nombre_tipo VARCHAR(20) NOT NULL,
+                CONSTRAINT tipo_usuario_pk PRIMARY KEY (id_tipo)
+)
+13356588 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Acciones_Usuario (
+                usuario VARCHAR(20) NOT NULL,
+                fecha DATE NOT NULL,
+                actividad VARCHAR(100) NOT NULL,
+                sentencia_ejecutada VARCHAR(1000) NOT NULL,
+                tabla_afectada VARCHAR(50) NOT NULL
+)
+13356588 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Pais (
+                id_pais INTEGER NOT NULL,
+                nombre_pais VARCHAR(50) NOT NULL,
+                CONSTRAINT pais_pk PRIMARY KEY (id_pais)
+)
+13356589 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Usuario (
+                usuario VARCHAR(20) NOT NULL,
+                nombre VARCHAR(100) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                fecha_nacimiento DATE NOT NULL,
+                genero VARCHAR(10) NOT NULL,
+                contrasena VARCHAR(12) NOT NULL,
+                id_tipo INTEGER NOT NULL,
+                activo INTEGER NOT NULL,
+                CONSTRAINT usuario_pk PRIMARY KEY (usuario)
+)
+13356589 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales_Valores (
+                valor_indicador_s DOUBLE PRECISION NOT NULL,
+                id_pais INTEGER NOT NULL,
+                id_indicador_social INTEGER NOT NULL
+)
+13356590 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Economicos_Valores (
+                valor_indicador_e DOUBLE PRECISION NOT NULL,
+                id_pais INTEGER NOT NULL,
+                id_indicador_economico INTEGER NOT NULL
+)
+13356592 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT incadores_ec_indcadores_economicos_fk
+FOREIGN KEY (id_indicador_economico)
+REFERENCES public.Indicadores_Economicos (id_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13356592 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT indicadores_so_indicadores_sociales_fk
+FOREIGN KEY (id_indicador_social)
+REFERENCES public.Indicadores_Sociales (id_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13356593 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Usuario ADD CONSTRAINT tipo_usuario_usuario_fk
+FOREIGN KEY (id_tipo)
+REFERENCES public.Tipo_Usuario (id_tipo)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13356594 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT pais_indicadores_sociales_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13356595 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT pais_indcadores_economicos_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13356669 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :14
+13358095 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+13774048 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.PlayPen  - Drop: I am over dtde=java.awt.dnd.DropTargetDropEvent[source=java.awt.dnd.DropTarget@50f410bf]
+13847783 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+13850368 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.Indicadores_Economicos (
+                id_indicador_economico INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_economicos_pk PRIMARY KEY (id_indicador_economico)
+)
+13850384 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales (
+                id_indicador_social INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_sociales_pk PRIMARY KEY (id_indicador_social)
+)
+13850385 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tiempo_Conexion (
+                usuario VARCHAR(20) NOT NULL,
+                inicio_sesion DATE NOT NULL,
+                fin_sesion DATE
+)
+13850386 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tipo_Usuario (
+                id_tipo INTEGER NOT NULL,
+                nombre_tipo VARCHAR(20) NOT NULL,
+                CONSTRAINT tipo_usuario_pk PRIMARY KEY (id_tipo)
+)
+13850388 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Acciones_Usuario (
+                usuario VARCHAR(20) NOT NULL,
+                fecha DATE NOT NULL,
+                actividad VARCHAR(100) NOT NULL,
+                sentencia_ejecutada VARCHAR(1000) NOT NULL,
+                tabla_afectada VARCHAR(50) NOT NULL
+)
+13850389 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Pais (
+                id_pais INTEGER NOT NULL,
+                nombre_pais VARCHAR(50) NOT NULL,
+                CONSTRAINT pais_pk PRIMARY KEY (id_pais)
+)
+13850390 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Usuario (
+                id_usuario INTEGER NOT NULL,
+                usuario VARCHAR(20) NOT NULL,
+                nombre VARCHAR(100) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                fecha_nacimiento DATE NOT NULL,
+                genero VARCHAR(10) NOT NULL,
+                contrasena VARCHAR(12) NOT NULL,
+                id_tipo INTEGER NOT NULL,
+                activo INTEGER NOT NULL,
+                CONSTRAINT usuario_pk PRIMARY KEY (id_usuario)
+)
+13850391 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales_Valores (
+                valor_indicador_s DOUBLE PRECISION NOT NULL,
+                id_pais INTEGER NOT NULL,
+                id_indicador_social INTEGER NOT NULL
+)
+13850392 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Economicos_Valores (
+                valor_indicador_e DOUBLE PRECISION NOT NULL,
+                id_pais INTEGER NOT NULL,
+                id_indicador_economico INTEGER NOT NULL
+)
+13850393 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT incadores_ec_indcadores_economicos_fk
+FOREIGN KEY (id_indicador_economico)
+REFERENCES public.Indicadores_Economicos (id_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13850394 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT indicadores_so_indicadores_sociales_fk
+FOREIGN KEY (id_indicador_social)
+REFERENCES public.Indicadores_Sociales (id_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13850394 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Usuario ADD CONSTRAINT tipo_usuario_usuario_fk
+FOREIGN KEY (id_tipo)
+REFERENCES public.Tipo_Usuario (id_tipo)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13850395 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT pais_indicadores_sociales_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13850395 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT pais_indcadores_economicos_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+13850397 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :14
+13851339 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+0    [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ArchitectUtils  - Log4J configured successfully
+0    [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ArchitectUtils  - Log4J configured successfully
+1841 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+1981 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+1982 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+2108 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+1371 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+1554 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+1555 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+1676 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+5465 [Thread-5] ERROR ca.sqlpower.architect.swingui.action.CheckForUpdateAction  - Fail to retrieve current version number!
+4926 [Thread-5] ERROR ca.sqlpower.architect.swingui.action.CheckForUpdateAction  - Fail to retrieve current version number!
+258694 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+262719 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.DIM_INDICADOR_ECONOMICO (
+                sk_indicador_economico INTEGER NOT NULL,
+                pk_indicador_economico INTEGER NOT NULL,
+                indicador VARCHAR(50) NOT NULL,
+                valido_desde DATE NOT NULL,
+                vaido_hasta DATE NOT NULL,
+                version INTEGER NOT NULL,
+                CONSTRAINT dim_indicador_economico_pk PRIMARY KEY (sk_indicador_economico)
+)
+262719 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.DIM_INDICADOR_SOCIAL (
+                sk_indicador_social INTEGER NOT NULL,
+                pk_indicador_social INTEGER NOT NULL,
+                indicador VARCHAR(50) NOT NULL,
+                valido_desde DATE NOT NULL,
+                vaido_hasta DATE NOT NULL,
+                version INTEGER NOT NULL,
+                CONSTRAINT dim_indicador_social_pk PRIMARY KEY (sk_indicador_social)
+)
+262720 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.DIM_PAIS (
+                sk_pais INTEGER NOT NULL,
+                pk_pais INTEGER NOT NULL,
+                pais VARCHAR(50) NOT NULL,
+                valido_desde DATE NOT NULL,
+                vaido_hasta DATE NOT NULL,
+                version INTEGER NOT NULL,
+                CONSTRAINT dim_pais_pk PRIMARY KEY (sk_pais)
+)
+262721 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.FACT_PAISES (
+                sk_pais INTEGER NOT NULL,
+                sk_indicador_social INTEGER NOT NULL,
+                sk_indicador_economico INTEGER NOT NULL,
+                valor_indicador_economico DOUBLE PRECISION NOT NULL,
+                valor_indicador_social DOUBLE PRECISION NOT NULL,
+                CONSTRAINT fact_paises_pk PRIMARY KEY (sk_pais, sk_indicador_social, sk_indicador_economico)
+)
+262731 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.FACT_PAISES ADD CONSTRAINT dim_indicador_economico_fact_paises_fk
+FOREIGN KEY (sk_indicador_economico)
+REFERENCES public.DIM_INDICADOR_ECONOMICO (sk_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+262737 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.FACT_PAISES ADD CONSTRAINT dim_indicador_social_fact_paises_fk
+FOREIGN KEY (sk_indicador_social)
+REFERENCES public.DIM_INDICADOR_SOCIAL (sk_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+262743 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.FACT_PAISES ADD CONSTRAINT dim_pais_fact_paises_fk
+FOREIGN KEY (sk_pais)
+REFERENCES public.DIM_PAIS (sk_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+262790 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :7
+263982 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+292167 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+1197631 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.DBTree  - DBTree: exporting list of DnD-type tree paths
+1201823 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.PlayPen  - Drop: I am over dtde=java.awt.dnd.DropTargetDropEvent[source=java.awt.dnd.DropTarget@2de78bd4]
+1211112 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.PlayPen  - Drop: I am over dtde=java.awt.dnd.DropTargetDropEvent[source=java.awt.dnd.DropTarget@2de78bd4]
+1215913 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+1218464 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.DIM_INDICADOR_ECONOMICO (
+                sk_indicador_economico INTEGER NOT NULL,
+                pk_indicador_economico INTEGER NOT NULL,
+                indicador VARCHAR(50) NOT NULL,
+                valido_desde DATE NOT NULL,
+                valido_hasta DATE NOT NULL,
+                version INTEGER NOT NULL,
+                CONSTRAINT dim_indicador_economico_pk PRIMARY KEY (sk_indicador_economico)
+)
+1218465 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.DIM_INDICADOR_SOCIAL (
+                sk_indicador_social INTEGER NOT NULL,
+                pk_indicador_social INTEGER NOT NULL,
+                indicador VARCHAR(50) NOT NULL,
+                valido_desde DATE NOT NULL,
+                valido_hasta DATE NOT NULL,
+                version INTEGER NOT NULL,
+                CONSTRAINT dim_indicador_social_pk PRIMARY KEY (sk_indicador_social)
+)
+1218466 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.DIM_PAIS (
+                sk_pais INTEGER NOT NULL,
+                pk_pais INTEGER NOT NULL,
+                pais VARCHAR(50) NOT NULL,
+                valido_desde DATE NOT NULL,
+                valido_hasta DATE NOT NULL,
+                version INTEGER NOT NULL,
+                CONSTRAINT dim_pais_pk PRIMARY KEY (sk_pais)
+)
+1218467 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.FACT_PAISES (
+                sk_pais INTEGER NOT NULL,
+                sk_indicador_social INTEGER NOT NULL,
+                sk_indicador_economico INTEGER NOT NULL,
+                valor_indicador_economico DOUBLE PRECISION NOT NULL,
+                valor_indicador_social DOUBLE PRECISION NOT NULL,
+                CONSTRAINT fact_paises_pk PRIMARY KEY (sk_pais, sk_indicador_social, sk_indicador_economico)
+)
+1218467 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.FACT_PAISES ADD CONSTRAINT dim_indicador_economico_fact_paises_fk
+FOREIGN KEY (sk_indicador_economico)
+REFERENCES public.DIM_INDICADOR_ECONOMICO (sk_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1218468 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.FACT_PAISES ADD CONSTRAINT dim_indicador_social_fact_paises_fk
+FOREIGN KEY (sk_indicador_social)
+REFERENCES public.DIM_INDICADOR_SOCIAL (sk_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1218469 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.FACT_PAISES ADD CONSTRAINT dim_pais_fact_paises_fk
+FOREIGN KEY (sk_pais)
+REFERENCES public.DIM_PAIS (sk_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1218470 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :7
+1219653 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+0    [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ArchitectUtils  - Log4J configured successfully
+833  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+941  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+941  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+1026 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+4847 [Thread-5] ERROR ca.sqlpower.architect.swingui.action.CheckForUpdateAction  - Fail to retrieve current version number!
+137074 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+140685 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.Indicadores_Economicos (
+                id_indicador_economico INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_economicos_pk PRIMARY KEY (id_indicador_economico)
+)
+140686 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales (
+                id_indicador_social INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_sociales_pk PRIMARY KEY (id_indicador_social)
+)
+140686 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tipo_Usuario (
+                id_tipo INTEGER NOT NULL,
+                nombre_tipo VARCHAR(20) NOT NULL,
+                CONSTRAINT tipo_usuario_pk PRIMARY KEY (id_tipo)
+)
+140687 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Pais (
+                id_pais INTEGER NOT NULL,
+                nombre_pais VARCHAR(50) NOT NULL,
+                CONSTRAINT pais_pk PRIMARY KEY (id_pais)
+)
+140688 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Usuario (
+                id_usuario INTEGER NOT NULL,
+                usuario VARCHAR(20) NOT NULL,
+                nombre VARCHAR(100) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                fecha_nacimiento DATE NOT NULL,
+                genero VARCHAR(10) NOT NULL,
+                contrasena VARCHAR(12) NOT NULL,
+                id_tipo INTEGER NOT NULL,
+                activo INTEGER NOT NULL,
+                CONSTRAINT usuario_pk PRIMARY KEY (id_usuario)
+)
+140689 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales_Valores (
+                valor_indicador DOUBLE PRECISION NOT NULL,
+                id_pais INTEGER NOT NULL,
+                id_indicador_social INTEGER NOT NULL
+)
+140690 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Economicos_Valores (
+                valor_indicador DOUBLE PRECISION NOT NULL,
+                id_pais INTEGER NOT NULL,
+                id_indicador_economico INTEGER NOT NULL
+)
+140694 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT incadores_ec_indcadores_economicos_fk
+FOREIGN KEY (id_indicador_economico)
+REFERENCES public.Indicadores_Economicos (id_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+140696 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT indicadores_so_indicadores_sociales_fk
+FOREIGN KEY (id_indicador_social)
+REFERENCES public.Indicadores_Sociales (id_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+140701 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Usuario ADD CONSTRAINT tipo_usuario_usuario_fk
+FOREIGN KEY (id_tipo)
+REFERENCES public.Tipo_Usuario (id_tipo)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+140703 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT pais_indicadores_sociales_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+140706 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT pais_indcadores_economicos_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+140877 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :12
+142068 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+0    [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ArchitectUtils  - Log4J configured successfully
+790  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+894  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+896  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+986  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+3652 [Thread-5] ERROR ca.sqlpower.architect.swingui.action.CheckForUpdateAction  - Fail to retrieve current version number!
+54867 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.PlayPen  - Drop: I am over dtde=java.awt.dnd.DropTargetDropEvent[source=java.awt.dnd.DropTarget@7c2d1fd3]
+56457 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.PlayPen  - Drop: I am over dtde=java.awt.dnd.DropTargetDropEvent[source=java.awt.dnd.DropTarget@7c2d1fd3]
+58001 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.PlayPen  - Drop: I am over dtde=java.awt.dnd.DropTargetDropEvent[source=java.awt.dnd.DropTarget@7c2d1fd3]
+59786 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.PlayPen  - Drop: I am over dtde=java.awt.dnd.DropTargetDropEvent[source=java.awt.dnd.DropTarget@7c2d1fd3]
+83330 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+85980 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.Indicadores_Economicos (
+                id_indicador_economico INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_economicos_pk PRIMARY KEY (id_indicador_economico)
+)
+85981 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales (
+                id_indicador_social INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_sociales_pk PRIMARY KEY (id_indicador_social)
+)
+85983 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tipo_Usuario (
+                id_tipo INTEGER NOT NULL,
+                nombre_tipo VARCHAR(20) NOT NULL,
+                CONSTRAINT tipo_usuario_pk PRIMARY KEY (id_tipo)
+)
+85983 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Pais (
+                id_pais INTEGER NOT NULL,
+                nombre_pais VARCHAR(50) NOT NULL,
+                CONSTRAINT pais_pk PRIMARY KEY (id_pais)
+)
+85984 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Usuario (
+                id_usuario INTEGER NOT NULL,
+                usuario VARCHAR(20) NOT NULL,
+                nombre VARCHAR(100) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                fecha_nacimiento DATE NOT NULL,
+                genero VARCHAR(10) NOT NULL,
+                contrasena VARCHAR(12) NOT NULL,
+                id_tipo INTEGER NOT NULL,
+                activo INTEGER NOT NULL,
+                CONSTRAINT usuario_pk PRIMARY KEY (id_usuario)
+)
+85985 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_social INTEGER NOT NULL,
+                valor_indicador NUMERIC NOT NULL
+)
+85986 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Economicos_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_economico INTEGER NOT NULL,
+                valor_indicador NUMERIC NOT NULL
+)
+85992 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT incadores_ec_indcadores_economicos_fk
+FOREIGN KEY (id_indicador_economico)
+REFERENCES public.Indicadores_Economicos (id_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+86002 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT indicadores_so_indicadores_sociales_fk
+FOREIGN KEY (id_indicador_social)
+REFERENCES public.Indicadores_Sociales (id_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+86004 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Usuario ADD CONSTRAINT tipo_usuario_usuario_fk
+FOREIGN KEY (id_tipo)
+REFERENCES public.Tipo_Usuario (id_tipo)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+86006 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT pais_indicadores_sociales_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+86007 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT pais_indcadores_economicos_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+86131 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :12
+87486 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+1062066 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+1064553 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.Indicadores_Economicos (
+                id_indicador_economico INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_economicos_pk PRIMARY KEY (id_indicador_economico)
+)
+1064555 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales (
+                id_indicador_social INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_sociales_pk PRIMARY KEY (id_indicador_social)
+)
+1064556 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tipo_Usuario (
+                id_tipo INTEGER NOT NULL,
+                nombre_tipo VARCHAR(20) NOT NULL,
+                CONSTRAINT tipo_usuario_pk PRIMARY KEY (id_tipo)
+)
+1064557 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Pais (
+                id_pais INTEGER NOT NULL,
+                nombre_pais VARCHAR(50) NOT NULL,
+                CONSTRAINT pais_pk PRIMARY KEY (id_pais)
+)
+1064557 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Usuario (
+                id_usuario INTEGER NOT NULL,
+                usuario VARCHAR(20) NOT NULL,
+                nombre VARCHAR(100) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                fecha_nacimiento DATE NOT NULL,
+                genero VARCHAR(10) NOT NULL,
+                contrasena VARCHAR(12) NOT NULL,
+                id_tipo INTEGER NOT NULL,
+                activo INTEGER NOT NULL,
+                CONSTRAINT usuario_pk PRIMARY KEY (id_usuario)
+)
+1064558 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_social INTEGER NOT NULL,
+                valor_indicador NUMERIC NOT NULL
+)
+1064558 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Economicos_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_economico INTEGER NOT NULL,
+                valor_indicador NUMERIC(15,1) NOT NULL
+)
+1064559 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT incadores_ec_indcadores_economicos_fk
+FOREIGN KEY (id_indicador_economico)
+REFERENCES public.Indicadores_Economicos (id_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1064559 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT indicadores_so_indicadores_sociales_fk
+FOREIGN KEY (id_indicador_social)
+REFERENCES public.Indicadores_Sociales (id_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1064560 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Usuario ADD CONSTRAINT tipo_usuario_usuario_fk
+FOREIGN KEY (id_tipo)
+REFERENCES public.Tipo_Usuario (id_tipo)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1064560 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT pais_indicadores_sociales_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1064561 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT pais_indcadores_economicos_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1064562 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :12
+1065452 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+1409535 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+1412567 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.Indicadores_Economicos (
+                id_indicador_economico INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_economicos_pk PRIMARY KEY (id_indicador_economico)
+)
+1412567 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales (
+                id_indicador_social INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_sociales_pk PRIMARY KEY (id_indicador_social)
+)
+1412568 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tipo_Usuario (
+                id_tipo INTEGER NOT NULL,
+                nombre_tipo VARCHAR(20) NOT NULL,
+                CONSTRAINT tipo_usuario_pk PRIMARY KEY (id_tipo)
+)
+1412568 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Pais (
+                id_pais INTEGER NOT NULL,
+                nombre_pais VARCHAR(50) NOT NULL,
+                CONSTRAINT pais_pk PRIMARY KEY (id_pais)
+)
+1412569 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Usuario (
+                id_usuario INTEGER NOT NULL,
+                usuario VARCHAR(20) NOT NULL,
+                nombre VARCHAR(100) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                fecha_nacimiento DATE NOT NULL,
+                genero VARCHAR(10) NOT NULL,
+                contrasena VARCHAR(12) NOT NULL,
+                id_tipo INTEGER NOT NULL,
+                activo INTEGER NOT NULL,
+                CONSTRAINT usuario_pk PRIMARY KEY (id_usuario)
+)
+1412569 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_social INTEGER NOT NULL,
+                valor_indicador NUMERIC NOT NULL
+)
+1412570 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Economicos_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_economico INTEGER NOT NULL,
+                valor_indicador NUMERIC(14) NOT NULL
+)
+1412570 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT incadores_ec_indcadores_economicos_fk
+FOREIGN KEY (id_indicador_economico)
+REFERENCES public.Indicadores_Economicos (id_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1412571 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT indicadores_so_indicadores_sociales_fk
+FOREIGN KEY (id_indicador_social)
+REFERENCES public.Indicadores_Sociales (id_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1412571 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Usuario ADD CONSTRAINT tipo_usuario_usuario_fk
+FOREIGN KEY (id_tipo)
+REFERENCES public.Tipo_Usuario (id_tipo)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1412572 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT pais_indicadores_sociales_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1412573 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT pais_indcadores_economicos_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1412574 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :12
+1460830 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+1463661 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.Indicadores_Economicos (
+                id_indicador_economico INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_economicos_pk PRIMARY KEY (id_indicador_economico)
+)
+1463662 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales (
+                id_indicador_social INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_sociales_pk PRIMARY KEY (id_indicador_social)
+)
+1463662 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tipo_Usuario (
+                id_tipo INTEGER NOT NULL,
+                nombre_tipo VARCHAR(20) NOT NULL,
+                CONSTRAINT tipo_usuario_pk PRIMARY KEY (id_tipo)
+)
+1463663 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Pais (
+                id_pais INTEGER NOT NULL,
+                nombre_pais VARCHAR(50) NOT NULL,
+                CONSTRAINT pais_pk PRIMARY KEY (id_pais)
+)
+1463664 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Usuario (
+                id_usuario INTEGER NOT NULL,
+                usuario VARCHAR(20) NOT NULL,
+                nombre VARCHAR(100) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                fecha_nacimiento DATE NOT NULL,
+                genero VARCHAR(10) NOT NULL,
+                contrasena VARCHAR(12) NOT NULL,
+                id_tipo INTEGER NOT NULL,
+                activo INTEGER NOT NULL,
+                CONSTRAINT usuario_pk PRIMARY KEY (id_usuario)
+)
+1463664 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_social INTEGER NOT NULL,
+                valor_indicador NUMERIC NOT NULL
+)
+1463666 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Economicos_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_economico INTEGER NOT NULL,
+                valor_indicador NUMERIC(14,1) NOT NULL
+)
+1463666 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT incadores_ec_indcadores_economicos_fk
+FOREIGN KEY (id_indicador_economico)
+REFERENCES public.Indicadores_Economicos (id_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1463666 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT indicadores_so_indicadores_sociales_fk
+FOREIGN KEY (id_indicador_social)
+REFERENCES public.Indicadores_Sociales (id_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1463667 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Usuario ADD CONSTRAINT tipo_usuario_usuario_fk
+FOREIGN KEY (id_tipo)
+REFERENCES public.Tipo_Usuario (id_tipo)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1463668 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT pais_indicadores_sociales_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1463669 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT pais_indcadores_economicos_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+1463671 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :12
+4680753 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+4683602 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.Indicadores_Economicos (
+                id_indicador_economico INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_economicos_pk PRIMARY KEY (id_indicador_economico)
+)
+4683602 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales (
+                id_indicador_social INTEGER NOT NULL,
+                nombre_indicador VARCHAR(50) NOT NULL,
+                CONSTRAINT indicadores_sociales_pk PRIMARY KEY (id_indicador_social)
+)
+4683603 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Tipo_Usuario (
+                id_tipo INTEGER NOT NULL,
+                nombre_tipo VARCHAR(20) NOT NULL,
+                CONSTRAINT tipo_usuario_pk PRIMARY KEY (id_tipo)
+)
+4683603 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Pais (
+                id_pais INTEGER NOT NULL,
+                nombre_pais VARCHAR(50) NOT NULL,
+                CONSTRAINT pais_pk PRIMARY KEY (id_pais)
+)
+4683604 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Usuario (
+                id_usuario INTEGER NOT NULL,
+                usuario VARCHAR(20) NOT NULL,
+                nombre VARCHAR(100) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                fecha_nacimiento DATE NOT NULL,
+                genero VARCHAR(10) NOT NULL,
+                contrasena VARCHAR(12) NOT NULL,
+                id_tipo INTEGER NOT NULL,
+                activo INTEGER NOT NULL,
+                CONSTRAINT usuario_pk PRIMARY KEY (id_usuario)
+)
+4683604 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Sociales_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_social INTEGER NOT NULL,
+                valor_indicador NUMERIC(16,2) NOT NULL
+)
+4683605 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.Indicadores_Economicos_Valores (
+                id_pais INTEGER NOT NULL,
+                id_indicador_economico INTEGER NOT NULL,
+                valor_indicador NUMERIC(16,2) NOT NULL
+)
+4683605 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT incadores_ec_indcadores_economicos_fk
+FOREIGN KEY (id_indicador_economico)
+REFERENCES public.Indicadores_Economicos (id_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+4683606 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT indicadores_so_indicadores_sociales_fk
+FOREIGN KEY (id_indicador_social)
+REFERENCES public.Indicadores_Sociales (id_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+4683606 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Usuario ADD CONSTRAINT tipo_usuario_usuario_fk
+FOREIGN KEY (id_tipo)
+REFERENCES public.Tipo_Usuario (id_tipo)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+4683607 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Sociales_Valores ADD CONSTRAINT pais_indicadores_sociales_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+4683608 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.Indicadores_Economicos_Valores ADD CONSTRAINT pais_indcadores_economicos_fk
+FOREIGN KEY (id_pais)
+REFERENCES public.Pais (id_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+4683609 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :12
+4684653 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+4751103 [AWT-EventQueue-0] WARN  ca.sqlpower.architect.ddl.DDLUtils  - Couldn't initialize DDL Generator class ca.sqlpower.architect.ddl.SQLServer2014DDLGenerator specified in database type SQL Server (jTDS). Skipping it.
+4754231 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+CREATE TABLE public.DIM_INDICADOR_ECONOMICO (
+                sk_indicador_economico INTEGER NOT NULL,
+                pk_indicador_economico INTEGER NOT NULL,
+                indicador VARCHAR(50) NOT NULL,
+                valido_desde DATE NOT NULL,
+                valido_hasta DATE NOT NULL,
+                version INTEGER NOT NULL,
+                CONSTRAINT dim_indicador_economico_pk PRIMARY KEY (sk_indicador_economico)
+)
+4754232 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.DIM_INDICADOR_SOCIAL (
+                sk_indicador_social INTEGER NOT NULL,
+                pk_indicador_social INTEGER NOT NULL,
+                indicador VARCHAR(50) NOT NULL,
+                valido_desde DATE NOT NULL,
+                valido_hasta DATE NOT NULL,
+                version INTEGER NOT NULL,
+                CONSTRAINT dim_indicador_social_pk PRIMARY KEY (sk_indicador_social)
+)
+4754233 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.DIM_PAIS (
+                sk_pais INTEGER NOT NULL,
+                pk_pais INTEGER NOT NULL,
+                pais VARCHAR(50) NOT NULL,
+                valido_desde DATE NOT NULL,
+                valido_hasta DATE NOT NULL,
+                version INTEGER NOT NULL,
+                CONSTRAINT dim_pais_pk PRIMARY KEY (sk_pais)
+)
+4754234 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+CREATE TABLE public.FACT_PAISES (
+                sk_pais INTEGER NOT NULL,
+                sk_indicador_social INTEGER NOT NULL,
+                sk_indicador_economico INTEGER NOT NULL,
+                valor_indicador_economico NUMERIC(16,2) NOT NULL,
+                valor_indicador_social NUMERIC(16,2) NOT NULL,
+                CONSTRAINT fact_paises_pk PRIMARY KEY (sk_pais, sk_indicador_social, sk_indicador_economico)
+)
+4754235 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+
+ALTER TABLE public.FACT_PAISES ADD CONSTRAINT dim_indicador_economico_fact_paises_fk
+FOREIGN KEY (sk_indicador_economico)
+REFERENCES public.DIM_INDICADOR_ECONOMICO (sk_indicador_economico)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+4754238 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.FACT_PAISES ADD CONSTRAINT dim_indicador_social_fact_paises_fk
+FOREIGN KEY (sk_indicador_social)
+REFERENCES public.DIM_INDICADOR_SOCIAL (sk_indicador_social)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+4754240 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ddl.GenericDDLGenerator  - endStatement: 
+
+ALTER TABLE public.FACT_PAISES ADD CONSTRAINT dim_pais_fact_paises_fk
+FOREIGN KEY (sk_pais)
+REFERENCES public.DIM_PAIS (sk_pais)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE
+4754241 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - The list size is :7
+4755516 [AWT-EventQueue-0] INFO  ca.sqlpower.architect.swingui.SQLScriptDialog  - SQL_FILE_FILTER:SQL Script Files:[sql, ddl]
+0    [AWT-EventQueue-0] INFO  ca.sqlpower.architect.ArchitectUtils  - Log4J configured successfully
+836  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+969  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+970  [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Beginning to read/merge new pl.ini data
+1079 [AWT-EventQueue-0] INFO  ca.sqlpower.sql.PlDotIni  - Finished reading file.
+5329 [Thread-5] ERROR ca.sqlpower.architect.swingui.action.CheckForUpdateAction  - Fail to retrieve current version number!

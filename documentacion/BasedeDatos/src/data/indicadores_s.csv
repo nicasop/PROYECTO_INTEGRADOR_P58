@@ -1,0 +1,23 @@
+id_indicador_social;nombre_indicador
+1;Area(sq km)
+2;Birth rate(births/1000 population)
+3;Death rate(deaths/1000 population)
+4;Exports
+5;HIV/AIDS - adult prevalence rate(%)
+6;HIV/AIDS - deaths
+7;HIV/AIDS - people living with HIV/AIDS
+8;Highways(km)
+9;Imports
+10;Industrial production growth rate(%)
+11;Infant mortality rate(deaths/1000 live births)
+12;Inflation rate (consumer prices)(%)
+13;Internet hosts
+14;Internet users
+15;Labor force
+16;Life expectancy at birth(years)
+17;Population
+18;Railways(km)
+19;Telephones - main lines in use
+20;Telephones - mobile cellular
+21;Total fertility rate(children born/woman)
+22;Unemployment rate(%)
